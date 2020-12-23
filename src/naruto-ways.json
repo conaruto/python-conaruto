@@ -1,0 +1,6230 @@
+[
+  {
+    "otype": "profil",
+    "name": "Techniques principales",
+    "full-description": "Les Techniques principales sont des techniques simples qui peuvent être maîtrisées par la quasi-totalité des ninjas."
+  },
+  {
+    "otype": "way",
+    "name": "Voie du ninja",
+    "profil": "Techniques principales",
+    "full-description": "La voie du ninja consiste en des techniques simples, qui devraient être maîtrisées par tous les aspirants ninja.",
+    "icon": "images/ways/way-ninja.png"
+  },
+  {
+    "otype": "capacity",
+    "name": "Contrôle du chakra",
+    "voname": "Nawanuke no jutsu",
+    "limited": true,
+    "rank": 1,
+    "profil": "Techniques principales",
+    "way": "Voie du ninja",
+    "jutsu": "Inconnu",
+    "element": "Inconnu",
+    "full-description": "Le ninja, en émettant un flux de chakra régulier d'attraction ou de répulsion défie les lois de la pesanteur. Il peut monter à la verticale d'un mur ou d'un arbre, marcher sur l'eau ou sur toute surface qui ne porterait pas son poids habituellement. Cette technique consomme 1 point de chakra tous les [rang dans la voie] minutes pour se maintenir sur une telle surface.",
+    "short-description": "Le ninja, en émettant un flux de chakra régulier d'attraction ou de répulsion défie les lois de la pesanteur. Il peut monter à la verticale d'un mur ou d'un arbre, marcher sur l'eau ou sur toute surface qui ne porterait pas son poids habituellement. Cette technique consomme du chakra pour se maintenir sur une telle surface.",
+    "properties": [
+      {
+        "name": "measure",
+        "measure": "duration",
+        "values": [
+          {
+            "name": "element",
+            "adjustment": "=",
+            "count": 1,
+            "element": "Chakra"
+          },
+          {
+            "name": "other",
+            "adjustment": "/",
+            "other": "rang"
+          }
+        ],
+        "unit": "min"
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "Rupture de genjutsu",
+    "voname": "Genjutsu kai",
+    "limited": true,
+    "rank": 2,
+    "profil": "Techniques principales",
+    "way": "Voie du ninja",
+    "jutsu": "Inconnu",
+    "element": "Inconnu",
+    "full-description": "En prononçant le mot « rupture », l'utilisateur peut briser la plupart des illusions. Cette technique peut s'appliquer à soi-même, ou sur un camarade ninja. Dans ce dernier cas, la technique consiste à envoyer son propre chakra dans la personne victime de l'illusion. Dans tous les cas, il faut réussir un test de jutsu de difficulté [10 + rang du genjutsu]. A chaque échec, la difficulté pour briser le genjutsu augmente de 1.",
+    "short-description": "L'utilisateur de cette technique peut briser la plupart des illusions. Cette technique peut s'appliquer à soi-même, ou sur un camarade ninja. Dans ce dernier cas, la technique consiste à envoyer son propre chakra dans la personne victime de l'illusion.",
+    "properties": [
+      {
+        "name": "test",
+        "test": "JUTSU",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "≥",
+            "count": 10
+          },
+          {
+            "name": "other",
+            "adjustment": "+",
+            "other": "rang"
+          }
+        ],
+        "detail": "genjutsu utilisé"
+      },
+      {
+        "name": "action",
+        "action": "Difficulté",
+        "limited": false,
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "+",
+            "count": 1
+          },
+          {
+            "name": "other",
+            "adjustment": "/",
+            "other": "échec"
+          }
+        ],
+        "detail": ""
+      }
+    ],
+    "mudras": [
+      "Rupture"
+    ]
+  },
+  {
+    "otype": "capacity",
+    "name": "Technique de métamorphose",
+    "voname": "Henge no jutsu",
+    "limited": true,
+    "rank": 3,
+    "profil": "Techniques principales",
+    "way": "Voie du ninja",
+    "jutsu": "Inconnu",
+    "element": "Inconnu",
+    "full-description": "Cette technique permet de prendre la forme d'une autre personne, animal, ou objet (voix comprise). L'utilisateur de cette technique lance un d20 et ajoute son Mod de CHA au résultat. Si le score est supérieur à 10, la métamorphose est réussie, mais ne résiste pas à un examen visuel attentif. Si le score est supérieur à 15, la métamorphose est parfaite et seul un échange verbal peut mettre fin à la supercherie. Cette technique dure 5 minutes par rang dans la voie ou jusqu'à ce que l'utilisateur y mette fin. La technique consomme 1 point de chakra toutes les 5 minutes.",
+    "short-description": "Cette technique permet de prendre la forme d'une autre personne, animal, ou objet (voix comprise) de façon plus ou moins réussie. Un examen visuel attentif ou un un échange verbal peuvent mettre fin à la supercherie.",
+    "properties": [
+      {
+        "name": "measure",
+        "measure": "duration",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 5
+          },
+          {
+            "name": "other",
+            "adjustment": "/",
+            "other": "rang"
+          }
+        ],
+        "unit": "min"
+      },
+      {
+        "name": "action",
+        "action": "Maintenir",
+        "limited": true,
+        "values": [
+          {
+            "name": "element",
+            "adjustment": "=",
+            "count": 1,
+            "element": "Chakra"
+          },
+          {
+            "name": "quantity",
+            "adjustment": "/",
+            "count": 5
+          },
+          {
+            "name": "measure",
+            "adjustment": "=",
+            "measure": "min"
+          }
+        ],
+        "detail": ""
+      },
+      {
+        "name": "test",
+        "test": "CHA",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "≥",
+            "count": 10
+          }
+        ],
+        "detail": "(Examen visuel annule)"
+      },
+      {
+        "name": "test",
+        "test": "CHA",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "≥",
+            "count": 15
+          }
+        ],
+        "detail": "(Échange verbal annule)"
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "Technique de multiclonage",
+    "voname": "Kage bunshin no jutsu",
+    "limited": true,
+    "rank": 4,
+    "profil": "Techniques principales",
+    "way": "Voie du ninja",
+    "jutsu": "Inconnu",
+    "element": "Inconnu",
+    "full-description": "Cette technique consiste à créer plusieurs clones de soi même. Ces clones possèdent les caractéristiques de l'utilisateur et ses techniques mais ils partagent les mêmes points de chakra et ne sont pas très résistants. En effet, le clone disparaît à la moindre blessure. L'utilisateur de cette technique peut réaliser jusqu'à un clone par rang dans cette voie. Maintenir un clone pour un tour supplémentaire consomme un point de chakra. Les clones peuvent attaquer dès le tour où ils sont créés comme l'original le ferait. À moins de pouvoir visualiser le chakra à l'intérieur d'un corps, il est impossible de savoir qui est l'original.",
+    "short-description": "Cette technique permet de créer plusieurs clones de soi, ayant les mêmes capacités que l'original, mais très peu résistant. À moins de voir le chakra à l'intérieur d'un corps, il est impossible de distinguer l'original.",
+    "properties": [
+      {
+        "name": "character",
+        "character": "PV",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "name": "action",
+        "action": "Quantité",
+        "limited": false,
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 1
+          },
+          {
+            "name": "other",
+            "adjustment": "/",
+            "other": "rang"
+          }
+        ],
+        "detail": "clones"
+      },
+      {
+        "name": "action",
+        "action": "Maintenir",
+        "limited": false,
+        "values": [
+          {
+            "name": "element",
+            "adjustment": "=",
+            "count": 1,
+            "element": "Chakra"
+          },
+          {
+            "name": "free",
+            "adjustment": "/",
+            "value": "clone"
+          },
+          {
+            "name": "measure",
+            "adjustment": "/",
+            "measure": "tr"
+          }
+        ],
+        "detail": ""
+      },
+      {
+        "name": "action",
+        "action": "Attaque",
+        "limited": false,
+        "values": [],
+        "detail": "Dès le tour où il est créé"
+      }
+    ],
+    "mudras": [
+      "Multiclonage"
+    ]
+  },
+  {
+    "otype": "capacity",
+    "name": "Technique de permutation",
+    "voname": "Kawarimi no jutsu",
+    "limited": false,
+    "rank": 5,
+    "profil": "Techniques principales",
+    "way": "Voie du ninja",
+    "jutsu": "Inconnu",
+    "element": "Inconnu",
+    "full-description": "Technique consistant à se substituer avec un autre objet, une bûche de bois le plus souvent. Cette technique, est une action gratuite, utilisable pendant le tour de l'adversaire. Lorsqu'il est attaqué, le ninja peut se défendre en lançant un d12 et en ajoutant le résultat à sa défense.",
+    "short-description": "Technique consistant à se substituer avec un autre objet, une bûche de bois le plus souvent. Cette technique s'utilise pendant le tour de l'adversaire.",
+    "properties": [
+      {
+        "name": "property",
+        "property": "",
+        "value": "Action gratuite"
+      },
+      {
+        "name": "defense",
+        "defense": "DEF",
+        "detail": "",
+        "values": [
+          {
+            "name": "dice",
+            "adjustment": "+",
+            "count": 1,
+            "die": "12"
+          }
+        ]
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "way",
+    "name": "Voie du taijutsu",
+    "profil": "Techniques principales",
+    "full-description": "Ces techniques permettent au ninja de porter des attaques au corps à corps. On peut ajouter des points de chakra à toutes les techniques de taijutsu pour augmenter leurs dégâts mais on ne peut pas de cette manière tomber à 0 point de chakra. Les techniques de taijutsu de rang 3, 4 et 5 ne consomment pas de points de chakra pour leur exécution.",
+    "icon": "images/ways/way-taijutsu.png"
+  },
+  {
+    "otype": "capacity",
+    "name": "Esquive",
+    "voname": "Inconnu",
+    "limited": false,
+    "rank": 1,
+    "profil": "Techniques principales",
+    "way": "Voie du taijutsu",
+    "jutsu": "Taijutsu",
+    "element": "Inconnu",
+    "full-description": "Le ninja qui maîtrise le taijutsu est très vif et bénéficie d'un bonus de +1 par rang dans la voie à sa DEF, son initiative et ses tests de DEX destinés à esquiver.",
+    "short-description": "Le ninja qui maîtrise le taijutsu est très vif. Il bénéficie de bonus en défense, en initiative et en esquive au fur et à mesure qu'il évolue dans cette voie.",
+    "properties": [
+      {
+        "name": "defense",
+        "defense": "DEF",
+        "detail": "",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "+",
+            "count": 1
+          },
+          {
+            "name": "other",
+            "adjustment": "/",
+            "other": "rang"
+          }
+        ]
+      },
+      {
+        "name": "character",
+        "character": "init",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "+",
+            "count": 1
+          },
+          {
+            "name": "other",
+            "adjustment": "/",
+            "other": "rang"
+          }
+        ]
+      },
+      {
+        "name": "action",
+        "action": "Esquive",
+        "limited": false,
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "+",
+            "count": 1
+          },
+          {
+            "name": "other",
+            "adjustment": "/",
+            "other": "rang"
+          }
+        ],
+        "detail": ""
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "Le brise-roche de Konoha",
+    "voname": "Konoha Kaiganshō",
+    "limited": false,
+    "rank": 2,
+    "profil": "Techniques principales",
+    "way": "Voie du taijutsu",
+    "jutsu": "Taijutsu",
+    "element": "Inconnu",
+    "full-description": "Cette technique consiste à s'élancer vers l'adversaire et lui donner un coup de coude violent. Sur un jet d'attaque au contact réussi, le coup inflige [1d6 + Mod. FOR] DM.",
+    "short-description": "Cette technique consiste à s'élancer vers l'adversaire et lui donner un coup de coude violent.",
+    "properties": [
+      {
+        "name": "fight",
+        "attack": {
+          "name": "attack",
+          "attack": "Contact",
+          "values": []
+        },
+        "fight": "",
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "dice",
+                "adjustment": "=",
+                "count": 1,
+                "die": "6"
+              },
+              {
+                "name": "modifier",
+                "adjustment": "+",
+                "modifier": "[FOR]"
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Contondant"
+              ]
+            }
+          }
+        ],
+        "detail": ""
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "La rafale de Konoha",
+    "voname": "Konoha shoufū",
+    "limited": true,
+    "rank": 3,
+    "profil": "Techniques principales",
+    "way": "Voie du taijutsu",
+    "jutsu": "Taijutsu",
+    "element": "Inconnu",
+    "full-description": "L'utilisateur de cette technique donne un violent coup de pied dans la main de l'ennemi pour lui faire lâcher son arme. Sur une attaque au contact réussie, l'arme de l'adversaire tombe à terre (2 actions de mouvements pour la récupérer). L'attaque lui inflige également 1d8 DM.",
+    "short-description": "L'utilisateur de cette technique donne un violent coup de pied dans la main de l'ennemi pour lui faire lâcher son arme.\nReprendre son arme exige alors 2 actions de mouvement car l'arme a été éjectée à plusieurs mètres.",
+    "properties": [
+      {
+        "name": "fight",
+        "attack": {
+          "name": "attack",
+          "attack": "Contact",
+          "values": []
+        },
+        "fight": "",
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "dice",
+                "adjustment": "=",
+                "count": 1,
+                "die": "8"
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Contondant"
+              ]
+            }
+          }
+        ],
+        "detail": ""
+      },
+      {
+        "name": "property",
+        "property": "Désarmé",
+        "value": "si attaque reussie"
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "La tornade de Konoha",
+    "voname": "Konoha senpū",
+    "limited": true,
+    "rank": 4,
+    "profil": "Techniques principales",
+    "way": "Voie du taijutsu",
+    "jutsu": "Taijutsu",
+    "element": "Inconnu",
+    "full-description": "L'utilisateur effectue un coup de pied au sol à 360° degrés, toute personne étant dans la zone d'action de 3 mètres de diamètres trébuche pour 1 tour à moins de réussir un jet de DEX (réflexe ou esquive) de difficulté [10 + niveau/2]. Chaque personne à terre (ami ou ennemi) reçoit [1d8 + Mod. FOR] DM.",
+    "short-description": "L'utilisateur effectue un coup de pied au sol à 360° degrés qui déstabilise les personnes autour de lui. Les personnes qui trébuchent reçoivent des DM.",
+    "properties": [
+      {
+        "name": "test",
+        "test": "DEX",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "≥",
+            "count": 10
+          },
+          {
+            "name": "other",
+            "adjustment": "+",
+            "other": "niveau"
+          },
+          {
+            "name": "quantity",
+            "adjustment": "/",
+            "count": 2
+          }
+        ],
+        "detail": "(Rester debout)"
+      },
+      {
+        "name": "action",
+        "action": "Se relever",
+        "limited": false,
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 1
+          },
+          {
+            "name": "measure",
+            "adjustment": "=",
+            "measure": "tr"
+          }
+        ],
+        "detail": ""
+      },
+      {
+        "name": "property",
+        "property": "Cible",
+        "value": "Amis et ennemis"
+      },
+      {
+        "name": "measure",
+        "measure": "area",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 3
+          }
+        ],
+        "unit": "m"
+      },
+      {
+        "name": "damage",
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "dice",
+                "adjustment": "=",
+                "count": 1,
+                "die": "8"
+              },
+              {
+                "name": "modifier",
+                "adjustment": "+",
+                "modifier": "[FOR]"
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Contondant"
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "L'ombre de la feuille morte",
+    "voname": "Kage buyō",
+    "limited": true,
+    "rank": 5,
+    "profil": "Techniques principales",
+    "way": "Voie du taijutsu",
+    "jutsu": "Taijutsu",
+    "element": "Inconnu",
+    "full-description": "Avec un jet d'attaque au contact réussi, l'utilisateur donne un violent coup de pied dans le menton de l'adversaire lui infligeant [1d8 + Mod. FOR] DM. Puis il se place juste en dessous de lui pour pouvoir enchaîner. Tant qu'il réussi des jets d'attaque, dans la limite de 4, il peut continuer d'asséner des coups à son adversaires qui lui infligent également 1d8 DM.",
+    "short-description": "L'utilisateur donne un violent coup de pied dans le menton de l'adversaire puis se place juste en dessous de lui pour pouvoir enchaîner. Tant qu'il réussi un  jet d'attaque, il peut continuer de lui asséner des coups.",
+    "properties": [
+      {
+        "name": "fight",
+        "attack": {
+          "name": "attack",
+          "attack": "Contact",
+          "values": []
+        },
+        "fight": "",
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "dice",
+                "adjustment": "=",
+                "count": 1,
+                "die": "8"
+              },
+              {
+                "name": "modifier",
+                "adjustment": "+",
+                "modifier": "[FOR]"
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Contondant"
+              ]
+            }
+          }
+        ],
+        "detail": ""
+      },
+      {
+        "name": "action",
+        "action": "Attaque",
+        "limited": false,
+        "values": [
+          {
+            "name": "dice",
+            "adjustment": "=",
+            "count": 1,
+            "die": "8"
+          }
+        ],
+        "detail": "DM (supplémentaires)"
+      },
+      {
+        "name": "property",
+        "property": "Attaques supplémentaires",
+        "value": "4 maximum"
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "way",
+    "name": "Voie du genjutsu",
+    "profil": "Techniques principales",
+    "full-description": "Ces techniques permettent au ninja de créer des illusions. On ne peut cibler une personne que par un seul genjutsu à la fois.",
+    "icon": "images/ways/way-genjutsu.png"
+  },
+  {
+    "otype": "capacity",
+    "name": "Charmant",
+    "voname": "Inconnu",
+    "limited": false,
+    "rank": 1,
+    "profil": "Techniques principales",
+    "way": "Voie du genjutsu",
+    "jutsu": "Genjutsu",
+    "element": "Inconnu",
+    "full-description": "Le ninja obtient un bonus de +2 par rang dans la voie pour tous ses tests de CHA visant à mentir, baratiner, marchander ou séduire.",
+    "short-description": "Le ninja est très charmant et obtient un bonus a ses tests de CHA par rang dans la voie lorsqu'il fait les actions mentir, baratiner, marchander ou séduire.",
+    "properties": [
+      {
+        "name": "action",
+        "action": "Mentir",
+        "limited": false,
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "+",
+            "count": 2
+          },
+          {
+            "name": "other",
+            "adjustment": "/",
+            "other": "rang"
+          }
+        ],
+        "detail": ""
+      },
+      {
+        "name": "action",
+        "action": "Baratiner",
+        "limited": false,
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "+",
+            "count": 2
+          },
+          {
+            "name": "other",
+            "adjustment": "/",
+            "other": "rang"
+          }
+        ],
+        "detail": ""
+      },
+      {
+        "name": "action",
+        "action": "Marchander",
+        "limited": false,
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "+",
+            "count": 2
+          },
+          {
+            "name": "other",
+            "adjustment": "/",
+            "other": "rang"
+          }
+        ],
+        "detail": ""
+      },
+      {
+        "name": "action",
+        "action": "Séduire",
+        "limited": false,
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "+",
+            "count": 2
+          },
+          {
+            "name": "other",
+            "adjustment": "/",
+            "other": "rang"
+          }
+        ],
+        "detail": ""
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "Changement d'apparence",
+    "voname": "Magen kokoni arazu no jutsu",
+    "limited": false,
+    "rank": 2,
+    "profil": "Techniques principales",
+    "way": "Voie du genjutsu",
+    "jutsu": "Genjutsu",
+    "element": "Inconnu",
+    "full-description": "Cette technique permet de changer l'apparence des objets qui entourent l'utilisateur pour duper les gens autour de lui. L'illusion persiste pendant [5 + Mod CHA] minutes. L'illusion peut être composée d'animaux ou d'objets qui peuvent être en mouvement. La taille de l'illusion est d'un rayon maximum de 5 mètres autour de l'utilisateur par rang dans la voie. Cette technique ne peut pas être utilisée en combat.",
+    "short-description": "Cette technique permet de changer l'apparence des objets qui entourent l'utilisateur pour duper les gens autour de lui. L'illusion peut être composée d'animaux ou d'objets qui peuvent être en mouvement.",
+    "properties": [
+      {
+        "name": "measure",
+        "measure": "duration",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 5
+          },
+          {
+            "name": "modifier",
+            "adjustment": "+",
+            "modifier": "[CHA]"
+          }
+        ],
+        "unit": "tr"
+      },
+      {
+        "name": "measure",
+        "measure": "area",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 5
+          },
+          {
+            "name": "other",
+            "adjustment": "/",
+            "other": "rang"
+          }
+        ],
+        "unit": "m"
+      },
+      {
+        "name": "property",
+        "property": "Inutilisable",
+        "value": "En combat"
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "Puissante illusion distordante",
+    "voname": "Magen jyubakusatsu",
+    "limited": true,
+    "rank": 3,
+    "profil": "Techniques principales",
+    "way": "Voie du genjutsu",
+    "jutsu": "Genjutsu",
+    "element": "Inconnu",
+    "full-description": "L'utilisateur fait croire à son adversaire qu'il est fixé à un arbre. Sur une attaque de jutsu réussie l'adversaire est entravé pour un maximum de [1 + Mod CHA] tours à moins que quelqu'un ne rompe l'illusion. Tant qu'elle est entravée, la cible subit 1d4 DM. Maintenir l'illusion consomme 1 point de chakra par tour.",
+    "short-description": "L'utilisateur fait croire à son adversaire qu'il est fixé à un arbre. La cible est entravée à moins que quelqu'un ne rompe l'illusion. Tant qu'elle est entravée, la cible subit des dégâts.",
+    "properties": [
+      {
+        "name": "measure",
+        "measure": "duration",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 1
+          },
+          {
+            "name": "modifier",
+            "adjustment": "+",
+            "modifier": "[CHA]"
+          }
+        ],
+        "unit": "tr"
+      },
+      {
+        "name": "fight",
+        "attack": {
+          "name": "attack",
+          "attack": "Jutsu",
+          "values": []
+        },
+        "fight": "",
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "dice",
+                "adjustment": "=",
+                "count": 1,
+                "die": "4"
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Mentaux"
+              ]
+            }
+          }
+        ],
+        "detail": ""
+      },
+      {
+        "name": "property",
+        "property": "Attaque réussie",
+        "value": "Entravé"
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "Le Temple du Nirvana",
+    "voname": "Nehan shōja no jutsu",
+    "limited": true,
+    "rank": 4,
+    "profil": "Techniques principales",
+    "way": "Voie du genjutsu",
+    "jutsu": "Genjutsu",
+    "element": "Inconnu",
+    "full-description": "L'utilisateur pratique une illusion avec des plumes pouvant endormir un grand nombre de personnes jusqu'à une distance de 15 mètres. Chaque personnage dans la zone d'effet, 1 mètre par rang dans la voie doit réussir un test de CHA de [10 + Mod. CHA de l'utilisateur] ou tomber dans un sommeil profond pendant [1d4 + Mod. CHA] tours. Un personnage peut être réveillé si quelqu'un rompt l'illusion. On ne peut rompre cette illusion soi-même.",
+    "short-description": "L'utilisateur pratique une illusion avec des plumes pouvant endormir un grand nombre de personnes. Un personnage peut être réveillé si quelqu'un rompt l'illusion. On ne peut rompre cette illusion soi-même.",
+    "properties": [
+      {
+        "name": "measure",
+        "measure": "range",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 15
+          }
+        ],
+        "unit": "m"
+      },
+      {
+        "name": "measure",
+        "measure": "area",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 1
+          },
+          {
+            "name": "other",
+            "adjustment": "/",
+            "other": "rang"
+          }
+        ],
+        "unit": "m"
+      },
+      {
+        "name": "test",
+        "test": "CHA",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "<",
+            "count": 10
+          },
+          {
+            "name": "modifier",
+            "adjustment": "+",
+            "modifier": "[CHA]"
+          }
+        ],
+        "detail": ": Endormi"
+      },
+      {
+        "name": "measure",
+        "measure": "duration",
+        "values": [
+          {
+            "name": "dice",
+            "adjustment": "=",
+            "count": 1,
+            "die": "4"
+          },
+          {
+            "name": "modifier",
+            "adjustment": "+",
+            "modifier": "[CHA]"
+          }
+        ],
+        "unit": "tr"
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "Descente aux enfers",
+    "voname": "Magen jigoku kōkan",
+    "limited": true,
+    "rank": 5,
+    "profil": "Techniques principales",
+    "way": "Voie du genjutsu",
+    "jutsu": "Genjutsu",
+    "element": "Inconnu",
+    "full-description": "La personne ciblée par cette technique pense qu'une boule de feu tombe du ciel. Sur une attaque de jutsu réussie, la personne ciblée se voit infliger 1d8 DM par tour pendant 5 tours, à moins que l'illusion ne soit rompue.",
+    "short-description": "La personne ciblée par cette technique pense qu'une boule de feu tombe du ciel. La personne ciblée se voit infliger des dégâts pendant chaque tours, à moins que l'illusion ne soit rompue.",
+    "properties": [
+      {
+        "name": "measure",
+        "measure": "duration",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 5
+          }
+        ],
+        "unit": "tr"
+      },
+      {
+        "name": "fight",
+        "attack": {
+          "name": "attack",
+          "attack": "Jutsu",
+          "values": []
+        },
+        "fight": "",
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "dice",
+                "adjustment": "=",
+                "count": 1,
+                "die": "8"
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Mentaux"
+              ]
+            }
+          }
+        ],
+        "detail": ""
+      },
+      {
+        "name": "damage",
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "dice",
+                "adjustment": "=",
+                "count": 1,
+                "die": "8"
+              },
+              {
+                "name": "measure",
+                "adjustment": "/",
+                "measure": "tr"
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Mentaux"
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "way",
+    "name": "Voie du senjutsu",
+    "profil": "Techniques principales",
+    "full-description": "Ces techniques permettent au ninja de maîtriser l'énergie naturelle et le mode ermite.",
+    "icon": "images/ways/way-senjutsu.png"
+  },
+  {
+    "otype": "capacity",
+    "name": "Mode ermite",
+    "voname": "Sennin mode",
+    "limited": true,
+    "rank": 1,
+    "profil": "Techniques principales",
+    "way": "Voie du senjutsu",
+    "jutsu": "Senjutsu",
+    "element": "Inconnu",
+    "full-description": "En entrant en mode ermite, l'utilisateur de cette technique reçoit 2 points de chakra supplémentaires par rang dans la voie. Ces points sont temporaires pendant la durée du combat et il est possible d'entrer en mode ermite une seule fois par combat.",
+    "short-description": "En entrant en mode ermite, l'utilisateur de cette technique accumule du chakra supplémentaires. Ces points sont temporaires pendant la durée du combat.",
+    "properties": [
+      {
+        "name": "measure",
+        "measure": "duration",
+        "values": [],
+        "unit": "Combat"
+      },
+      {
+        "name": "character",
+        "character": "Chakra",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "+",
+            "count": 2
+          },
+          {
+            "name": "other",
+            "adjustment": "/",
+            "other": "rang"
+          }
+        ]
+      },
+      {
+        "name": "property",
+        "property": "Points de chakra",
+        "value": "Temporaires"
+      },
+      {
+        "name": "property",
+        "property": "Mode ermite",
+        "value": "1 seule fois par combat"
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "Invocation du crapaud",
+    "voname": "Kuchiyose no jutsu",
+    "limited": true,
+    "rank": 2,
+    "profil": "Techniques principales",
+    "way": "Voie du senjutsu",
+    "jutsu": "Senjutsu",
+    "element": "Inconnu",
+    "full-description": "Cette technique consiste à invoquer un crapaud qui vient se battre aux cotés de l'utilisateur de cette technique. Le crapaud est lié au ninja par un pacte de sang et possède les caractéristiques suivantes : FOR +3, DEX +0, CON +2, INT +0, SAG +0 CHA +0, Init 18, DEF 16, PV [niveau x 4], Attaque au contact [niveau], 2d6 DM +3. Le crapaud reste pendant [rang dans la voie] tours et tant qu'il lui reste au moins 1 point de vie.",
+    "short-description": "Cette technique consiste à invoquer un crapaud qui vient se battre aux cotés de l'utilisateur de cette technique. Le crapaud est lié au ninja par un pacte de sang.  Le crapaud reste pendant un certain temps et tant qu'il lui reste au moins 1 point de vie.",
+    "properties": [
+      {
+        "name": "creature",
+        "creature": "Crapaud",
+        "init": {
+          "name": "quantity",
+          "adjustment": "=",
+          "count": 18
+        },
+        "PV": [
+          {
+            "name": "other",
+            "adjustment": "=",
+            "other": "niveau"
+          },
+          {
+            "name": "quantity",
+            "adjustment": "x",
+            "count": 4
+          }
+        ],
+        "DEF": {
+          "name": "quantity",
+          "adjustment": "=",
+          "count": 16
+        },
+        "FOR": {
+          "name": "quantity",
+          "adjustment": "+",
+          "count": 3
+        },
+        "DEX": {
+          "name": "quantity",
+          "adjustment": "+",
+          "count": 0
+        },
+        "CON": {
+          "name": "quantity",
+          "adjustment": "+",
+          "count": 2
+        },
+        "INT": {
+          "name": "quantity",
+          "adjustment": "+",
+          "count": 0
+        },
+        "SAG": {
+          "name": "quantity",
+          "adjustment": "+",
+          "count": 0
+        },
+        "CHA": {
+          "name": "quantity",
+          "adjustment": "+",
+          "count": 0
+        },
+        "attack": {
+          "name": "attack",
+          "attack": "Contact",
+          "values": [
+            {
+              "name": "other",
+              "adjustment": "=",
+              "other": "niveau"
+            }
+          ]
+        },
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "dice",
+                "adjustment": "=",
+                "count": 2,
+                "die": "6"
+              },
+              {
+                "name": "quantity",
+                "adjustment": "+",
+                "count": 3
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Contondant"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "measure",
+        "measure": "duration",
+        "values": [
+          {
+            "name": "other",
+            "adjustment": "=",
+            "other": "rang"
+          }
+        ],
+        "unit": "tr"
+      }
+    ],
+    "mudras": [
+      "Sanglier",
+      "Chien",
+      "Coq",
+      "Singe",
+      "Chèvre"
+    ]
+  },
+  {
+    "otype": "capacity",
+    "name": "L'orbe tourbillonnant",
+    "voname": "Rasengan",
+    "limited": true,
+    "rank": 3,
+    "profil": "Techniques principales",
+    "way": "Voie du senjutsu",
+    "jutsu": "Ninjutsu",
+    "element": "Inconnu",
+    "full-description": "L'utilisateur crée une sphère de chakra tourbillonnante dans la paume de sa main. Il faut un tour (sans action limitée, ni action d'attaque) pour créer la sphère. Au prochain tour, sur une attaque de jutsu au contact réussie, il inflige 1d10 DM. On peut également ajouter des points de chakra afin d'augmenter les DM de cette attaque.",
+    "short-description": "L'utilisateur crée une sphère de chakra tourbillonnante dans la paume de sa main. Il faut un tour (sans action limitée, ni action d'attaque) pour créer la sphère afin de pouvoir attaquer au prochain tour. On peut également ajouter des points de chakra afin d'augmenter les DM de cette attaque.",
+    "properties": [
+      {
+        "name": "fight",
+        "attack": {
+          "name": "attack",
+          "attack": "Jutsu",
+          "values": []
+        },
+        "fight": "",
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "dice",
+                "adjustment": "=",
+                "count": 1,
+                "die": "10"
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Contondant"
+              ]
+            }
+          }
+        ],
+        "detail": ""
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "Les mille aiguilles capillaires",
+    "voname": "Senpō kebari senbon",
+    "limited": true,
+    "rank": 4,
+    "profil": "Techniques principales",
+    "way": "Voie du senjutsu",
+    "jutsu": "Senjutsu",
+    "element": "Inconnu",
+    "full-description": "L'utilisateur de cette technique rend ses cheveux aussi durs que des aiguilles. Tant qu'il maintient cette technique, qui lui coûte 1 point de chakra par tour, l'utilisateur reçoit un bonus de DEF de +5 et peut projeter 1 aiguille par rang dans la voie, jusqu'à une distance de 15 mètres. Les aiguilles infligent chacune 2 DM et peuvent cibler un seul adversaire par tour.",
+    "short-description": "L'utilisateur rend ses cheveux aussi durs que des aiguilles dont il se sert pour se protéger et pour attaquer.",
+    "properties": [
+      {
+        "name": "defense",
+        "defense": "DEF",
+        "detail": "",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "+",
+            "count": 5
+          }
+        ]
+      },
+      {
+        "name": "action",
+        "action": "Maintenir",
+        "limited": true,
+        "values": [
+          {
+            "name": "element",
+            "adjustment": "=",
+            "count": 1,
+            "element": "Chakra"
+          },
+          {
+            "name": "measure",
+            "adjustment": "/",
+            "measure": "tr"
+          }
+        ],
+        "detail": ""
+      },
+      {
+        "name": "property",
+        "property": "Attaque aiguille",
+        "value": "Réussite automatique"
+      },
+      {
+        "name": "property",
+        "property": "Cible des aiguilles",
+        "value": "1 adversaire par tour"
+      },
+      {
+        "name": "action",
+        "action": "Quantité",
+        "limited": false,
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 1
+          },
+          {
+            "name": "other",
+            "adjustment": "/",
+            "other": "rang"
+          }
+        ],
+        "detail": "aiguilles"
+      },
+      {
+        "name": "measure",
+        "measure": "range",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 15
+          }
+        ],
+        "unit": "m"
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "Invocation du crapaud fabuleux",
+    "voname": "Kuchiyose no jutsu",
+    "limited": true,
+    "rank": 5,
+    "profil": "Techniques principales",
+    "way": "Voie du senjutsu",
+    "jutsu": "Senjutsu",
+    "element": "Inconnu",
+    "full-description": "L'utilisateur de cette technique peut maintenant invoquer un crapaud fabuleux. Le crapaud fabuleux possède les caractéristiques suivantes : FOR +6, DEX +0, CON +5, INT +0, SAG +0 CHA +0, Init 18, DEF 18, PV [niveau x 4], Attaque au contact [niveau], 2d8 DM +6. Le crapaud reste pendant un certain temps et tant qu'il lui reste au moins 1 point de vie.",
+    "short-description": "L'utilisateur de cette technique peut maintenant aussi invoquer un crapaud fabuleux. Le crapaud reste pendant un certain temps et tant qu'il lui reste au moins 1 point de vie.",
+    "properties": [
+      {
+        "name": "creature",
+        "creature": "Crapaud",
+        "init": {
+          "name": "quantity",
+          "adjustment": "=",
+          "count": 18
+        },
+        "PV": [
+          {
+            "name": "other",
+            "adjustment": "=",
+            "other": "niveau"
+          },
+          {
+            "name": "quantity",
+            "adjustment": "x",
+            "count": 4
+          }
+        ],
+        "DEF": {
+          "name": "quantity",
+          "adjustment": "=",
+          "count": 18
+        },
+        "FOR": {
+          "name": "quantity",
+          "adjustment": "+",
+          "count": 6
+        },
+        "DEX": {
+          "name": "quantity",
+          "adjustment": "+",
+          "count": 0
+        },
+        "CON": {
+          "name": "quantity",
+          "adjustment": "+",
+          "count": 5
+        },
+        "INT": {
+          "name": "quantity",
+          "adjustment": "+",
+          "count": 0
+        },
+        "SAG": {
+          "name": "quantity",
+          "adjustment": "+",
+          "count": 0
+        },
+        "CHA": {
+          "name": "quantity",
+          "adjustment": "+",
+          "count": 0
+        },
+        "attack": {
+          "name": "attack",
+          "attack": "Contact",
+          "values": [
+            {
+              "name": "other",
+              "adjustment": "=",
+              "other": "niveau"
+            }
+          ]
+        },
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "dice",
+                "adjustment": "=",
+                "count": 2,
+                "die": "8"
+              },
+              {
+                "name": "quantity",
+                "adjustment": "+",
+                "count": 6
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Contondant"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "measure",
+        "measure": "duration",
+        "values": [
+          {
+            "name": "other",
+            "adjustment": "=",
+            "other": "rang"
+          }
+        ],
+        "unit": "tr"
+      }
+    ],
+    "mudras": [
+      "Sang",
+      "Sanglier",
+      "Chien",
+      "Coq",
+      "Singe",
+      "Chèvre"
+    ]
+  },
+  {
+    "otype": "way",
+    "name": "Voie du ninja médecin",
+    "profil": "Techniques principales",
+    "full-description": "Les techniques médicales nécessitent une grande précision et une grande maîtrise dans la manipulation du chakra.",
+    "icon": "images/ways/way-medecin.png"
+  },
+  {
+    "otype": "capacity",
+    "name": "Technique de la paume mystique",
+    "voname": "Shōsen jutsu",
+    "limited": true,
+    "rank": 1,
+    "profil": "Techniques principales",
+    "way": "Voie du ninja médecin",
+    "jutsu": "Ninjutsu",
+    "element": "Inconnu",
+    "full-description": "Cette technique est une technique médicale universelle employée par le médecin-ninja pour guérir des blessures et pour exécuter la chirurgie. L'utilisateur concentre son chakra dans sa main et l'applique à la blessure, accélérant la régénération de cellules. Il peut aussi focaliser son chakra dans une lame pour faire des coupes en cas de besoin. L'utilisateur de cette technique permet de soigner [1d8 + niveau du ninja] PV perdus.",
+    "short-description": "Cette technique médicale universelle est employée pour guérir des blessures et pour exécuter la chirurgie. L'utilisateur concentre son chakra dans sa main et l'applique à la blessure, accélérant la régénération de cellules. Il peut aussi focaliser son chakra dans une lame pour faire des coupes en cas de besoin.",
+    "properties": [
+      {
+        "name": "action",
+        "action": "Soigne",
+        "limited": false,
+        "detail": "PV perdus",
+        "values": [
+          {
+            "name": "dice",
+            "adjustment": "=",
+            "count": 1,
+            "die": "8"
+          },
+          {
+            "name": "other",
+            "adjustment": "+",
+            "other": "niveau"
+          }
+        ]
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "Technique de l'extraction du poison",
+    "voname": "Dokunuki no jutsu",
+    "limited": true,
+    "rank": 2,
+    "profil": "Techniques principales",
+    "way": "Voie du ninja médecin",
+    "jutsu": "Ninjutsu",
+    "element": "Inconnu",
+    "full-description": "Cette technique très difficile est utilisée pour tirer littéralement les substances étrangères d'un corps (comme le poison). Cependant, elle doit être utilisée avec beaucoup de délicatesse car un mauvais geste risquerait de provoquer d'autres dommages internes au patient et ne peut donc pas s'utiliser en combat. Cette technique permet de supprimer les maladies, empoisonnements, brûlures et affaiblissements de caractéristiques.",
+    "short-description": "Cette technique est utilisée pour enlever les substances étrangères d'un corps. Cependant, elle doit être utilisée avec délicatesse sous peine de provoquer des dommages internes au patient. ",
+    "properties": [
+      {
+        "name": "property",
+        "property": "Inutilisable",
+        "value": "En combat"
+      },
+      {
+        "name": "action",
+        "action": "Soigne",
+        "limited": false,
+        "detail": "Maladie, empoisonnement",
+        "values": []
+      },
+      {
+        "name": "action",
+        "action": "Soigne",
+        "limited": false,
+        "detail": "Affaiblissement de carac.",
+        "values": []
+      },
+      {
+        "name": "action",
+        "action": "Soigne",
+        "limited": false,
+        "detail": "Brûlure",
+        "values": []
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "Régénération des cellules",
+    "voname": "Chikatsu saisei no jutsu",
+    "limited": true,
+    "rank": 3,
+    "profil": "Techniques principales",
+    "way": "Voie du ninja médecin",
+    "jutsu": "Ninjutsu",
+    "element": "Inconnu",
+    "full-description": "Cette technique permet de régénérer des cellules à la suite d'une blessure grave. Cette technique est assez longue à exécuter et permet de soigner [4d8 + niveau du ninja] PV perdus par tour. Cette technique immobilise les deux ninjas (le soignant et le soigné) pendant 1 tour complet. Le patient ne doit faire aucune action le tour où il est soigné. Ils subissent également tous les deux un malus de -5 en DEF pendant ce tour.",
+    "short-description": "Cette technique régénère des cellules à la suite d'une blessure grave. Cette technique immobilise les deux ninjas (le soignant et le soigné) pendant 1 tour. Le patient ne doit faire aucune action le tour où il est soigné.",
+    "properties": [
+      {
+        "name": "action",
+        "action": "Soigne",
+        "limited": false,
+        "detail": "PV perdus",
+        "values": [
+          {
+            "name": "dice",
+            "adjustment": "=",
+            "count": 4,
+            "die": "8"
+          },
+          {
+            "name": "other",
+            "adjustment": "+",
+            "other": "niveau"
+          }
+        ]
+      },
+      {
+        "name": "action",
+        "action": "Defense",
+        "limited": false,
+        "detail": "pour le soigné",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "-",
+            "count": 5
+          }
+        ]
+      },
+      {
+        "name": "defense",
+        "defense": "DEF",
+        "detail": "",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "-",
+            "count": 5
+          }
+        ]
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "La création et le renouveau",
+    "voname": "Sōzō saisei",
+    "limited": false,
+    "rank": 4,
+    "profil": "Techniques principales",
+    "way": "Voie du ninja médecin",
+    "jutsu": "Fûinjutsu",
+    "element": "Inconnu",
+    "full-description": "Ce sceau permet d'enfermer une énorme quantité de Chakra sous forme d'un diamant sur le front à raison de 1 point de chakra par heure de méditation. Un ninja peut avoir au plus, dans cette réserve, une quantité équivalente à son nombre de points de chakra maximal.",
+    "short-description": "Ce sceau permet d'enfermer une énorme quantité de Chakra sous forme d'un diamant sur le front à raison par heure de méditation. Un ninja peut avoir au plus, dans cette réserve, une quantité équivalente à son nombre de points de chakra maximal.",
+    "properties": [
+      {
+        "name": "action",
+        "action": "Méditer",
+        "limited": false,
+        "detail": "",
+        "values": [
+          {
+            "name": "element",
+            "adjustment": "=",
+            "count": 1,
+            "element": "Chakra"
+          },
+          {
+            "name": "measure",
+            "adjustment": "/",
+            "measure": "h"
+          }
+        ]
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "Transmigration de sa propre énergie",
+    "voname": "Kishou tensei",
+    "limited": true,
+    "rank": 5,
+    "profil": "Techniques principales",
+    "way": "Voie du ninja médecin",
+    "jutsu": "Ninjutsu",
+    "element": "Inconnu",
+    "full-description": "Ce jutsu permet d'insuffler de l'énergie vitale dans un corps pour le soigner. Cette technique médicale avancée permet à partir d'une combinaison de PV et/ou de points de chakra de l'utilisateur, de les restituer sous forme de PV au bénéficiaire de cette technique. Il doit au moins rester 1 point de vie et 1 point de chakra à l'utilisateur après cette technique.",
+    "short-description": "Ce jutsu permet d'insuffler de l'énergie vitale dans un corps pour le soigner. Cette technique médicale avancée permet à partir d'une combinaison de PV et/ou de points de chakra de l'utilisateur, de les restituer sous forme de PV au bénéficiaire de cette technique. Il doit au moins rester 1 point de vie et 1 point de chakra à l'utilisateur après cette technique.",
+    "properties": [],
+    "mudras": []
+  },
+  {
+    "otype": "profil",
+    "name": "Techniques des 5 éléments",
+    "full-description": "Le ninjutsu est l'art de transformer son chakra. Il se divise en cinq éléments : le feu, l'eau, la terre, la foudre et le vent. Il existe un lien de supériorité entre ces éléments : Eau > Feu > Vent > Foudre > Terre. Pour faire court, l'eau éteint le feu qui est attisé par le vent qui découpe la foudre qui brise la terre qui absorbe l'eau."
+  },
+  {
+    "otype": "way",
+    "name": "Voie du feu",
+    "profil": "Techniques des 5 éléments",
+    "full-description": "Le Katon désigne l’art de maîtriser le feu. Un personnage ayant au moins 1 rang dans la voie est capable de réaliser des actions simples utilisant le feu comme allumer un feu ou enflammer une brindille.",
+    "icon": "images/ways/way-katon.png"
+  },
+  {
+    "otype": "capacity",
+    "name": "Technique de la balsamine",
+    "voname": "Hōsenka no jutsu",
+    "limited": false,
+    "rank": 1,
+    "profil": "Techniques des 5 éléments",
+    "way": "Voie du feu",
+    "jutsu": "Ninjutsu",
+    "element": "Katon",
+    "full-description": "L'utilisateur envoie une multitude de petites boules de feu sur un adversaire. L’utilisateur peut créer [1 x rang dans la voie] petites boules de feu. Chaque petite boule inflige automatiquement 1d4 DM de feu et peut être dirigée sur un ennemi différent jusqu’à une distance de 50 mètres. Si cette technique est utilisée comme une action limitée, l'utilisateur peut dissimuler des shurikens dans ses petites boules de feu qui infligent alors 1d4 +2 DM de feu.",
+    "short-description": "L'utilisateur envoie de petites boules de feu sur un ou plusieurs adversaires (réussite automatique). Utilisée comme une action limitée, il peut y dissimuler des shurikens.",
+    "properties": [
+      {
+        "name": "measure",
+        "measure": "range",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 50
+          }
+        ],
+        "unit": "m"
+      },
+      {
+        "name": "fight",
+        "fight": "",
+        "attack": {
+          "name": "attack",
+          "attack": "Jutsu",
+          "values": []
+        },
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "dice",
+                "adjustment": "=",
+                "count": 1,
+                "die": "4"
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Feu"
+              ]
+            }
+          }
+        ],
+        "detail": "par boule"
+      },
+      {
+        "name": "action",
+        "action": "Quantité",
+        "limited": false,
+        "detail": "petites boules de feu",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 1
+          },
+          {
+            "name": "other",
+            "adjustment": "/",
+            "other": "rang"
+          }
+        ]
+      },
+      {
+        "name": "action",
+        "action": "Attaque",
+        "limited": true,
+        "detail": "aux DM",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "+",
+            "count": 2
+          }
+        ]
+      }
+    ],
+    "mudras": [
+      "Rat",
+      "Tigre",
+      "Chien",
+      "Buffle",
+      "Lièvre",
+      "Tigre"
+    ]
+  },
+  {
+    "otype": "capacity",
+    "name": "Technique de la boule de feu suprême",
+    "voname": "Gōkakyū no jutsu",
+    "limited": true,
+    "rank": 2,
+    "profil": "Techniques des 5 éléments",
+    "way": "Voie du feu",
+    "jutsu": "Ninjutsu",
+    "element": "Katon",
+    "full-description": "L'utilisateur produit une énorme boule de feu sur l'ennemi. Sur une attaque de jutsu réussie, la boule de feu inflige [1d6 + Mod. d'INT] DM de feu. La portée de la boule de feu est de 30 mètres. Chaque tour de combat suivant, le feu inflige 1d6 dégâts supplémentaires. Sur un résultat de 1 à 2 avec un d6, les flammes s'éteignent.",
+    "short-description": "L'utilisateur produit une énorme boule de feu sur l'ennemi. Chaque tour de combat suivant, le feu inflige des dégâts supplémentaires. Sur un résultat de 1 à 2 avec un d6, les flammes s'éteignent.",
+    "properties": [
+      {
+        "name": "fight",
+        "fight": "",
+        "attack": {
+          "name": "attack",
+          "attack": "Jutsu",
+          "values": []
+        },
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "dice",
+                "adjustment": "=",
+                "count": 1,
+                "die": "6"
+              },
+              {
+                "name": "modifier",
+                "adjustment": "+",
+                "modifier": "[INT]"
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Feu"
+              ]
+            }
+          }
+        ],
+        "detail": ""
+      },
+      {
+        "name": "measure",
+        "measure": "range",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 30
+          }
+        ],
+        "unit": "m"
+      },
+      {
+        "name": "damage",
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "dice",
+                "adjustment": "+",
+                "count": 1,
+                "die": "6"
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Feu"
+              ]
+            }
+          },
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "measure",
+                "adjustment": "/",
+                "measure": "tr"
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": []
+            }
+          }
+        ]
+      }
+    ],
+    "mudras": [
+      "Tigre",
+      "Sanglier",
+      "Singe",
+      "Cheval",
+      "Tigre"
+    ]
+  },
+  {
+    "otype": "capacity",
+    "name": "Le feu du dragon",
+    "voname": "Ryūka no jutsu",
+    "limited": true,
+    "rank": 3,
+    "profil": "Techniques des 5 éléments",
+    "way": "Voie du feu",
+    "jutsu": "Ninjutsu",
+    "element": "Katon",
+    "full-description": "L'utilisateur crée un dragon de feu qui se répand jusqu'à sa cible en ligne droite. Sur une attaque de jutsu réussie, le dragon inflige [3d6 + Mod. d'INT] DM à tous les personnages, amis comme ennemis, se trouvant sur sa trajectoire. La portée du dragon est de 30 mètres et il crée une traînée de 1 mètre de large qui enflamme tout sur son passage. Chaque victime peut effectuer un test de DEX de difficulté [10 + Mod. INT] de l'utilisateur pour ne subir que la moitié des DM.",
+    "short-description": "L'utilisateur crée un dragon de feu qui se répand en ligne droite. Il est possible d'éviter une partie des dégâts si l'on est agile. ",
+    "properties": [
+      {
+        "name": "fight",
+        "fight": "",
+        "attack": {
+          "name": "attack",
+          "attack": "Jutsu",
+          "values": []
+        },
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "dice",
+                "adjustment": "=",
+                "count": 3,
+                "die": "6"
+              },
+              {
+                "name": "modifier",
+                "adjustment": "+",
+                "modifier": "[INT]"
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Feu"
+              ]
+            }
+          }
+        ],
+        "detail": ""
+      },
+      {
+        "name": "measure",
+        "measure": "range",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 30
+          }
+        ],
+        "unit": "m"
+      },
+      {
+        "name": "measure",
+        "measure": "area",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 1
+          }
+        ],
+        "unit": "m"
+      },
+      {
+        "name": "test",
+        "test": "DEX",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "≥",
+            "count": 10
+          },
+          {
+            "name": "modifier",
+            "adjustment": "+",
+            "modifier": "[INT]"
+          }
+        ],
+        "detail": ": DM / 2"
+      }
+    ],
+    "mudras": [
+      "Serpent",
+      "Dragon",
+      "Lièvre",
+      "Tigre"
+    ]
+  },
+  {
+    "otype": "capacity",
+    "name": "Le feu du dragon suprême",
+    "voname": "Gōryūka no jutsu",
+    "limited": true,
+    "rank": 4,
+    "profil": "Techniques des 5 éléments",
+    "way": "Voie du feu",
+    "jutsu": "Ninjutsu",
+    "element": "Katon",
+    "full-description": "Sur une attaque de jutsu réussie, l’utilisateur crache plusieurs énormes boules de feu (1 par rang dans la voie) représentant une tête de dragon. Chaque boule de feu inflige [1d8 + Mod. d'INT] DM de feu et peut être dirigée sur un ennemi différent jusqu’à une distance de 30 mètres.",
+    "short-description": "L’utilisateur crache plusieurs énormes boules de feu représentant une tête de dragon. Les boules de feu peuvent cibler 1 ou plusieurs adversaires.",
+    "properties": [
+      {
+        "name": "fight",
+        "fight": "",
+        "attack": {
+          "name": "attack",
+          "attack": "Jutsu",
+          "values": []
+        },
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "dice",
+                "adjustment": "=",
+                "count": 1,
+                "die": "8"
+              },
+              {
+                "name": "modifier",
+                "adjustment": "+",
+                "modifier": "[INT]"
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Feu"
+              ]
+            }
+          }
+        ],
+        "detail": "par boule"
+      },
+      {
+        "name": "measure",
+        "measure": "range",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 30
+          }
+        ],
+        "unit": "m"
+      },
+      {
+        "name": "action",
+        "action": "Quantité",
+        "limited": false,
+        "detail": "boules de feu",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 1
+          },
+          {
+            "name": "other",
+            "adjustment": "/",
+            "other": "rang"
+          }
+        ]
+      }
+    ],
+    "mudras": [
+      "Tigre"
+    ]
+  },
+  {
+    "otype": "capacity",
+    "name": "Nuées ardentes",
+    "voname": "Haisekishō",
+    "limited": true,
+    "rank": 5,
+    "profil": "Techniques des 5 éléments",
+    "way": "Voie du feu",
+    "jutsu": "Ninjutsu",
+    "element": "Katon",
+    "full-description": "L'utilisateur crache un nuage de cendres ardentes jusqu'à une distance de 50 mètres. Sur une attaque de jutsu réussie, tous les personnages dans la zone d’effet reçoivent [5d6 + Mod d'INT] DM de feu. La zone d’effet est un nuage de 15 mètres de diamètre. Chaque victime peut effectuer un test de DEX de difficulté 10 + Mod. d'INT de l'utilisateur pour ne subir que la moitié des DM.",
+    "short-description": "L'utilisateur crache un nuage de cendres ardentes. Il est possible d'éviter une partie des dégâts si l'on est agile.",
+    "properties": [
+      {
+        "name": "measure",
+        "measure": "range",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 50
+          }
+        ],
+        "unit": "m"
+      },
+      {
+        "name": "measure",
+        "measure": "area",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 15
+          }
+        ],
+        "unit": "m"
+      },
+      {
+        "name": "fight",
+        "fight": "",
+        "attack": {
+          "name": "attack",
+          "attack": "Jutsu",
+          "values": []
+        },
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "dice",
+                "adjustment": "=",
+                "count": 5,
+                "die": "6"
+              },
+              {
+                "name": "modifier",
+                "adjustment": "+",
+                "modifier": "[INT]"
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Feu"
+              ]
+            }
+          }
+        ],
+        "detail": ""
+      },
+      {
+        "name": "test",
+        "test": "DEX",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "≥",
+            "count": 10
+          },
+          {
+            "name": "modifier",
+            "adjustment": "+",
+            "modifier": "[INT]"
+          }
+        ],
+        "detail": ": DM / 2"
+      }
+    ],
+    "mudras": [
+      "Serpent",
+      "Rat",
+      "Serpent",
+      "Tigre"
+    ]
+  },
+  {
+    "otype": "way",
+    "name": "Voie de l'eau",
+    "profil": "Techniques des 5 éléments",
+    "full-description": "Le Suiton désigne l’art de maîtriser l'eau. Un personnage ayant au moins 1 rang dans la voie est capable de réaliser des actions simples utilisant l'eau comme remplir une bouteille d'eau.",
+    "icon": "images/ways/way-suiton.png"
+  },
+  {
+    "otype": "capacity",
+    "name": "Technique de la prison aqueuse",
+    "voname": "Suirō no jutsu",
+    "limited": true,
+    "rank": 1,
+    "profil": "Techniques des 5 éléments",
+    "way": "Voie de l'eau",
+    "jutsu": "Ninjutsu",
+    "element": "Suiton",
+    "full-description": "Sur une attaque au contact de jutsu réussie, l'utilisateur enferme son ennemi dans une sphère d'eau. L'adversaire est alors piégé pendant [Mod SAG + 1 par rang dans la voie] tours. L'utilisateur doit toucher la sphère avec la main pendant cette période, et si il se déplace, ou est contraint de se déplacer (cible d'une attaque par exemple), la technique prend fin.",
+    "short-description": "L'utilisateur de cette technique enferme son ennemi dans une sphère d'eau. L'utilisateur doit toucher la sphère avec la main pendant cette période, et si il se déplace, ou est contraint de se déplacer (cible d'une attaque par exemple), la technique prend fin.",
+    "properties": [
+      {
+        "name": "fight",
+        "fight": "",
+        "attack": {
+          "name": "attack",
+          "attack": "Jutsu",
+          "values": []
+        },
+        "damage": [
+          {
+            "name": "damage",
+            "values": [],
+            "dm": {
+              "name": "dm",
+              "dm": []
+            }
+          }
+        ],
+        "detail": "piégé dans une bulle d'eau"
+      },
+      {
+        "name": "measure",
+        "measure": "duration",
+        "values": [
+          {
+            "name": "modifier",
+            "adjustment": "=",
+            "modifier": "[SAG]"
+          },
+          {
+            "name": "quantity",
+            "adjustment": "+",
+            "count": 1
+          },
+          {
+            "name": "other",
+            "adjustment": "/",
+            "other": "rang"
+          }
+        ],
+        "unit": "tr"
+      }
+    ],
+    "mudras": [
+      "Serpent",
+      "Chèvre",
+      "Cheval",
+      "Lièvre",
+      "Chèvre",
+      "Cheval",
+      "Lièvre"
+    ]
+  },
+  {
+    "otype": "capacity",
+    "name": "Requin élémentaire aqueux",
+    "voname": "Suikoudan no Jutsu",
+    "limited": true,
+    "rank": 2,
+    "profil": "Techniques des 5 éléments",
+    "way": "Voie de l'eau",
+    "jutsu": "Ninjutsu",
+    "element": "Suiton",
+    "full-description": "Un puissant requin aqueux est propulsé sur l'ennemi jusqu'à une distance de 20 mètres. Sur une attaque de jutsu réussie, le requin inflige [1d8 + Mod. SAG] DM.",
+    "short-description": "Un puissant requin aqueux est propulsé sur l'ennemi.",
+    "properties": [
+      {
+        "name": "fight",
+        "fight": "",
+        "attack": {
+          "name": "attack",
+          "attack": "Jutsu",
+          "values": []
+        },
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "dice",
+                "adjustment": "=",
+                "count": 1,
+                "die": "8"
+              },
+              {
+                "name": "modifier",
+                "adjustment": "+",
+                "modifier": "[SAG]"
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Contondant"
+              ]
+            }
+          }
+        ],
+        "detail": ""
+      },
+      {
+        "name": "measure",
+        "measure": "range",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 20
+          }
+        ],
+        "unit": "m"
+      }
+    ],
+    "mudras": [
+      "Tigre",
+      "Buffle",
+      "Dragon",
+      "Lièvre",
+      "Chien",
+      "Coq",
+      "Rat",
+      "Dragon",
+      "Chèvre"
+    ]
+  },
+  {
+    "otype": "capacity",
+    "name": "La vague explosive",
+    "voname": "Bakusui Shôha",
+    "limited": true,
+    "rank": 3,
+    "profil": "Techniques des 5 éléments",
+    "way": "Voie de l'eau",
+    "jutsu": "Ninjutsu",
+    "element": "Suiton",
+    "full-description": "L'utilisateur joint ses mains et envoie une énorme quantité d'eau qui se répand et forme une gigantesque vague. Sur une attaque de jutsu réussie, une vague de 3 mètres de large balaye tout sur son passage. Elle inflige [2d8 + Mod. SAG] DM à tous les personnages touchés par la vague jusqu'à une portée de 15 mètres. L'eau générée par la vague reste [1 + Mod SAG] tours puis disparaît.",
+    "short-description": "L'utilisateur joint ses mains et envoie une énorme quantité d'eau qui se répand et forme une gigantesque vague qui balaye tout sur son passage (amis comme ennemis). L'eau générée par la vague reste quelques tours puis disparaît.",
+    "properties": [
+      {
+        "name": "fight",
+        "fight": "",
+        "attack": {
+          "name": "attack",
+          "attack": "Jutsu",
+          "values": []
+        },
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "dice",
+                "adjustment": "=",
+                "count": 2,
+                "die": "8"
+              },
+              {
+                "name": "modifier",
+                "adjustment": "+",
+                "modifier": "[SAG]"
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Contondant"
+              ]
+            }
+          }
+        ],
+        "detail": ""
+      },
+      {
+        "name": "measure",
+        "measure": "range",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 15
+          }
+        ],
+        "unit": "m"
+      },
+      {
+        "name": "measure",
+        "measure": "area",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 3
+          }
+        ],
+        "unit": "m"
+      },
+      {
+        "name": "measure",
+        "measure": "duration",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 1
+          },
+          {
+            "name": "modifier",
+            "adjustment": "+",
+            "modifier": "[SAG]"
+          }
+        ],
+        "unit": "tr"
+      }
+    ],
+    "mudras": [
+      "Serpent"
+    ]
+  },
+  {
+    "otype": "capacity",
+    "name": "Les 5 requins affamés",
+    "voname": "Goshokusame",
+    "limited": true,
+    "rank": 4,
+    "profil": "Techniques des 5 éléments",
+    "way": "Voie de l'eau",
+    "jutsu": "Ninjutsu",
+    "element": "Suiton",
+    "full-description": "Comme l'indique son nom, 5 requins sont invoqués pour pourchasser l'ennemi. Ces requins se matérialisent et se régénèrent continuellement tant qu'une partie de leur corps subsiste dans de l'eau. Chaque requin peut cibler un ennemi différent et inflige 1d6 DM par tour pendant au maximum [Mod SAG + 1 par rang dans la voie] tours puis disparaît. Si les requins ne touchent plus une source d'eau ils disparaissent.",
+    "short-description": "Cinq requins sont invoqués pour pourchasser l'ennemi. Ces requins peuvent se régénérer continuellement tant qu'une partie de leur corps subsiste dans de l'eau. Chaque requin peut cibler un ennemi différent. Si les requins ne touchent plus une source d'eau ils disparaissent.",
+    "properties": [
+      {
+        "name": "measure",
+        "measure": "duration",
+        "values": [
+          {
+            "name": "modifier",
+            "adjustment": "=",
+            "modifier": "[SAG]"
+          },
+          {
+            "name": "quantity",
+            "adjustment": "+",
+            "count": 1
+          },
+          {
+            "name": "other",
+            "adjustment": "/",
+            "other": "rang"
+          }
+        ],
+        "unit": "tr"
+      },
+      {
+        "name": "fight",
+        "fight": "",
+        "attack": {
+          "name": "attack",
+          "attack": "Jutsu",
+          "values": []
+        },
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "dice",
+                "adjustment": "=",
+                "count": 1,
+                "die": "6"
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Contondant"
+              ]
+            }
+          }
+        ],
+        "detail": "par requin"
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "Grand requin élémentaire aqueux",
+    "voname": "Daikōdan no jutsu",
+    "limited": true,
+    "rank": 5,
+    "profil": "Techniques des 5 éléments",
+    "way": "Voie de l'eau",
+    "jutsu": "Ninjutsu",
+    "element": "Suiton",
+    "full-description": "L'utilisateur crée un missile en forme de requin colossal et le propulse sur son adversaire. Celui-ci a la particularité d'absorber le chakra de sa cible et de le restituer à son utilisateur. Sur une attaque de jutsu réussie, le requin absorbe 1 point de chakra de son ennemi et lui inflige 1d8 DM pendant [1 + Mod SAG] tours. On ne peut avoir q'un seul requin élémentaire aqueux en même temps.",
+    "short-description": "L'utilisateur crée un missile en forme de requin colossal et le propulse sur son adversaire. Il absorbe le chakra de sa cible et le restitue à l'utilisateur. On ne peut avoir q'un seul requin élémentaire aqueux en même temps.",
+    "properties": [
+      {
+        "name": "fight",
+        "fight": "",
+        "attack": {
+          "name": "attack",
+          "attack": "Jutsu",
+          "values": []
+        },
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "dice",
+                "adjustment": "=",
+                "count": 1,
+                "die": "8"
+              },
+              {
+                "name": "measure",
+                "adjustment": "/",
+                "measure": "tr"
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Contondant"
+              ]
+            }
+          }
+        ],
+        "detail": ""
+      },
+      {
+        "name": "measure",
+        "measure": "duration",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 1
+          },
+          {
+            "name": "modifier",
+            "adjustment": "+",
+            "modifier": "[SAG]"
+          }
+        ],
+        "unit": "tr"
+      },
+      {
+        "name": "action",
+        "action": "Absorbe",
+        "limited": false,
+        "detail": "",
+        "values": [
+          {
+            "name": "element",
+            "adjustment": "=",
+            "count": 1,
+            "element": "Chakra"
+          },
+          {
+            "name": "measure",
+            "adjustment": "/",
+            "measure": "tr"
+          }
+        ]
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "way",
+    "name": "Voie de la terre",
+    "profil": "Techniques des 5 éléments",
+    "full-description": "Le Doton désigne l’art de maîtriser la terre. Un personnage ayant au moins 1 rang dans la voie est capable de réaliser des actions simples impliquant la terre comme réduire une pierre en grain de sable ou creuser un petit trou de 30 cm de profondeur.",
+    "icon": "images/ways/way-doton.png"
+  },
+  {
+    "otype": "capacity",
+    "name": "Le mur de boue",
+    "voname": "Doryuuheki",
+    "limited": true,
+    "rank": 1,
+    "profil": "Techniques des 5 éléments",
+    "way": "Voie de la terre",
+    "jutsu": "Ninjutsu",
+    "element": "Doton",
+    "full-description": "L'utilisateur crée automatiquement un mur de terre pour se protéger d'une attaque ou acculer son ennemi. Aucune attaque directe ne peut franchir ce mur pendant [1d4 + Mod. INT] tours. Une attaque à base d'eau ou de chakra fragilise le mur. À la suite d'une telle attaque, on lance un 1d6 et sur un 1 ou un 2, le mur s'écroule. Contourner le mur prend 1 tour complet.",
+    "short-description": "L'utilisateur crée automatiquement un mur de terre qui empêche toute attaque directe. Une attaque à base d'eau ou de chakra fragilise le mur. À la suite d'une telle attaque, on lance un 1d6 et sur un 1 ou un 2, le mur s'écroule.",
+    "properties": [
+      {
+        "name": "measure",
+        "measure": "duration",
+        "values": [
+          {
+            "name": "dice",
+            "adjustment": "=",
+            "count": 1,
+            "die": "4"
+          },
+          {
+            "name": "modifier",
+            "adjustment": "+",
+            "modifier": "[INT]"
+          }
+        ],
+        "unit": "tr"
+      },
+      {
+        "name": "action",
+        "action": "Contourner",
+        "limited": false,
+        "detail": "",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 1
+          },
+          {
+            "name": "measure",
+            "adjustment": "=",
+            "measure": "tr"
+          }
+        ]
+      }
+    ],
+    "mudras": [
+      "Tigre",
+      "Lièvre",
+      "Sanglier",
+      "Chien"
+    ]
+  },
+  {
+    "otype": "capacity",
+    "name": "Souffle du Dragon de terre",
+    "voname": "Doryū dan",
+    "limited": true,
+    "rank": 2,
+    "profil": "Techniques des 5 éléments",
+    "way": "Voie de la terre",
+    "jutsu": "Ninjutsu",
+    "element": "Doton",
+    "full-description": "L'utilisateur crée un torrent de boue qui se transforme en tête de dragon. Sur une attaque de jutsu réussi, le dragon projette 1d4 missiles de boue sur un ou plusieurs ennemis, leur infligeant chacun 1d6 DM.",
+    "short-description": "L'utilisateur crée un torrent de boue qui se transforme en tête de dragon. Le dragon projette les missiles de boue sur un ou plusieurs ennemis.",
+    "properties": [
+      {
+        "name": "fight",
+        "fight": "",
+        "attack": {
+          "name": "attack",
+          "attack": "Jutsu",
+          "values": []
+        },
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "dice",
+                "adjustment": "=",
+                "count": 1,
+                "die": "6"
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Contondant"
+              ]
+            }
+          }
+        ],
+        "detail": "par tête de dragon"
+      },
+      {
+        "name": "action",
+        "action": "Quantité",
+        "limited": false,
+        "detail": "missiles",
+        "values": [
+          {
+            "name": "dice",
+            "adjustment": "=",
+            "count": 1,
+            "die": "4"
+          }
+        ]
+      }
+    ],
+    "mudras": [
+      "Chèvre",
+      "Cheval",
+      "Dragon"
+    ]
+  },
+  {
+    "otype": "capacity",
+    "name": "La geôle de terre",
+    "voname": "Kekkai Dorōdōmu",
+    "limited": true,
+    "rank": 3,
+    "profil": "Techniques des 5 éléments",
+    "way": "Voie de la terre",
+    "jutsu": "Ninjutsu",
+    "element": "Doton",
+    "full-description": "Technique consistant à emprisonner ses ennemis sous un dôme de terre de 3 mètres de diamètre jusqu'à une distance de 10 mètres. Sur une attaque de jutsu réussie, un dôme est créé et parcouru par un flot continuel de chakra qui permet aux parois de se régénérer toutes seules si elles subissent des dommages. Ce jutsu a pour effet supplémentaire d'absorber 1 point de chakra pendant [1 + Mod. INT] tours de tous des prisonniers pour le transférer à l'utilisateur. A moins de réussir à mettre hors jeu l'utilisateur ou à arrêter le flux de chakra avec une attaque qui enlève des points de chakra, le dôme de terre ne peut être brisé. On ne peut aller au delà de son nombre de point maximal de chakra avec cette technique.",
+    "short-description": "Technique consistant à emprisonner automatiquement ses ennemis sous un dôme de terre. Pour briser le dôme, il faut arrêter le flux de chakra, avec une attaque qui enlève des points de chakra.",
+    "properties": [
+      {
+        "name": "measure",
+        "measure": "range",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 10
+          }
+        ],
+        "unit": "m"
+      },
+      {
+        "name": "measure",
+        "measure": "area",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 3
+          }
+        ],
+        "unit": "m"
+      },
+      {
+        "name": "measure",
+        "measure": "duration",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 1
+          },
+          {
+            "name": "modifier",
+            "adjustment": "+",
+            "modifier": "[INT]"
+          }
+        ],
+        "unit": "tr"
+      },
+      {
+        "name": "fight",
+        "fight": "",
+        "attack": {
+          "name": "attack",
+          "attack": "Jutsu",
+          "values": []
+        },
+        "damage": [
+          {
+            "name": "damage",
+            "values": [],
+            "dm": {
+              "name": "dm",
+              "dm": []
+            }
+          }
+        ],
+        "detail": "Création du dôme"
+      },
+      {
+        "name": "action",
+        "action": "Absorbe",
+        "limited": false,
+        "detail": "/ prisonnier",
+        "values": [
+          {
+            "name": "element",
+            "adjustment": "=",
+            "count": 1,
+            "element": "Chakra"
+          },
+          {
+            "name": "measure",
+            "adjustment": "/",
+            "measure": "tr"
+          }
+        ]
+      }
+    ],
+    "mudras": [
+      "Serpent"
+    ]
+  },
+  {
+    "otype": "capacity",
+    "name": "La motte de terre",
+    "voname": "Doryō dango",
+    "limited": true,
+    "rank": 4,
+    "profil": "Techniques des 5 éléments",
+    "way": "Voie de la terre",
+    "jutsu": "Ninjutsu",
+    "element": "Doton",
+    "full-description": "L'utilisateur de cette technique soulève de grandes parcelles de terre qu'il lance sur leurs ennemis jusqu'à une distance de 20 mètres. Sur une attaque de jutsu réussie, elle inflige [4d8 + Mod. INT] DM à tous les utilisateurs se trouvant sous la plaque de terre. La taille de la motte de terre est de 1 mètre de diamètre par point de chakra dépensé lors de cette attaque en plus de son coût initial.",
+    "short-description": "L'utilisateur de cette technique soulève de grandes parcelles de terre qu'il lance sur leurs ennemis. La taille de la motte de terre dépend du nombre de point de chakra dépensé lors de cette attaque en plus de son coût initial.",
+    "properties": [
+      {
+        "name": "measure",
+        "measure": "range",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 20
+          }
+        ],
+        "unit": "m"
+      },
+      {
+        "name": "action",
+        "action": "Taille",
+        "limited": false,
+        "detail": "",
+        "values": [
+          {
+            "name": "element",
+            "adjustment": "=",
+            "count": 1,
+            "element": "Chakra"
+          },
+          {
+            "name": "measure",
+            "adjustment": "/",
+            "measure": "m"
+          }
+        ]
+      },
+      {
+        "name": "fight",
+        "fight": "",
+        "attack": {
+          "name": "attack",
+          "attack": "Jutsu",
+          "values": []
+        },
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "dice",
+                "adjustment": "=",
+                "count": 4,
+                "die": "8"
+              },
+              {
+                "name": "modifier",
+                "adjustment": "+",
+                "modifier": "[INT]"
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Contondant"
+              ]
+            }
+          }
+        ],
+        "detail": "(dessous la plaque)"
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "Déplacement souterrain",
+    "voname": "Dochū eigyo no jutsu",
+    "limited": true,
+    "mudras": [],
+    "profil": "Techniques des 5 éléments",
+    "element": "Doton",
+    "way": "Voie de la terre",
+    "rank": 5,
+    "jutsu": "Ninjutsu",
+    "full-description": "Technique de déplacement permettant de se déplacer sous le sol pendant 15 mètres. Au tour suivant, si l'utilisateur de cette technique ressort dans le dos de son adversaire, il peut porter une attaque sournoise qui inflige, si l'attaque au contact est réussie, +5d6 DM.",
+    "short-description": "Technique de déplacement permettant de se déplacer sous le sol. Au tour suivant, si l'utilisateur de cette technique ressort dans le dos de son adversaire, il peut porter une attaque sournoise.",
+    "properties": [
+      {
+        "name": "range",
+        "value": [
+          {
+            "name": "count",
+            "value": 15
+          },
+          {
+            "name": "unit",
+            "value": "m"
+          }
+        ]
+      },
+      {
+        "name": "duration",
+        "value": [
+          {
+            "name": "count",
+            "value": 1
+          },
+          {
+            "name": "unit",
+            "value": "tr"
+          }
+        ]
+      },
+      {
+        "name": "Attaque sournoise",
+        "value": [
+          {
+            "name": "mod",
+            "value": "+"
+          },
+          {
+            "name": "count",
+            "value": "5"
+          },
+          {
+            "name": "die",
+            "value": 6
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "otype": "way",
+    "name": "Voie de la foudre",
+    "profil": "Techniques des 5 éléments",
+    "full-description": "Le Raiton désigne l’art de maîtriser la foudre. Un personnage ayant au moins 1 rang dans la voie est capable de réaliser des actions simples impliquant la foudre comme produire de l'électricité pour faire briller une petite ampoule électrique pendant plusieurs secondes.",
+    "icon": "images/ways/way-raiton.png"
+  },
+  {
+    "otype": "capacity",
+    "name": "Les mille oiseaux",
+    "voname": "Chidori",
+    "limited": true,
+    "rank": 1,
+    "profil": "Techniques des 5 éléments",
+    "way": "Voie de la foudre",
+    "jutsu": "Ninjutsu",
+    "element": "Raiton",
+    "full-description": "Cette technique consiste à concentrer du chakra de foudre dans la main de l'utilisateur sous la forme d'un éclair pour ensuite foncer à toute vitesse sur l'ennemi et le transpercer. Lors de sa charge, qui prend 1 tour complet sans action, l'utilisateur s'expose à un contre adverse. Puis après une action de mouvement et sur une attaque de jutsu au contact réussie, l'utilisateur inflige [2d8 + Mod. CHA] DM de foudre à son adversaire.",
+    "short-description": "Cette technique consiste à concentrer du chakra de foudre dans la main de l'utilisateur sous la forme d'un éclair ( 1 tour complet sans action) pour ensuite foncer à toute vitesse sur l'ennemi et le transpercer (le tour suivant).",
+    "properties": [
+      {
+        "name": "fight",
+        "fight": "",
+        "attack": {
+          "name": "attack",
+          "attack": "Jutsu",
+          "values": []
+        },
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "dice",
+                "adjustment": "=",
+                "count": 2,
+                "die": "8"
+              },
+              {
+                "name": "modifier",
+                "adjustment": "+",
+                "modifier": "[CHA]"
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Foudre"
+              ]
+            }
+          }
+        ],
+        "detail": ""
+      }
+    ],
+    "mudras": [
+      "Tigre",
+      "Buffle",
+      "Lièvre",
+      "Singe"
+    ]
+  },
+  {
+    "otype": "capacity",
+    "name": "Les aiguilles des mille oiseaux",
+    "voname": "Chidori Senbon",
+    "limited": true,
+    "rank": 2,
+    "profil": "Techniques des 5 éléments",
+    "way": "Voie de la foudre",
+    "jutsu": "Ninjutsu",
+    "element": "Raiton",
+    "full-description": "L'utilisateur de cette technique lance des aiguilles de foudre de petite taille qui infligent chacune 1d6 DM de foudre. L'utilisateur peut lancer 1 aiguille par rang dans la voie et les aiguilles ne peuvent cibler chacune qu'un seul adversaire qui doit être différent.",
+    "short-description": "L'utilisateur de cette technique lance des aiguilles de foudre de petite taille qui infligent chacune des dégâts de foudre.",
+    "properties": [
+      {
+        "name": "property",
+        "property": "Cible",
+        "value": "Un adversaire différent par aiguille"
+      },
+      {
+        "name": "fight",
+        "fight": "",
+        "attack": {
+          "name": "attack",
+          "attack": "Jutsu",
+          "values": []
+        },
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "dice",
+                "adjustment": "=",
+                "count": 1,
+                "die": "6"
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Foudre"
+              ]
+            }
+          }
+        ],
+        "detail": ""
+      },
+      {
+        "name": "action",
+        "action": "Quantité",
+        "limited": false,
+        "detail": "aiguilles",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 1
+          },
+          {
+            "name": "other",
+            "adjustment": "/",
+            "other": "rang"
+          }
+        ]
+      }
+    ],
+    "mudras": [
+      "Tigre",
+      "Buffle",
+      "Lièvre",
+      "Singe"
+    ]
+  },
+  {
+    "otype": "capacity",
+    "name": "Armure Raiton",
+    "voname": "no yoroi",
+    "limited": true,
+    "rank": 3,
+    "profil": "Techniques des 5 éléments",
+    "way": "Voie de la foudre",
+    "jutsu": "Ninjutsu",
+    "element": "Raiton",
+    "full-description": "Technique qui consiste à créer une protection constituée d'électricité répartie sur tout le corps afin d'augmenter sa résistance et sa vitesse. Cette technique permet d'augmenter sa défense de +5 pendant [1d4 + Mod. CHA] tours. Elle permet également de faire un mouvement de déplacement supplémentaire par tour pendant la durée de la technique.",
+    "short-description": "Technique qui consiste à créer une protection constituée d'électricité répartie sur tout le corps afin d'augmenter sa résistance et sa vitesse. ",
+    "properties": [
+      {
+        "name": "defense",
+        "defense": "DEF",
+        "detail": "",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "+",
+            "count": 5
+          }
+        ]
+      },
+      {
+        "name": "measure",
+        "measure": "duration",
+        "values": [
+          {
+            "name": "dice",
+            "adjustment": "=",
+            "count": 1,
+            "die": "4"
+          },
+          {
+            "name": "modifier",
+            "adjustment": "+",
+            "modifier": "[CHA]"
+          }
+        ],
+        "unit": "tr"
+      },
+      {
+        "name": "action",
+        "action": "Déplacement",
+        "limited": false,
+        "detail": "action de mouvement",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "+",
+            "count": 1
+          }
+        ]
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "La lance acérée des mille oiseaux",
+    "voname": "Chidori eisō",
+    "limited": true,
+    "rank": 4,
+    "profil": "Techniques des 5 éléments",
+    "way": "Voie de la foudre",
+    "jutsu": "Ninjutsu",
+    "element": "Raiton",
+    "full-description": "L'utilisateur de cette technique crée une épée de foudre extensible qui lui permet de toucher des ennemis se trouvant sur une même ligne jusqu'à une distance de 50 mètres. Sur une attaque de jutsu réussie, la lance inflige [3d6 + Mod. CHA] DM de foudre à tous les utilisateurs transpercée par la lance.",
+    "short-description": "L'utilisateur de cette technique crée une épée de foudre extensible qui inflige des dégâts à tous les ennemis se trouvant sur une même ligne.",
+    "properties": [
+      {
+        "name": "measure",
+        "measure": "range",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 50
+          }
+        ],
+        "unit": "m"
+      },
+      {
+        "name": "fight",
+        "fight": "",
+        "attack": {
+          "name": "attack",
+          "attack": "Jutsu",
+          "values": []
+        },
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "dice",
+                "adjustment": "=",
+                "count": 3,
+                "die": "6"
+              },
+              {
+                "name": "modifier",
+                "adjustment": "+",
+                "modifier": "[CHA]"
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Foudre"
+              ]
+            }
+          }
+        ],
+        "detail": ""
+      }
+    ],
+    "mudras": [
+      "Tigre",
+      "Buffle",
+      "Lièvre",
+      "Singe"
+    ]
+  },
+  {
+    "otype": "capacity",
+    "name": "Clone de Foudre",
+    "voname": "Raiton Kage bunshin",
+    "limited": true,
+    "rank": 5,
+    "profil": "Techniques des 5 éléments",
+    "way": "Voie de la foudre",
+    "jutsu": "Ninjutsu",
+    "element": "Raiton",
+    "full-description": "L'utilisateur de cette technique crée un clone de l'ombre chargé en chakra de foudre qui peut se déplacer vers un adversaire à raison de 10 mètres par tour. Lorsque le clone se dissipe au bout de [2 + Mod. CHA] tours ou lorsque l'utilisateur le décide, il envoie automatiquement une décharge de 4d6 DM de foudre à un adversaire au contact du clone.",
+    "short-description": "L'utilisateur de cette technique crée un clone de l'ombre chargé en chakra de foudre. Lorsque le clone se dissipe ou lorsque l'utilisateur le décide, il envoie automatiquement une décharge à un adversaire au contact du clone.",
+    "properties": [
+      {
+        "name": "action",
+        "action": "Déplacement",
+        "limited": false,
+        "detail": "",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 10
+          },
+          {
+            "name": "measure",
+            "adjustment": "=",
+            "measure": "m"
+          },
+          {
+            "name": "measure",
+            "adjustment": "/",
+            "measure": "tr"
+          }
+        ]
+      },
+      {
+        "name": "measure",
+        "measure": "duration",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 2
+          },
+          {
+            "name": "modifier",
+            "adjustment": "+",
+            "modifier": "[CHA]"
+          }
+        ],
+        "unit": "tr"
+      },
+      {
+        "name": "damage",
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "dice",
+                "adjustment": "=",
+                "count": 4,
+                "die": "6"
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Foudre"
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "mudras": [
+      "Tigre",
+      "Singe",
+      "Sanglier",
+      "Coq",
+      "Chèvre"
+    ]
+  },
+  {
+    "otype": "way",
+    "name": "Voie du vent",
+    "profil": "Techniques des 5 éléments",
+    "full-description": "Le Fūton désigne l’art de maîtriser le vent. Un personnage ayant au moins 1 rang dans la voie est capable de réaliser des actions simples impliquant le vent comme murmurer un message de quelques mots (moins de 10) à quelqu'un à moins de 100 mètres.",
+    "icon": "images/ways/way-futon.png"
+  },
+  {
+    "otype": "capacity",
+    "name": "La grande percée",
+    "voname": "Daitoppa",
+    "limited": true,
+    "rank": 1,
+    "profil": "Techniques des 5 éléments",
+    "way": "Voie du vent",
+    "jutsu": "Ninjutsu",
+    "element": "Fūton",
+    "full-description": "L'utilisateur souffle un puissant tourbillon à partir de la bouche. Sur une attaque de jutsu réussie, le tourbillon inflige 1d6 DM de dégâts tranchants à tous ceux qu'il touche, 1 par rang dans la voie, avant de disparaître.",
+    "short-description": "L'utilisateur souffle un puissant tourbillon à partir de la bouche. Le tourbillon inflige des dégâts à tous ceux qu'il touche.",
+    "properties": [
+      {
+        "name": "fight",
+        "fight": "",
+        "attack": {
+          "name": "attack",
+          "attack": "Jutsu",
+          "values": []
+        },
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "dice",
+                "adjustment": "=",
+                "count": 1,
+                "die": "6"
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Tranchant"
+              ]
+            }
+          }
+        ],
+        "detail": ""
+      },
+      {
+        "name": "action",
+        "action": "Cible",
+        "limited": false,
+        "detail": "ennemis",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 1
+          },
+          {
+            "name": "other",
+            "adjustment": "/",
+            "other": "rang"
+          }
+        ]
+      }
+    ],
+    "mudras": [
+      "Tigre",
+      "Buffle",
+      "Chien",
+      "Lièvre",
+      "Serpent"
+    ]
+  },
+  {
+    "otype": "capacity",
+    "name": "L'hirondelle volante",
+    "voname": "Hien",
+    "limited": true,
+    "rank": 2,
+    "profil": "Techniques des 5 éléments",
+    "way": "Voie du vent",
+    "jutsu": "Ninjutsu",
+    "element": "Fūton",
+    "full-description": "L'utilisateur de cette technique envoie du chakra dans la lame d'une arme, et les rend ainsi bien plus tranchantes et solides. Il est capable de prolonger la lame par une lame de chakra d'une bonne longueur (équivalent à un petit katana) pendant [Mod. CHA + 1 par rang dans la voie] tours. Les dégâts de l'arme sont alors multipliés par 2.",
+    "short-description": "L'utilisateur de cette technique envoie du chakra dans la lame d'une arme, et les rend ainsi bien plus tranchantes et solides.",
+    "properties": [
+      {
+        "name": "measure",
+        "measure": "duration",
+        "values": [
+          {
+            "name": "modifier",
+            "adjustment": "=",
+            "modifier": "[CHA]"
+          },
+          {
+            "name": "quantity",
+            "adjustment": "+",
+            "count": 1
+          },
+          {
+            "name": "other",
+            "adjustment": "/",
+            "other": "rang"
+          }
+        ],
+        "unit": "tr"
+      },
+      {
+        "name": "damage",
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "quantity",
+                "adjustment": "x",
+                "count": 2
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": []
+            }
+          }
+        ]
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "L’épée du vent",
+    "voname": "Kaze no yaiba",
+    "limited": true,
+    "rank": 3,
+    "profil": "Techniques des 5 éléments",
+    "way": "Voie du vent",
+    "jutsu": "Ninjutsu",
+    "element": "Fūton",
+    "full-description": "L'utilisateur crée une lame de vent extrêmement acérée. Sur une attaque de jutsu au contact réussie, la lame inflige [1d8 + Mod. CHA] DM et ignore toutes les résistances ou réductions de dégâts de la cible qu'elles soient physiques ou magiques.",
+    "short-description": "L'utilisateur crée une lame de vent extrêmement acérée qui ignore toutes les résistances ou réductions de dégâts de la cible qu'elles soient physiques ou magiques.",
+    "properties": [
+      {
+        "name": "fight",
+        "fight": "",
+        "attack": {
+          "name": "attack",
+          "attack": "Jutsu",
+          "values": []
+        },
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "dice",
+                "adjustment": "=",
+                "count": 1,
+                "die": "8"
+              },
+              {
+                "name": "modifier",
+                "adjustment": "+",
+                "modifier": "[CHA]"
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Tranchant"
+              ]
+            }
+          }
+        ],
+        "detail": ""
+      },
+      {
+        "name": "measure",
+        "measure": "duration",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 1
+          }
+        ],
+        "unit": "tr"
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "Paume de la bourrasque",
+    "voname": "Reppûshô",
+    "limited": true,
+    "rank": 4,
+    "profil": "Techniques des 5 éléments",
+    "way": "Voie du vent",
+    "jutsu": "Ninjutsu",
+    "element": "Fūton",
+    "full-description": "L'utilisateur frappe dans ses mains, du vent est compressé et transformé en une puissante bourrasque dévastatrice qui inflige [3d8 + Mod. CHA] DM à tous les personnages (amis et ennemis) se trouvant dans un cercle de 5 mètres de diamètre autour de la cible.",
+    "short-description": "L'utilisateur frappe dans ses mains, du vent est compressé et transformé en une puissante bourrasque dévastatrice qui inflige des dégâts à tous les personnages (amis et ennemis) se trouvant autour de la cible.",
+    "properties": [
+      {
+        "name": "fight",
+        "fight": "",
+        "attack": {
+          "name": "attack",
+          "attack": "Jutsu",
+          "values": []
+        },
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "dice",
+                "adjustment": "=",
+                "count": 3,
+                "die": "8"
+              },
+              {
+                "name": "modifier",
+                "adjustment": "+",
+                "modifier": "[CHA]"
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Tranchant"
+              ]
+            }
+          }
+        ],
+        "detail": ""
+      },
+      {
+        "name": "measure",
+        "measure": "area",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 5
+          }
+        ],
+        "unit": "m"
+      }
+    ],
+    "mudras": [
+      "Serpent",
+      "Chèvre",
+      "Sanglier",
+      "Cheval",
+      "Coq"
+    ]
+  },
+  {
+    "otype": "capacity",
+    "name": "Sphère du vide majeure",
+    "voname": "Shinkū daigyoku",
+    "limited": true,
+    "rank": 5,
+    "profil": "Techniques des 5 éléments",
+    "way": "Voie du vent",
+    "jutsu": "Ninjutsu",
+    "element": "Fūton",
+    "full-description": "L'utilisateur envoie une puissante boule de vent sur un adversaire situé à moins de 5 mètre. Cette boule le projette automatiquement à 30 mètres de distance. Sur une attaque réussie, la victime reçoit [4d6 + Mod. CHA] DM. Si l'attaque échoue, la cible ne subit que la moité des dégâts.",
+    "short-description": "L'utilisateur envoie une puissante boule de vent sur un adversaire proche et le projette automatiquement à 30 mètres de distance.",
+    "properties": [
+      {
+        "name": "measure",
+        "measure": "range",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 5
+          }
+        ],
+        "unit": "m"
+      },
+      {
+        "name": "fight",
+        "fight": "",
+        "attack": {
+          "name": "attack",
+          "attack": "Jutsu",
+          "values": []
+        },
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "dice",
+                "adjustment": "=",
+                "count": 4,
+                "die": "6"
+              },
+              {
+                "name": "modifier",
+                "adjustment": "+",
+                "modifier": "[CHA]"
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Tranchant"
+              ]
+            }
+          }
+        ],
+        "detail": ""
+      },
+      {
+        "name": "property",
+        "property": "Attaque ratée",
+        "value": "DM / 2"
+      }
+    ],
+    "mudras": [
+      "Tigre",
+      "Chien"
+    ]
+  },
+  {
+    "otype": "profil",
+    "name": "Techniques héréditaires",
+    "full-description": "Les techniques héréditaires sont des techniques dont le secret ne se transmet qu'au sein d'un même clan, par un maître ou des dôjutsu, des techniques réalisables que si l'on est possesseur d'yeux spéciaux ou encore si l'on sert de réceptacle pour un bijû."
+  },
+  {
+    "otype": "way",
+    "name": "Voie du clan Aburame",
+    "profil": "Techniques héréditaires",
+    "full-description": "Les membres du clan Aburame sont renommés pour pouvoir de contrôler les insectes. Dès la naissance, les membres de cette lignée font de leur corps un nid pour les insectes. En échange d'une partie de leur chakra, dont ces derniers se nourrissent en permanence, ils les commandent à main levée, se reposant entièrement sur eux lorsqu'ils combattent.",
+    "icon": "images/ways/way-aburame.png"
+  },
+  {
+    "otype": "capacity",
+    "name": "Le clone d'insecte",
+    "voname": "Mushi bunshin no jutsu",
+    "limited": true,
+    "rank": 1,
+    "profil": "Techniques héréditaires",
+    "way": "Voie du clan Aburame",
+    "jutsu": "Secrète",
+    "element": "Inconnu",
+    "full-description": "L'utilisateur crée un clone à l'aide de ses insectes pendant [5 + Mod. SAG] tours. Le clone possède les mêmes caractéristiques que l'utilisateur, mais seulement la moitié de ses points de vie. Lorsqu'il attaque, il inflige seulement la moitié des DM. Il peut tenir une arme, mais pas utiliser d'action limitée. S'il n'a plus de PV, le clone disparaît.",
+    "short-description": "L'utilisateur crée un clone à l'aide de ses insectes. Le clone possède les mêmes caractéristiques que l'utilisateur excepté pour les PV et les DM. Il peut tenir une arme, mais pas utiliser d'action limitée. S'il n'a plus de PV, le clone disparaît.",
+    "properties": [
+      {
+        "name": "measure",
+        "measure": "duration",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 5
+          },
+          {
+            "name": "modifier",
+            "adjustment": "+",
+            "modifier": "[SAG]"
+          }
+        ],
+        "unit": "tr"
+      },
+      {
+        "name": "character",
+        "character": "PV",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "/",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "name": "damage",
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "quantity",
+                "adjustment": "/",
+                "count": 2
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": []
+            }
+          }
+        ]
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "Technique de l'extraction du Poison",
+    "voname": "Dokunuki no jutsu",
+    "limited": false,
+    "rank": 2,
+    "profil": "Techniques héréditaires",
+    "way": "Voie du clan Aburame",
+    "jutsu": "Secrète",
+    "element": "Inconnu",
+    "full-description": "À l'aide de ses insectes, l'utilisateur peut détruire le poison situé dans un organisme (les insectes aspirent le poison). Cette technique est une action gratuite. Elle restaure de plus 5 PV par rang dans la voie, à la personne à qui on a retiré le poison (ne soigne pas sinon).",
+    "short-description": "À l'aide de ses insectes, l'utilisateur peut détruire le poison situé dans un organisme (les insectes aspirent le poison). Elle soigne également la personne à qui on a retiré le poison (ne soigne pas sinon).",
+    "properties": [
+      {
+        "name": "action",
+        "action": "Soigne",
+        "limited": false,
+        "detail": "Poison",
+        "values": []
+      },
+      {
+        "name": "action",
+        "action": "Soigne",
+        "limited": false,
+        "detail": " PV perdus",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 5
+          },
+          {
+            "name": "other",
+            "adjustment": "/",
+            "other": "rang"
+          }
+        ]
+      },
+      {
+        "name": "property",
+        "property": "",
+        "value": "Action gratuite"
+      }
+    ],
+    "mudras": []
+  },
+  {
+  "otype": "capacity",
+  "name": "Technique du mur d'insectes",
+  "voname": "Mushikame no jutsu",
+  "limited": true,
+  "rank": 3,
+  "profil": "Techniques héréditaires",
+  "way": "Voie du clan Aburame",
+  "jutsu": "Secrète",
+  "element": "Inconnu",
+  "full-description": "Technique de protection, semblable au tourbillon divin : l'utilisateur fait sortir en masse ses insectes et grâce à eux s'enveloppe lui ou une personne consentante d'une bulle protectrice. Avec cette technique, l'utilisateur gagne un bonus de +5 en DEF pendant [2 + Mod SAG] tours. Toute personne venant l'attaquer subit également 4 DM par rang dans la voie. Il faut dépenser 1 point de chakra par tour pour maintenir la sphère et pendant qu'elle est active, la personne dans la sphère ne peut attaquer.",
+  "short-description": "L'utilisateur fait sortir ses insectes et s'enveloppe lui ou une personne consentante d'une bulle protectrice qui ne peut plus attaquer. Toute personne venant l'attaquer subit également des dégâts.",
+  "properties": [
+    {
+      "name": "defense",
+      "defense": "DEF",
+      "detail": "(à l'intérieur de la sphère)",
+      "values": [
+        {
+          "name": "quantity",
+          "adjustment": "+",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "name": "measure",
+      "measure": "duration",
+      "values": [
+        {
+          "name": "quantity",
+          "adjustment": "=",
+          "count": 2
+        },
+        {
+          "name": "modifier",
+          "adjustment": "+",
+          "modifier": "[SAG]"
+        }
+      ],
+      "unit": "tr"
+    },
+    {
+      "name": "action",
+      "action": "Maintenir",
+      "limited": false,
+      "detail": "",
+      "values": [
+        {
+          "name": "element",
+          "adjustment": "=",
+          "count": 1,
+          "element": "Chakra"
+        },
+        {
+          "name": "measure",
+          "adjustment": "/",
+          "measure": "tr"
+        }
+      ]
+    },
+    {
+      "name": "damage",
+      "damage": [
+        {
+          "name": "damage",
+          "values": [
+            {
+              "name": "quantity",
+              "adjustment": "=",
+              "count": 4
+            },
+            {
+              "name": "other",
+              "adjustment": "/",
+              "other": "rang"
+            }
+          ],
+          "dm": {
+            "name": "dm",
+            "dm": []
+          }
+        }
+      ]
+    }
+  ],
+  "mudras": []
+},
+{
+  "otype": "capacity",
+  "name": "La sphère d'insectes",
+  "voname": "Hijutsu mushi dama",
+  "limited": true,
+  "rank": 4,
+  "profil": "Techniques héréditaires",
+  "way": "Voie du clan Aburame",
+  "jutsu": "Secrète",
+  "element": "Inconnu",
+  "full-description": "L'utilisateur disperse ses insectes, puis les regroupe autour de son adversaire. Les insectes submergent alors le corps de ce dernier et le vident de son chakra. Sur une attaque de jutsu réussie, les insectes vident 1 point de chakra par rang dans la voie par tour pendant [1d4 + Mod. CHA] tours.",
+  "short-description": "L'utilisateur disperse ses insectes, puis les regroupe autour de son adversaire. Les insectes submergent alors le corps de ce dernier et le vident de son chakra.",
+  "properties": [
+    {
+      "name": "fight",
+      "fight": "",
+      "attack": {
+        "name": "attack",
+        "attack": "Jutsu",
+        "values": []
+      },
+      "damage": [
+        {
+          "name": "damage",
+          "values": [
+            {
+              "name": "element",
+              "adjustment": "=",
+              "count": 1,
+              "element": "Chakra"
+            },
+            {
+              "name": "other",
+              "adjustment": "/",
+              "other": "rang"
+            },
+            {
+              "name": "measure",
+              "adjustment": "/",
+              "measure": "tr"
+            }
+          ],
+          "dm": {
+            "name": "dm",
+            "dm": [
+              "Tranchant"
+            ]
+          }
+        }
+      ],
+      "detail": ""
+    },
+    {
+      "name": "measure",
+      "measure": "duration",
+      "values": [
+        {
+          "name": "dice",
+          "adjustment": "=",
+          "count": 1,
+          "die": "4"
+        },
+        {
+          "name": "modifier",
+          "adjustment": "+",
+          "modifier": "[CHA]"
+        }
+      ],
+      "unit": "tr"
+    }
+  ],
+  "mudras": []
+},
+{
+  "otype": "capacity",
+  "name": "Brouillage par insecte",
+  "voname": "Mushi jamingu no jutsu",
+  "limited": true,
+  "rank": 5,
+  "profil": "Techniques héréditaires",
+  "way": "Voie du clan Aburame",
+  "jutsu": "Secrète",
+  "element": "Inconnu",
+  "full-description": "Les insectes de l'utilisateur volent en nuée et couvrent une zone jusqu'à 1 kilomètre de diamètre, ce qui réduit grandement la visibilité. Les insectes dévorent également tout chakra à l'air libre comme des fils de chakra. La portée des armes et techniques dans cette zone est divisées par 2. Les techniques exécutées dans cette zone coûtent 1 point de chakra en plus pour être réalisées ou pour être maintenues. Cette technique peut être utilisée une fois par combat et dure [3 + Mod. SAG] tours. Hors combat, elle peut être utilisée pour empêcher la circulation des ondes radio. Elle consomme alors 3 points de chakra par quart d'heure.",
+  "short-description": "Les insectes volent en nuée et réduisent la visibilité dans la zone et dévorent tout chakra à l'air libre. Hors combat, elle peut être utilisée pour empêcher la circulation des ondes radio mais  consomme du chakra.",
+  "properties": [
+    {
+      "name": "measure",
+      "measure": "area",
+      "values": [
+        {
+          "name": "quantity",
+          "adjustment": "=",
+          "count": 1
+        }
+      ],
+      "unit": "Km"
+    },
+    {
+      "name": "action",
+      "action": "Portée",
+      "limited": false,
+      "detail": "pour les armes et techniques",
+      "values": [
+        {
+          "name": "quantity",
+          "adjustment": "/",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "action",
+      "action": "Coût",
+      "limited": false,
+      "detail": "pour les techniques",
+      "values": [
+        {
+          "name": "element",
+          "adjustment": "+",
+          "count": 1,
+          "element": "Chakra"
+        }
+      ]
+    },
+    {
+      "name": "measure",
+      "measure": "duration",
+      "values": [
+        {
+          "name": "quantity",
+          "adjustment": "=",
+          "count": 3
+        },
+        {
+          "name": "modifier",
+          "adjustment": "+",
+          "modifier": "[SAG]"
+        }
+      ],
+      "unit": "tr"
+    },
+    {
+      "name": "action",
+      "action": "Utilisation",
+      "limited": false,
+      "detail": "",
+      "values": [
+        {
+          "name": "quantity",
+          "adjustment": "=",
+          "count": 1
+        },
+        {
+          "name": "measure",
+          "adjustment": "/",
+          "measure": "Combat"
+        }
+      ]
+    },
+    {
+      "name": "measure",
+      "measure": "duration",
+      "values": [
+        {
+          "name": "element",
+          "adjustment": "=",
+          "count": 3,
+          "element": "Chakra"
+        },
+        {
+          "name": "quantity",
+          "adjustment": "/",
+          "count": 15
+        }
+      ],
+      "unit": "min"
+    }
+  ],
+  "mudras": []
+},
+  {
+    "otype": "way",
+    "name": "Voie du clan Inuzuka",
+    "profil": "Techniques héréditaires",
+    "full-description": "Les membres du clan Inuzuka sont renommés pour leur utilisation de chiens entraînés pour le combat. Toutes leurs techniques sont d'ailleurs basées sur le partenariat entre le chien et l'humain. Dès qu'il prend un rang dans cette voie, le ninja du clan Inuzuka obtient un chien pour compagnon animal.",
+    "icon": "images/ways/way-inuzuka.png"
+  },
+  {
+    "otype": "capacity",
+    "name": "Odorat",
+    "voname": "Inconnu",
+    "limited": false,
+    "rank": 1,
+    "profil": "Techniques héréditaires",
+    "way": "Voie du clan Inuzuka",
+    "jutsu": "Inconnu",
+    "element": "Inconnu",
+    "full-description": "Le chien du ninja détecte les odeurs des animaux, hommes et créatures là où ils sont passés. Le ninja obtient un bonus de +5 aux tests de sagesse pour pister, suivre des traces. Le chien étant constamment sur ses gardes, le ninja obtient également un bonus de +5 aux tests de sagesse pour savoir s'il est surpris.",
+    "short-description": "Le chien du ninja détecte les odeurs des animaux, hommes et créatures là où ils sont passés. Le chien étant constamment sur ses gardes, le ninja obtient un bonus aux tests de sagesse.",
+    "properties": [
+      {
+        "name": "action",
+        "action": "Pister",
+        "limited": false,
+        "detail": "",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "+",
+            "count": 5
+          }
+        ]
+      },
+      {
+        "name": "action",
+        "action": "Suivre des traces",
+        "limited": false,
+        "detail": "",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "+",
+            "count": 5
+          }
+        ]
+      },
+      {
+        "name": "action",
+        "action": "Éviter d'être surpris",
+        "limited": false,
+        "detail": "",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "+",
+            "count": 5
+          }
+        ]
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "Combat",
+    "voname": "Inconnu",
+    "limited": false,
+    "rank": 2,
+    "profil": "Techniques héréditaires",
+    "way": "Voie du clan Inuzuka",
+    "jutsu": "Inconnu",
+    "element": "Inconnu",
+    "full-description": "Le chien du ninja peut désormais se battre comme un véritable personnage. Il possède les caractéristiques suivantes: FOR +1, DEX +1, CON +1, INT -3, SAG +2, CHA -2, Init 13, DEF 14, PV [niveau x 4], attaque au contact = [niveau du ninja], DM 1d6+1.",
+    "short-description": "Le chien du ninja peut se battre comme un véritable personnage.",
+    "properties": [
+      {
+        "name": "creature",
+        "creature": "Chien",
+        "init": {
+          "name": "quantity",
+          "adjustment": "=",
+          "count": 13
+        },
+        "PV": [
+          {
+            "name": "other",
+            "adjustment": "=",
+            "other": "niveau"
+          },
+          {
+            "name": "quantity",
+            "adjustment": "x",
+            "count": 4
+          }
+        ],
+        "DEF": {
+          "name": "quantity",
+          "adjustment": "=",
+          "count": 14
+        },
+        "FOR": {
+          "name": "quantity",
+          "adjustment": "+",
+          "count": 1
+        },
+        "DEX": {
+          "name": "quantity",
+          "adjustment": "+",
+          "count": 1
+        },
+        "CON": {
+          "name": "quantity",
+          "adjustment": "+",
+          "count": 1
+        },
+        "INT": {
+          "name": "quantity",
+          "adjustment": "-",
+          "count": 3
+        },
+        "SAG": {
+          "name": "quantity",
+          "adjustment": "+",
+          "count": 2
+        },
+        "CHA": {
+          "name": "quantity",
+          "adjustment": "-",
+          "count": 2
+        },
+        "attack": {
+          "name": "attack",
+          "attack": "Contact",
+          "values": [
+            {
+              "name": "other",
+              "adjustment": "=",
+              "other": "niveau"
+            }
+          ]
+        },
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "dice",
+                "adjustment": "=",
+                "count": 1,
+                "die": "6"
+              },
+              {
+                "name": "quantity",
+                "adjustment": "+",
+                "count": 1
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Tranchant"
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "Le loup bicéphale",
+    "voname": "Ryū jūjin combi henge sōtōrō",
+    "limited": true,
+    "rank": 3,
+    "profil": "Techniques héréditaires",
+    "way": "Voie du clan Inuzuka",
+    "jutsu": "Secrète",
+    "element": "Inconnu",
+    "full-description": "L'utilisateur et son chien se transforment en un loup blanc à 2 têtes. Avec cette technique ils peuvent attaquer 2 adversaires au contact par tour. Lancez 2 d20 en attaque au contact et gardez le meilleur résultat. Si l'attaque est réussie, elle inflige 1d6 DM à chacun des 2 adversaires.",
+    "short-description": "L'utilisateur et son chien se transforment en un loup blanc à 2 têtes. Avec cette technique ils peuvent attaquer 2 adversaires au contact par tour. Lancez 2 d20 en attaque au contact et gardez le meilleur résultat. ",
+    "properties": [
+      {
+        "name": "fight",
+        "fight": "",
+        "attack": {
+          "name": "attack",
+          "attack": "Contact",
+          "values": [
+            {
+              "name": "dice",
+              "adjustment": "=",
+              "count": 2,
+              "die": "20"
+            }
+          ]
+        },
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "dice",
+                "adjustment": "=",
+                "count": 1,
+                "die": "6"
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Perforant",
+                "Contondant"
+              ]
+            }
+          }
+        ],
+        "detail": "(chaque adversaire)"
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "Les Crocs pénétrants",
+    "voname": "Inconnu",
+    "limited": true,
+    "rank": 4,
+    "profil": "Techniques héréditaires",
+    "way": "Voie du clan Inuzuka",
+    "jutsu": "Secrète",
+    "element": "Inconnu",
+    "full-description": "L'utilisateur tourne sur lui-même jusqu'à obtenir la forme et les propriétés d'une foreuse. Avec cette technique, l'utilisateur peut percer un trou de 1,5 mètres de diamètre et doit dépenser 1 point de chakra par mètre perforé en plus des points nécessaires à la réalisation de la technique. Utilisée en combat contre des adversaires, avec une attaque au contact réussie, elle inflige [1d8 + Mod. SAG] à un maximum de 3 adversaires situés à moins de 3 mètres les uns des autres et sans obstacles entre eux.",
+    "short-description": "L'utilisateur tourne sur lui-même jusqu'à devenir une foreuse. La foreuse peut être utilisé en combat pour infliger des dégâts à un maximum de 3 adversaires situés à moins de 3 mètres les uns des autres et sans obstacles entre eux.",
+    "properties": [
+      {
+        "name": "action",
+        "action": "Coût",
+        "limited": false,
+        "detail": "foré (1,5 m de diamètre)",
+        "values": [
+          {
+            "name": "element",
+            "adjustment": "=",
+            "count": 1,
+            "element": "Chakra"
+          },
+          {
+            "name": "measure",
+            "adjustment": "/",
+            "measure": "m"
+          }
+        ]
+      },
+      {
+        "name": "fight",
+        "fight": "",
+        "attack": {
+          "name": "attack",
+          "attack": "Contact",
+          "values": []
+        },
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "dice",
+                "adjustment": "=",
+                "count": 1,
+                "die": "8"
+              },
+              {
+                "name": "modifier",
+                "adjustment": "+",
+                "modifier": "[SAG]"
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Tranchant",
+                "Perforant"
+              ]
+            }
+          }
+        ],
+        "detail": "(chaque adversaire)"
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "Le loup tricéphale",
+    "voname": "Ryû jinjû kongô henge santôrô",
+    "limited": true,
+    "rank": 5,
+    "profil": "Techniques héréditaires",
+    "way": "Voie du clan Inuzuka",
+    "jutsu": "Secrète",
+    "element": "Inconnu",
+    "full-description": "L'utilisateur et son chien se transforment en un loup blanc à 3 têtes. Avec cette technique ils peuvent alors attaquer tous les adversaires au contact. Lancez 3 d20 en attaque au contact et gardez le meilleur résultat. Si l'attaque est réussie, elle inflige 2d6 DM à chaque adversaire au contact.",
+    "short-description": "L'utilisateur et son chien se transforment en un loup blanc à 3 têtes. Avec cette technique ils peuvent alors attaquer tous les adversaires au contact. Lancez 3 d20 en attaque au contact et gardez le meilleur résultat. ",
+    "properties": [
+      {
+        "name": "fight",
+        "fight": "",
+        "attack": {
+          "name": "attack",
+          "attack": "Contact",
+          "values": [
+            {
+              "name": "dice",
+              "adjustment": "=",
+              "count": 3,
+              "die": "20"
+            }
+          ]
+        },
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "dice",
+                "adjustment": "=",
+                "count": 2,
+                "die": "6"
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Perforant",
+                "Contondant"
+              ]
+            }
+          }
+        ],
+        "detail": "(chaque adversaire)"
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "way",
+    "name": "Voie du clan Yamanaka",
+    "profil": "Techniques héréditaires",
+    "full-description": "Les membres du clan Yamanaka sont renommés pour leur utilisation de techniques impliquant la manipulation de l'esprit. Il est aussi réputé pour ses jutsu utilisant différentes sortes de fleurs ayant des effets variés sur leurs adversaires.",
+    "icon": "images/ways/way-yamanaka.png"
+  },
+  {
+    "otype": "capacity",
+    "name": "Télépathie",
+    "voname": "Shindenshin no jutsu",
+    "limited": true,
+    "rank": 1,
+    "profil": "Techniques héréditaires",
+    "way": "Voie du clan Yamanaka",
+    "jutsu": "Secrète",
+    "element": "Inconnu",
+    "full-description": "Les membres du clan sont télépathes, ce qui signifie qu'ils peuvent communiquer entre eux par la pensée à partir du moment où ils se connaissent. Avec des personnes qui ne sont pas du clan, ils peuvent transmettre des informations, mais ils doivent pour cela connaître la personne et savoir où elle se trouve. Pour pouvoir communiquer, il faut être concentré et ne pas être attaqué (action limitée à chaque tour). Cela se traduit par un malus en défense de -5 lorsqu'il utilise cette technique.",
+    "short-description": "Les membres du clan sont télépathes, ce qui signifie qu'ils peuvent communiquer entre eux par la pensée à partir du moment où ils se connaissent. Avec des personnes qui ne sont pas du clan, ils peuvent transmettre des informations, mais ils doivent pour cela connaître la personne et savoir où elle se trouve.",
+    "properties": [
+      {
+        "name": "defense",
+        "defense": "DEF",
+        "detail": "(utilisation en combat)",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "-",
+            "count": 5
+          }
+        ]
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "Technique de lecture de l'esprit",
+    "voname": "Inconnu",
+    "limited": false,
+    "rank": 2,
+    "profil": "Techniques héréditaires",
+    "way": "Voie du clan Yamanaka",
+    "jutsu": "Secrète",
+    "element": "Inconnu",
+    "full-description": "L'utilisateur pose sa main sur le front d'une personne \nvivante (mais qui peut être inanimée) pour « lire dans ses pensées ». Il est possible d'empêcher la « lecture » d'une tierce personne en réalisant un test de CHA de [10 + 1 par rang dans cette voie]. Cette technique ne peut pas être utilisée en combat.",
+    "short-description": "L'utilisateur pose sa main sur le front d'une personne \nvivante (mais qui peut être inanimée) pour « lire dans ses pensées ». Il est possible d'empêcher la « lecture » d'une tierce personne en réalisant un test de CHA.",
+    "properties": [
+      {
+        "name": "test",
+        "test": "CHA",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "≥",
+            "count": 10
+          },
+          {
+            "name": "quantity",
+            "adjustment": "+",
+            "count": 1
+          },
+          {
+            "name": "other",
+            "adjustment": "/",
+            "other": "rang"
+          }
+        ],
+        "detail": ": Résister"
+      },
+      {
+        "name": "property",
+        "property": "Inutilisable",
+        "value": "En combat"
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "Transposition",
+    "voname": "Shintenshin no jutsu",
+    "limited": true,
+    "rank": 3,
+    "profil": "Techniques héréditaires",
+    "way": "Voie du clan Yamanaka",
+    "jutsu": "Secrète",
+    "element": "Inconnu",
+    "full-description": "Sur une attaque de jutsu réussie, l'utilisateur transfère son esprit dans le corps de l'ennemi pour le contrôler pendant [1d4 + Mod. CHA] tours. Cependant, son propre corps reste inanimé pendant toute la durée de cette technique; s'il rate son coup, son esprit mettra 1 tour complet pour retourner dans son corps, le laissant vulnérable aux attaques de l'ennemi. Ce jutsu est donc périlleux en combat, même en compagnie de coéquipiers fidèles et dévoués.",
+    "short-description": "L'utilisateur transfère son esprit dans le corps de l'ennemi pour le contrôler. Cependant, son propre corps reste inanimé pendant toute la durée de cette technique. En cas d'échec, il faut 1 tour complet pour que son esprit retourne dans son corps.",
+    "properties": [
+      {
+        "name": "measure",
+        "measure": "duration",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 1
+          },
+          {
+            "name": "modifier",
+            "adjustment": "+",
+            "modifier": "[CHA]"
+          }
+        ],
+        "unit": "tr"
+      },
+      {
+        "name": "state",
+        "state": "Étourdi",
+        "detail": "(durée technique + 1 tr)"
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "La grande confusion",
+    "voname": "Shinranshin no jutsu",
+    "limited": true,
+    "rank": 4,
+    "profil": "Techniques héréditaires",
+    "way": "Voie du clan Yamanaka",
+    "jutsu": "Secrète",
+    "element": "Inconnu",
+    "full-description": "Sans perdre le contrôle de son corps, l'utilisateur perturbe l'esprit de l'adversaire. Ce dernier, toujours conscient, ne peut plus contrôler ses gestes et attaque l'allié le plus proche à moins de réussir un test de CHA de [13 + Mod. CHA]. Une fois son tour terminé, l'adversaire reprend ses esprits.",
+    "short-description": "Sans perdre le contrôle de son corps, l'utilisateur perturbe l'esprit de l'adversaire. Ce dernier, toujours conscient, ne peut plus contrôler ses gestes et attaque l'allié le plus proche à moins de réussir un test de CHA. Une fois son tour terminé, l'adversaire reprend ses esprits.",
+    "properties": [
+      {
+        "name": "test",
+        "test": "CHA",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "≥",
+            "count": 13
+          },
+          {
+            "name": "modifier",
+            "adjustment": "+",
+            "modifier": "[CHA]"
+          }
+        ],
+        "detail": ": Résister"
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "Technique d'attraction",
+    "voname": "Shindanshin no jutsu",
+    "limited": true,
+    "rank": 5,
+    "profil": "Techniques héréditaires",
+    "way": "Voie du clan Yamanaka",
+    "jutsu": "Secrète",
+    "element": "Inconnu",
+    "full-description": "L'utilisateur vise et téléporte [Mod. CHA] ennemis en vue à l'endroit de son choix dans un cercle de 20 mètres de diamètre autour de lui dans un nuage de fumée. A moins de réussir un test de CHA de [12 + Mod. CHA], l'ennemi est étourdi.",
+    "short-description": "L'utilisateur vise et téléporte des ennemis en vue à l'endroit de son choix autour de lui dans un nuage de fumée. A moins de réussir un test de CHA, l'ennemi est étourdi.",
+    "properties": [
+      {
+        "name": "action",
+        "action": "Quantité",
+        "limited": false,
+        "detail": "ennemis",
+        "values": [
+          {
+            "name": "modifier",
+            "adjustment": "=",
+            "modifier": "[CHA]"
+          }
+        ]
+      },
+      {
+        "name": "measure",
+        "measure": "range",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 20
+          }
+        ],
+        "unit": "m"
+      },
+      {
+        "name": "test",
+        "test": "CHA",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "<",
+            "count": 12
+          },
+          {
+            "name": "modifier",
+            "adjustment": "+",
+            "modifier": "[CHA]"
+          }
+        ],
+        "detail": ": Étourdi"
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "way",
+    "name": "Voie du clan Nara",
+    "profil": "Techniques héréditaires",
+    "full-description": "Les membres du clan Nara sont renommés pour leur utilisation de techniques secrètes permettant de manipuler les ombres, et ils sont réputés pour leur élevage de cerfs qui leur permet de guérir plusieurs maladies. Les techniques du clan Nara ne peuvent s'utiliser dans le noir complet.",
+    "icon": "images/ways/way-nara.png"
+  },
+  {
+    "otype": "capacity",
+    "name": "Manipulation des ombres",
+    "voname": "Kagemane no jutsu",
+    "limited": true,
+    "rank": 1,
+    "profil": "Techniques héréditaires",
+    "way": "Voie du clan Nara",
+    "jutsu": "Secrète",
+    "element": "Inconnu",
+    "full-description": "L'utilisateur modifie son ombre pour se relier à son adversaire, et lorsqu'il y arrive, l'immobilise. Cette technique permet de ralentir l'ennemi. Utilisée en conjonction avec l'environnement, elle peut devenir offensive ou défensive. Elle devient particulièrement efficace dans le cadre d'un piège. L'ombre peut se diviser, tant que la distance totale ne dépasse pas 10 mètres par rang dans la voie, pour relier plusieurs adversaires. Maintenir l'ombre consomme 1 point de chakra par tour pour chaque adversaire relié et ne peut être maintenu plus de [1 + Mod. INT] tours. Si l'utilisateur de cette technique subit une attaque réussie, la technique prend fin.",
+    "short-description": "L'utilisateur immobilise son adversaire grâce à son ombre.  L'ombre peut se diviser tant que l'on ne dépasse pas la distance totale. Si l'utilisateur de cette technique subit une attaque réussie, la technique prend fin.",
+    "properties": [
+      {
+        "name": "measure",
+        "measure": "range",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 10
+          },
+          {
+            "name": "other",
+            "adjustment": "/",
+            "other": "rang"
+          }
+        ],
+        "unit": "m"
+      },
+      {
+        "name": "measure",
+        "measure": "duration",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 1
+          },
+          {
+            "name": "modifier",
+            "adjustment": "+",
+            "modifier": "[INT]"
+          }
+        ],
+        "unit": "tr"
+      },
+      {
+        "name": "action",
+        "action": "Maintenir",
+        "limited": false,
+        "detail": "/ adversaire",
+        "values": [
+          {
+            "name": "element",
+            "adjustment": "=",
+            "count": 1,
+            "element": "Chakra"
+          },
+          {
+            "name": "measure",
+            "adjustment": "/",
+            "measure": "tr"
+          }
+        ]
+      },
+      {
+        "name": "fight",
+        "fight": "",
+        "attack": {
+          "name": "attack",
+          "attack": "Jutsu",
+          "values": []
+        },
+        "damage": [],
+        "detail": "Immobilisé"
+      }
+    ],
+    "mudras": [
+      "Rat"
+    ]
+  },
+  {
+    "otype": "capacity",
+    "name": "L'étreinte mortelle de l'ombre",
+    "voname": "Kage kubishibari no jutsu",
+    "limited": true,
+    "rank": 2,
+    "profil": "Techniques héréditaires",
+    "way": "Voie du clan Nara",
+    "jutsu": "Secrète",
+    "element": "Inconnu",
+    "full-description": "Après avoir immobilisé l'adversaire, une main d'ombre s'abat sur l'ennemi et le prend au cou pour l'étrangler ou lui briser la nuque. Cette technique inflige [1d6 + Mod. INT] DM à chacun des adversaires sous l'emprise de la manipulation des ombres.",
+    "short-description": "Après avoir immobilisé l'adversaire, une main d'ombre s'abat sur l'ennemi et le prend au cou pour l'étrangler ou lui briser la nuque. Cette technique inflige des dégâts à chacun des adversaires sous l'emprise de la manipulation des ombres.",
+    "properties": [
+      {
+        "name": "fight",
+        "fight": "",
+        "attack": {
+          "name": "attack",
+          "attack": "Jutsu",
+          "values": []
+        },
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "dice",
+                "adjustment": "=",
+                "count": 1,
+                "die": "6"
+              },
+              {
+                "name": "modifier",
+                "adjustment": "+",
+                "modifier": "[INT]"
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Contondant"
+              ]
+            }
+          }
+        ],
+        "detail": "(chaque adversaire)"
+      }
+    ],
+    "mudras": [
+      "Rat"
+    ]
+  },
+  {
+    "otype": "capacity",
+    "name": "L'entrelacement des ombres",
+    "voname": "Kagenui no jutsu",
+    "limited": true,
+    "rank": 3,
+    "profil": "Techniques héréditaires",
+    "way": "Voie du clan Nara",
+    "jutsu": "Secrète",
+    "element": "Inconnu",
+    "full-description": "L'ombre de l'utilisateur se subdivise et se transforme en un nombre variable de piques autour de l'ennemi pour l'empaler. Sur une attaque de jutsu réussie, l'utilisateur de cette technique peut faire une pique de 10 mètres de long par rang dans la voie. Chaque pique inflige 1d8 DM. Les pointes peuvent également attraper des objets situés à moins de 10 mètres et n'excédant pas 5 Kilogrammes.",
+    "short-description": "L'ombre de l'utilisateur se subdivise et se transforme en un nombre variable de piques autour de l'ennemi pour l'empaler. Les pointes peuvent également attraper des objets n'excédant pas un certain poids.",
+    "properties": [
+      {
+        "name": "fight",
+        "fight": "",
+        "attack": {
+          "name": "attack",
+          "attack": "Jutsu",
+          "values": []
+        },
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "dice",
+                "adjustment": "=",
+                "count": 1,
+                "die": "8"
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Perforant"
+              ]
+            }
+          }
+        ],
+        "detail": "(par pique)"
+      },
+      {
+        "name": "action",
+        "action": "Quantité",
+        "limited": false,
+        "detail": "piques",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 1
+          },
+          {
+            "name": "other",
+            "adjustment": "/",
+            "other": "rang"
+          }
+        ]
+      },
+      {
+        "name": "measure",
+        "measure": "range",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 10
+          }
+        ],
+        "unit": "m"
+      },
+      {
+        "name": "measure",
+        "measure": "weight",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "≤",
+            "count": 5
+          }
+        ],
+        "unit": "Kg"
+      }
+    ],
+    "mudras": [
+      "Rat"
+    ]
+  },
+  {
+    "otype": "capacity",
+    "name": "Invocation des ombres",
+    "voname": "Kageyose no jutsu",
+    "limited": true,
+    "rank": 4,
+    "profil": "Techniques héréditaires",
+    "way": "Voie du clan Nara",
+    "jutsu": "Secrète",
+    "element": "Inconnu",
+    "full-description": "L'utilisateur invoque une ombre (d'une autre dimension, ou bien une ombre proche de l'ennemi) pendant [1d4 + Mod. INT] tours. L'ombre attaque la cible et lui inflige automatiquement 1d8 DM à chaque tour.",
+    "short-description": "L'utilisateur invoque une ombre (d'une autre dimension, ou bien une ombre proche de l'ennemi). L'ombre attaque la cible et lui inflige automatiquement des dégâts à chaque tour.",
+    "properties": [
+      {
+        "name": "measure",
+        "measure": "duration",
+        "values": [
+          {
+            "name": "dice",
+            "adjustment": "=",
+            "count": 1,
+            "die": "4"
+          },
+          {
+            "name": "modifier",
+            "adjustment": "+",
+            "modifier": "[INT]"
+          }
+        ],
+        "unit": "tr"
+      },
+      {
+        "name": "fight",
+        "fight": "",
+        "attack": {
+          "name": "attack",
+          "attack": "Contact",
+          "values": []
+        },
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "dice",
+                "adjustment": "=",
+                "count": 1,
+                "die": "8"
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Perforant"
+              ]
+            }
+          }
+        ],
+        "detail": "(Réussite automatique)"
+      }
+    ],
+    "mudras": [
+      "Rat"
+    ]
+  },
+  {
+    "otype": "capacity",
+    "name": "Shuriken de manipulation des ombres",
+    "voname": "Kagemane shuriken no jutsu",
+    "limited": true,
+    "rank": 5,
+    "profil": "Techniques héréditaires",
+    "way": "Voie du clan Nara",
+    "jutsu": "Secrète",
+    "element": "Inconnu",
+    "full-description": "En insufflant au préalable les lames avec son propre chakra, l'utilisateur leur donne l'effet des techniques d'ombres. Avec une attaque à distance réussie, l'utilisateur lance [1d4 + Mod. INT] projectiles réels (kunaï, shuriken, etc ...) qu'il doit avoir à portée de main et les plante dans les ombres des ennemis. Ils subissent alors les dégâts de l'arme et sont paralysés sur place pendant 1 tour.",
+    "short-description": "L'utilisateur peut lancer des projectiles sur ses adversaires. Ils subissent alors les dégâts de l'arme et sont paralysés sur place pendant 1 tour.",
+    "properties": [
+      {
+        "name": "fight",
+        "fight": "",
+        "attack": {
+          "name": "attack",
+          "attack": "Distance",
+          "values": []
+        },
+        "damage": [],
+        "detail": "DM de l'arme utilisée"
+      },
+      {
+        "name": "action",
+        "action": "Quantité",
+        "limited": false,
+        "detail": "projectiles rééls",
+        "values": [
+          {
+            "name": "dice",
+            "adjustment": "=",
+            "count": 1,
+            "die": "4"
+          },
+          {
+            "name": "modifier",
+            "adjustment": "+",
+            "modifier": "[INT]"
+          }
+        ]
+      },
+      {
+        "name": "state",
+        "state": "Paralysé",
+        "detail": "(1 tour si attaque réussie)"
+      }
+    ],
+    "mudras": [
+      "Rat"
+    ]
+  },
+  {
+    "otype": "way",
+    "name": "Voie du clan Akimichi",
+    "profil": "Techniques héréditaires",
+    "full-description": "Les membres du clan Akimichi sont renommés pour leur utilisation de techniques spéciales permettant d'augmenter et de diminuer la taille de tout ou partie de leur corps et de leur équipement.",
+    "icon": "images/ways/way-akimichi.png"
+  },
+  {
+    "otype": "capacity",
+    "name": "Décuplement",
+    "voname": "Baika no jutsu",
+    "limited": true,
+    "rank": 1,
+    "profil": "Techniques héréditaires",
+    "way": "Voie du clan Akimichi",
+    "jutsu": "Secrète",
+    "element": "Inconnu",
+    "full-description": "L'utilisateur de cette technique accroît sa taille et son corps en convertissant leurs calories en chakra. Cette technique dure pendant [1 + rang dans la voie] tours et permet de doubler les dégâts que l'on fait en dépensant 2 points de chakra pour chacun des coups portés par tour.",
+    "short-description": "L'utilisateur de cette technique accroît sa taille et son corps en convertissant leurs calories en chakra.",
+    "properties": [
+      {
+        "name": "measure",
+        "measure": "duration",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 1
+          },
+          {
+            "name": "other",
+            "adjustment": "+",
+            "other": "rang"
+          }
+        ],
+        "unit": "tr"
+      },
+      {
+        "name": "action",
+        "action": "Coût",
+        "limited": false,
+        "detail": "par tentative d'attaque",
+        "values": [
+          {
+            "name": "element",
+            "adjustment": "=",
+            "count": 2,
+            "element": "Chakra"
+          }
+        ]
+      },
+      {
+        "name": "damage",
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "quantity",
+                "adjustment": "x",
+                "count": 2
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": []
+            }
+          }
+        ]
+      }
+    ],
+    "mudras": ["Coq"]
+  },
+  {
+    "otype": "capacity",
+    "name": "Pilules",
+    "voname": "Inconnu",
+    "limited": false,
+    "rank": 2,
+    "profil": "Techniques héréditaires",
+    "way": "Voie du clan Akimichi",
+    "jutsu": "Inconnu",
+    "element": "Inconnu",
+    "full-description": "Chaque membre du clan Akimichi part en mission avec 3 petites pilules dont la composition est tenue secrète (les trois pilules sont renouvelées à chaque fois que l'on passe un niveau). Pour une action gratuite, l'utilisateur peut avaler une petite pilule. Il doit les consommer dans l'ordre en commençant par la verte, la pilule aux épinards, puis par la jaune, la pilule au curry, et enfin par la rouge, la pilule au piment. En convertissant chimiquement les réserves de graisse du consommateur en chakra, chaque pilule ingérée augmente drastiquement la puissance de l'utilisateur. La pilule verte apporte un bonus de +2 en FOR, en attaque et en défense pour l'ensemble du combat ainsi que 3 points de chakra à dépenser dans le tour. La pilule jaune apporte un bonus de +4 en FOR, en attaque et en défense pour l'ensemble du combat ainsi que 6 points de chakra à dépenser dans le tour. La pilule rouge apporte un bonus de +6 en FOR, en attaque et en défense pour l'ensemble du combat ainsi que 9 points de chakra à dépenser dans le tour.",
+    "short-description": "Chaque membre du clan Akimichi part en mission avec 3 petites pilules.\n",
+    "properties": [
+      {
+        "name": "property",
+        "property": "Avaler une pilule",
+        "value": "Action gratuite"
+      },
+      {
+        "name": "property",
+        "property": "Renouvelée",
+        "value": "A chaque niveau"
+      },
+      {
+        "name": "property",
+        "property": "Verte",
+        "value": "+2 FOR, Att. et DEF (combat) et 3 points de chakra supplémentaire (tour)"
+      },
+      {
+        "name": "property",
+        "property": "Jaune",
+        "value": "+4 FOR, Att. et DEF (combat) et 6 points de chakra supplémentaire (tour)"
+      },
+      {
+        "name": "property",
+        "property": "Rouge",
+        "value": "+6 FOR, Att. et DEF (combat) et 9 points de chakra supplémentaire (tour)"
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "Le boulet humain",
+    "voname": "Nikudan sensha",
+    "limited": true,
+    "rank": 3,
+    "profil": "Techniques héréditaires",
+    "way": "Voie du clan Akimichi",
+    "jutsu": "Secrète",
+    "element": "Inconnu",
+    "full-description": "L'utilisateur roule et s'élance sur l'adversaire pour l'écraser. Pour pouvoir utiliser cette technique, l'utilisateur doit être en mode décuplement (ou décuplement supra). Sur une attaque au contact réussie, il inflige 1d10 DM",
+    "short-description": "L'utilisateur roule et s'élance sur l'adversaire pour l'écraser. Pour pouvoir utiliser cette technique, l'utilisateur doit être en mode décuplement (ou décuplement supra).",
+    "properties": [
+      {
+        "name": "fight",
+        "fight": "",
+        "attack": {
+          "name": "attack",
+          "attack": "Contact",
+          "values": []
+        },
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "dice",
+                "adjustment": "=",
+                "count": 1,
+                "die": "10"
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Contondant"
+              ]
+            }
+          }
+        ],
+        "detail": ""
+      }
+    ],
+    "mudras": ["Coq"]
+  },
+  {
+    "otype": "capacity",
+    "name": "Décuplement supra",
+    "voname": "Chō baika no jutsu",
+    "limited": true,
+    "rank": 4,
+    "profil": "Techniques héréditaires",
+    "way": "Voie du clan Akimichi",
+    "jutsu": "Secrète",
+    "element": "Inconnu",
+    "full-description": "L'utilisateur de cette technique accroît sa taille et son corps en convertissant ses calories en chakra. Sa taille approche celle d'une petite colline. Cette technique dure pendant 1d4 tours et permet de quadrupler les dégâts que l'on fait en dépensant 3 points de chakra supplémentaires pour chacun des coups portés par tour.",
+    "short-description": "L'utilisateur de cette technique accroît sa taille et son corps en convertissant ses calories en chakra. Sa taille approche celle d'une petite colline.",
+    "properties": [
+      {
+        "name": "measure",
+        "measure": "duration",
+        "values": [
+          {
+            "name": "dice",
+            "adjustment": "=",
+            "count": 1,
+            "die": "4"
+          }
+        ],
+        "unit": "tr"
+      },
+      {
+        "name": "damage",
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "quantity",
+                "adjustment": "x",
+                "count": 4
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": []
+            }
+          }
+        ]
+      },
+      {
+        "name": "action",
+        "action": "Coût",
+        "limited": false,
+        "detail": "par tentative d'attaque",
+        "values": [
+          {
+            "name": "element",
+            "adjustment": "=",
+            "count": 3,
+            "element": "Chakra"
+          }
+        ]
+      }
+    ],
+    "mudras": ["Coq"]
+  },
+  {
+    "otype": "capacity",
+    "name": "Mode papillon",
+    "voname": "Chô môdo",
+    "limited": true,
+    "rank": 5,
+    "profil": "Techniques héréditaires",
+    "way": "Voie du clan Akimichi",
+    "jutsu": "Secrète",
+    "element": "Inconnu",
+    "full-description": "Grâce aux pilules spéciales des Akimichi, les réserves de chakra de l'utilisateur sont centuplées. Il concentre alors toute cette réserve dans son poing et écrase l'opposant d'un coup. Les chances de survie à cette attaque sont infinitésimales. Pour pouvoir utiliser cette technique, il faut avoir au préalable ingéré une pilule du clan Akimichi pour avoir augmenté ses réserves de chakra. Sur une attaque au contact réussie, l'utilisateur de cette technique inflige 5d6 dégâts avec la pilule verte, 7d6 avec la pilule jaune et 9d6 avec la pilule rouge. Cependant, ses réserves de chakra sont alors épuisées et il ne peut plus combattre tant qu'il ne récupère pas de chakra.",
+    "short-description": "L'utilisateur concentre sa réserve de chakra (nécessite de consommer une pilule du clan Akimichi ce tour) dans son poing. Ensuite, il doit récupérer du chakra pour combattre de nouveau.",
+    "properties": [
+      {
+        "name": "property",
+        "property": "Verte",
+        "value": "5d6 DM"
+      },
+      {
+        "name": "property",
+        "property": "Jaune",
+        "value": "7d6 DM"
+      },
+      {
+        "name": "property",
+        "property": "Rouge",
+        "value": "9d6 DM"
+      },
+      {
+        "name": "fight",
+        "fight": "",
+        "attack": {
+          "name": "attack",
+          "attack": "Contact",
+          "values": []
+        },
+        "damage": [],
+        "detail": "(DM dépendent de la pilule)"
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "way",
+    "name": "Voie du clan Hyûga",
+    "profil": "Techniques héréditaires",
+    "full-description": "Les membres du clan Hyûga possèdent des yeux spéciaux, le byakugan. L'utilisateur peut voir à 360° sauf un minuscule angle mort derrière la première vertèbre cervicale.",
+    "icon": "images/ways/way-hyuga.png"
+  },
+  {
+    "otype": "capacity",
+    "name": "Byakugan",
+    "voname": "Byakugan",
+    "limited": false,
+    "rank": 1,
+    "profil": "Techniques héréditaires",
+    "way": "Voie du clan Hyûga",
+    "jutsu": "Inconnu",
+    "element": "Inconnu",
+    "full-description": "Pour chaque rang dans cette voie, le ninja gagne un bonus de +2 à tous ses tests de SAG destinés à simuler la perception visuelle. Le byakugan permet aussi de voir à environ 50 mètres, à travers les obstacles, en vision thermique et même les méridiens de chakra. Il ajoute de plus son mod. de SAG aux DM des armes à distance et à son initiative. Il remplace également son score d'attaque au contact par son score d'attaque de jutsu.",
+    "short-description": "Le byakugan permet de voir à travers les obstacles, en vision thermique et les méridiens de chakra. Le score d'attaque au contact est remplacé par le score d'attaque de jutsu.",
+    "properties": [
+      {
+        "name": "action",
+        "action": "Perception",
+        "limited": false,
+        "detail": "(visuelle)",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "+",
+            "count": 2
+          },
+          {
+            "name": "other",
+            "adjustment": "/",
+            "other": "rang"
+          }
+        ]
+      },
+      {
+        "name": "action",
+        "action": "Vision",
+        "limited": false,
+        "detail": "",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 50
+          },
+          {
+            "name": "measure",
+            "adjustment": "=",
+            "measure": "m"
+          }
+        ]
+      },
+      {
+        "name": "character",
+        "character": "init",
+        "values": [
+          {
+            "name": "modifier",
+            "adjustment": "+",
+            "modifier": "[SAG]"
+          }
+        ]
+      },
+      {
+        "name": "fight",
+        "fight": "",
+        "attack": {
+          "name": "attack",
+          "attack": "Distance",
+          "values": []
+        },
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "modifier",
+                "adjustment": "+",
+                "modifier": "[SAG]"
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Tranchant"
+              ]
+            }
+          }
+        ],
+        "detail": "DM"
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "Les 64 points du hakke",
+    "voname": "Hakke rokujūyon shō",
+    "limited": true,
+    "rank": 2,
+    "profil": "Techniques héréditaires",
+    "way": "Voie du clan Hyûga",
+    "jutsu": "Jūken",
+    "element": "Inconnu",
+    "full-description": "Technique de jūken qui permet de frapper en 64 points pour bloquer les flux de chakra de l'adversaire. Sur une attaque au contact de jutsu réussie, l'utilisateur de la technique enlève [1d4 + Mod. SAG] points de chakra de la réserve de son adversaire.",
+    "short-description": "Technique de jūken qui permet de frapper en 64 points pour bloquer les flux de chakra de l'adversaire. Sur une attaque réussie, l'utilisateur de la technique enlève des points de chakra de la réserve de son adversaire.",
+    "properties": [
+      {
+        "name": "fight",
+        "fight": "",
+        "attack": {
+          "name": "attack",
+          "attack": "Jutsu",
+          "values": []
+        },
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "dice",
+                "adjustment": "=",
+                "count": 1,
+                "die": "4"
+              },
+              {
+                "name": "modifier",
+                "adjustment": "+",
+                "modifier": "[SAG]"
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Chakra"
+              ]
+            }
+          }
+        ],
+        "detail": ""
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "Le tourbillon divin du hakke",
+    "voname": "Hakkeshō kaiten",
+    "limited": true,
+    "rank": 3,
+    "profil": "Techniques héréditaires",
+    "way": "Voie du clan Hyûga",
+    "jutsu": "Jūken",
+    "element": "Inconnu",
+    "full-description": "Technique défensive très puissante consistant à expulser du chakra par toutes les pores de la peau, empêchant un contact direct avec le corps. Pendant qu'il utilise cette technique, qui lui consomme 2 points de chakra par tour pour la maintenir, l'utilisateur de cette technique ne peut être touché que si son adversaire obtient une réussite critique (les DM sont ceux du critique). Cette technique dure [1 + Mod. SAG] tours et l'utilisateur ne peut attaquer mais il peut par contre protéger jusqu'à 2 personnes à son contact, qui ne peuvent elles non plus attaquer. Les personnes protégées, peuvent par contre se soigner par exemple ou boire une potion.",
+    "short-description": "L'utilisateur expulse du chakra par les pores de la peau et  empêche un contact direct. Il ne peut être touché que par une réussite critique (DM du critique). Les personnes protégées, ne peuvent attaquer mais peuvent par contre se soigner ou boire.",
+    "properties": [
+      {
+        "name": "action",
+        "action": "Maintenir",
+        "limited": false,
+        "detail": "",
+        "values": [
+          {
+            "name": "element",
+            "adjustment": "=",
+            "count": 2,
+            "element": "Chakra"
+          },
+          {
+            "name": "measure",
+            "adjustment": "/",
+            "measure": "tr"
+          }
+        ]
+      },
+      {
+        "name": "action",
+        "action": "Protéger",
+        "limited": false,
+        "detail": "au contact",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 2
+          },
+          {
+            "name": "other",
+            "adjustment": "x",
+            "other": "PJ"
+          }
+        ]
+      },
+      {
+        "name": "measure",
+        "measure": "duration",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 1
+          },
+          {
+            "name": "modifier",
+            "adjustment": "+",
+            "modifier": "[SAG]"
+          }
+        ],
+        "unit": "tr"
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "La paume du hakke",
+    "voname": "Hakke kūshō",
+    "limited": true,
+    "rank": 4,
+    "profil": "Techniques héréditaires",
+    "way": "Voie du clan Hyûga",
+    "jutsu": "Inconnu",
+    "element": "Inconnu",
+    "full-description": "Technique permettant de frapper l'adversaire à distance, jusqu'à 5 mètres, grâce à une impulsion de chakra qui jaillit de la main. Sur une attaque de jutsu réussie, l'utilisateur inflige [1d8 + Mod. SAG] DM. L'attaque supprime également 1d6 points de chakra de la réserve de son adversaire.",
+    "short-description": "Technique permettant de frapper l'adversaire à distance grâce à une impulsion de chakra qui jaillit de la main. L'attaque, en plus des dégâts occasionnés, supprime des points de chakra de la réserve de son adversaire.",
+    "properties": [
+      {
+        "name": "measure",
+        "measure": "range",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 5
+          }
+        ],
+        "unit": "m"
+      },
+      {
+        "name": "fight",
+        "fight": "",
+        "attack": {
+          "name": "attack",
+          "attack": "Contact",
+          "values": []
+        },
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "dice",
+                "adjustment": "=",
+                "count": 1,
+                "die": "8"
+              },
+              {
+                "name": "modifier",
+                "adjustment": "+",
+                "modifier": "[SAG]"
+              },
+              {
+                "name": "other",
+                "adjustment": "=",
+                "other": ","
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Contondant"
+              ]
+            }
+          },
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "dice",
+                "adjustment": "=",
+                "count": 1,
+                "die": "6"
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Chakra"
+              ]
+            }
+          }
+        ],
+        "detail": ""
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "Les paumes jumelles des lions agiles",
+    "voname": "Jūho sōshiken",
+    "limited": true,
+    "rank": 5,
+    "profil": "Techniques héréditaires",
+    "way": "Voie du clan Hyûga",
+    "jutsu": "Jūken",
+    "element": "Inconnu",
+    "full-description": "Technique offensive, l'utilisateur rassemble une grande quantité de chakra autour de ses poings et la modèle sous la forme de têtes de lions, puis frappe l'adversaire. Sur une attaque de jutsu au contact réussie, l'utilisateur de cette technique inflige 3d12 DM à son adversaire.",
+    "short-description": "Technique offensive, l'utilisateur rassemble une grande quantité de chakra autour de ses poings et la modèle sous la forme de têtes de lions, puis frappe l'adversaire.",
+    "properties": [
+      {
+        "name": "fight",
+        "fight": "",
+        "attack": {
+          "name": "attack",
+          "attack": "Jutsu",
+          "values": []
+        },
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "dice",
+                "adjustment": "=",
+                "count": 3,
+                "die": "12"
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Contondant"
+              ]
+            }
+          }
+        ],
+        "detail": ""
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "way",
+    "name": "Voie du clan Uchiwa",
+    "profil": "Techniques héréditaires",
+    "full-description": "Un œil rouge possédant 1, 2 ou 3 tomoe apparaît sur l'œil de l'utilisateur du sharingan. À un tomoe, l'œil possède la capacité de voir à travers les techniques de Taijutsu et Genjutsu. À 2 tomoe, il peut aussi copier les techniques adverses. À 3 tomoe, il peut lancer des Genjutsu très puissants.",
+    "icon": "images/ways/way-uchiwa.png"
+  },
+  {
+    "otype": "capacity",
+    "name": "Un tomoe",
+    "voname": "Inconnu",
+    "limited": false,
+    "rank": 1,
+    "profil": "Techniques héréditaires",
+    "way": "Voie du clan Uchiwa",
+    "jutsu": "Inconnu",
+    "element": "Inconnu",
+    "full-description": "Avec cet œil, le ninja voit toutes les attaques légèrement en avance il gagne un bonus de +1 dans la voie en initiative et en DEF ainsi qu'un bonus de +2 par rang dans la voie à tous les tests pour éviter d'être surpris.",
+    "short-description": "Avec cet œil, le ninja voit toutes les attaques légèrement en avance.",
+    "properties": [
+      {
+        "name": "character",
+        "character": "init",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "+",
+            "count": 1
+          },
+          {
+            "name": "other",
+            "adjustment": "/",
+            "other": "rang"
+          }
+        ]
+      },
+      {
+        "name": "defense",
+        "defense": "DEF",
+        "detail": "",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "+",
+            "count": 1
+          },
+          {
+            "name": "other",
+            "adjustment": "/",
+            "other": "rang"
+          }
+        ]
+      },
+      {
+        "name": "action",
+        "action": "Éviter d'être surpris",
+        "limited": false,
+        "detail": "",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "+",
+            "count": 2
+          },
+          {
+            "name": "other",
+            "adjustment": "/",
+            "other": "rang"
+          }
+        ]
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "Deux tomoe",
+    "voname": "Inconnu",
+    "limited": false,
+    "rank": 2,
+    "profil": "Techniques héréditaires",
+    "way": "Voie du clan Uchiwa",
+    "jutsu": "Dôjutsu",
+    "element": "Inconnu",
+    "full-description": "Avec 2 tomoe sur cet œil, le ninja peut désormais une fois par scénario copier une des techniques de l'adversaire si celle-ci est de rang inférieure ou égale à son rang dans cette voie. La technique copiée est acquise définitivement et peut être utilisée immédiatement. Cette action est une action gratuite.",
+    "short-description": "Avec 2 tomoe sur cet œil, le ninja peut désormais une fois par scénario copier une des techniques de l'adversaire si celle-ci est de rang inférieure ou égale à son rang dans cette voie. La technique copiée est acquise définitivement et peut être utilisée immédiatement.",
+    "properties": [
+      {
+        "name": "property",
+        "property": "",
+        "value": "Action gratuite"
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "Retournement du miroir du ciel et de la terre",
+    "voname": "Magen kyō tenchi ten",
+    "limited": true,
+    "rank": 3,
+    "profil": "Techniques héréditaires",
+    "way": "Voie du clan Uchiwa",
+    "jutsu": "Genjutsu",
+    "element": "Inconnu",
+    "full-description": "Une fois par combat, l'utilisateur de cette technique peut retourner une illusion ou une attaque même critique, contre son utilisateur. On compare le score d'attaque à la DEF de l'adversaire pour savoir si celui-ci subit réellement les dégâts.",
+    "short-description": "Une fois par combat, l'utilisateur de cette technique peut retourner une illusion ou une attaque même critique, contre son utilisateur. On compare le score d'attaque à la DEF de l'adversaire pour savoir si celui-ci subit réellement les dégâts.",
+    "properties": [],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "L'enchaînement par les pieux",
+    "voname": "Magen kasegui no jutsu",
+    "limited": true,
+    "rank": 4,
+    "profil": "Techniques héréditaires",
+    "way": "Voie du clan Uchiwa",
+    "jutsu": "Dôjutsu",
+    "element": "Inconnu",
+    "full-description": "L'adversaire se voit immobilisé, transpercé par des pieux gigantesques qui lui traversent le corps. Pour parer cette illusion, il faut réussir un test de charisme de difficulté [10 + Mod. CHA] de l'utilisateur sous peine de subir [3d6 + Mod. CHA] DM. Même si la personne ciblée ne subit pas de dégât, elle est immobilisée pour 1 tour.",
+    "short-description": "L'adversaire se voit immobilisé, transpercé par des pieux gigantesques qui lui traversent le corps. Même si la personne ciblée ne subit pas de dégât, elle sera immobilisée pour le prochain tour.",
+    "properties": [
+      {
+        "name": "test",
+        "test": "CHA",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "≥",
+            "count": 10
+          },
+          {
+            "name": "modifier",
+            "adjustment": "+",
+            "modifier": "[CHA]"
+          }
+        ],
+        "detail": ": Éviter les DM"
+      },
+      {
+        "name": "state",
+        "state": "Immobilisé",
+        "detail": ""
+      },
+      {
+        "name": "damage",
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "dice",
+                "adjustment": "=",
+                "count": 3,
+                "die": "6"
+              },
+              {
+                "name": "modifier",
+                "adjustment": "+",
+                "modifier": "[CHA]"
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Mentaux"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "measure",
+        "measure": "duration",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 1
+          }
+        ],
+        "unit": "tr"
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "Kaléidoscope hypnotique du sharingan",
+    "voname": "Mangekyō sharingan",
+    "limited": false,
+    "rank": 5,
+    "profil": "Techniques héréditaires",
+    "way": "Voie du clan Uchiwa",
+    "jutsu": "Inconnu",
+    "element": "Inconnu",
+    "full-description": "Cet œil offre des capacités spéciales qui diffèrent selon l’utilisateur en plus de celles du Sharingan. Elle augmente la valeur de CHA de +2, lancer deux d20 pour ses tests de CHA et de JUTSU ne conserver que le meilleur résultat. Enfin, il obtient également un bonus de +2 en DEF et en initiative.",
+    "short-description": "Cet œil offre des capacités spéciales qui diffèrent selon l’utilisateur en plus de celles du Sharingan.",
+    "properties": [
+      {
+        "name": "attribute",
+        "attribute": "CHA",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "+",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "name": "test",
+        "test": "CHA",
+        "values": [
+          {
+            "name": "other",
+            "adjustment": "=",
+            "other": ":"
+          },
+          {
+            "name": "dice",
+            "adjustment": "=",
+            "count": 2,
+            "die": "20"
+          }
+        ],
+        "detail": "(garder le meilleur)"
+      },
+      {
+        "name": "test",
+        "test": "JUTSU",
+        "values": [
+          {
+            "name": "other",
+            "adjustment": "=",
+            "other": ":"
+          },
+          {
+            "name": "dice",
+            "adjustment": "=",
+            "count": 2,
+            "die": "20"
+          }
+        ],
+        "detail": "(garder le meilleur)"
+      },
+      {
+        "name": "character",
+        "character": "init",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "+",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "name": "defense",
+        "defense": "DEF",
+        "detail": "",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "+",
+            "count": 2
+          }
+        ]
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "way",
+    "name": "Voie des huit portes célestes",
+    "profil": "Techniques héréditaires",
+    "full-description": "La circulation du chakra dans le corps humain est régulée par huit « portes » dont la disposition est la suivante : les deux premières au niveau du cerveau, les cinq suivantes le long de la colonne vertébrale, et la dernière au niveau du cœur. L'ouverture de ces portes décuple le flux de chakra dans l'organisme, ce qui permet à l'utilisateur d'accéder à une énergie physique colossale et d'outrepasser les limites de son corps. Toutefois il y a le revers de la médaille, l'utilisateur subit un contrecoup qui se traduit par une fatigue et une usure extrêmes. Les portes doivent être ouvertes dans l'ordre (on peut ouvrir la troisième porte après la première, mais on ne peut pas ouvrir la troisième porte si l'on a déjà ouvert la quatrième) et chaque porte ne peut être ouverte qu'une seule fois par combat.",
+    "icon": "images/ways/way-8-portes-celestes.png"
+  },
+  {
+    "otype": "capacity",
+    "name": "La porte initiale",
+    "voname": "Kaimon",
+    "limited": true,
+    "rank": 1,
+    "profil": "Techniques héréditaires",
+    "way": "Voie des huit portes célestes",
+    "jutsu": "Kinjutsu",
+    "element": "Inconnu",
+    "full-description": "Cette porte supprime le contrôle régulateur du cerveau sur l'ensemble des muscles du corps. Ainsi ceux-ci peuvent être utilisés à 100% de leurs capacités, alors qu'en temps normal, une personne ne peut utiliser que 20% de son potentiel musculaire du fait de la régulation cérébrale. Pour le tour suivant, l'utilisateur de cette technique voit ses dégâts multipliés par 2, mais perd 10 points de vie.",
+    "short-description": "Cette porte supprime le contrôle régulateur du cerveau sur l'ensemble des muscles du corps. Ainsi ceux-ci peuvent être utilisés à 100% de leurs capacités, alors qu'en temps normal, une personne ne peut utiliser que 20% de son potentiel musculaire du fait de la régulation cérébrale.",
+    "properties": [
+      {
+        "name": "damage",
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "quantity",
+                "adjustment": "x",
+                "count": 2
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": []
+            }
+          }
+        ]
+      },
+      {
+        "name": "property",
+        "property": "Effet",
+        "value": "Prochain tour"
+      },
+      {
+        "name": "character",
+        "character": "PV",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "-",
+            "count": 10
+          }
+        ]
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "La porte de la guérison",
+    "voname": "Kyûmon",
+    "limited": true,
+    "rank": 2,
+    "profil": "Techniques héréditaires",
+    "way": "Voie des huit portes célestes",
+    "jutsu": "Kinjutsu",
+    "element": "Inconnu",
+    "full-description": "Cette porte annule les effets de l'ouverture de la porte initiale, augmente la force physique et redynamise temporairement le corps. L'utilisateur récupère  immédiatement tous ses points de vie et lors du tour suivant, les dégâts de son attaque seront multipliés par 3.",
+    "short-description": "Cette porte annule les effets de l'ouverture de la porte initiale, augmente la force physique et redynamise temporairement le corps. L'utilisateur récupère immédiatement tous ses points de vie.",
+    "properties": [
+      {
+        "name": "property",
+        "property": "Effet",
+        "value": "Prochain tour"
+      },
+      {
+        "name": "damage",
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "quantity",
+                "adjustment": "x",
+                "count": 3
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": []
+            }
+          }
+        ]
+      },
+      {
+        "name": "action",
+        "action": "Soigne",
+        "limited": false,
+        "detail": "Tous les PV perdus",
+        "values": []
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "La porte de la vie",
+    "voname": "Seimon",
+    "limited": true,
+    "rank": 3,
+    "profil": "Techniques héréditaires",
+    "way": "Voie des huit portes célestes",
+    "jutsu": "Kinjutsu",
+    "element": "Inconnu",
+    "full-description": "Cette porte amorce la mobilisation d'une grande énergie physique. L'augmentation du flux sanguin fait rougir la peau de l'utilisateur et ses yeux deviennent complètement blancs. Pour le tour suivant, l'utilisateur de cette technique voit ses dégâts multipliés par 4, mais perd 30 points de vie.",
+    "short-description": "Cette porte amorce la mobilisation d'une grande énergie physique. L'augmentation du flux sanguin fait rougir la peau de l'utilisateur et ses yeux deviennent complètement blancs.",
+    "properties": [
+      {
+        "name": "property",
+        "property": "Effet",
+        "value": "Prochain tour"
+      },
+      {
+        "name": "damage",
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "quantity",
+                "adjustment": "x",
+                "count": 4
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": []
+            }
+          }
+        ]
+      },
+      {
+        "name": "character",
+        "character": "PV",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "-",
+            "count": 30
+          }
+        ]
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "La porte de la blessure",
+    "voname": "Shômon",
+    "limited": true,
+    "rank": 4,
+    "profil": "Techniques héréditaires",
+    "way": "Voie des huit portes célestes",
+    "jutsu": "Kinjutsu",
+    "element": "Inconnu",
+    "full-description": "Cette porte augmente la vitesse de l'utilisateur et ses capacités offensives. L'ouverture de cette porte entraîne des déchirures de tissus musculaires. Pour le tour suivant, l'utilisateur de cette technique voit ses dégâts multipliés par 5, mais perd 40 points de vie.",
+    "short-description": "Cette porte augmente la vitesse de l'utilisateur et ses capacités offensives. L'ouverture de cette porte entraîne des déchirures de tissus musculaires.",
+    "properties": [
+      {
+        "name": "property",
+        "property": "Efffet",
+        "value": "Prochain tour"
+      },
+      {
+        "name": "damage",
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "quantity",
+                "adjustment": "x",
+                "count": 5
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": []
+            }
+          }
+        ]
+      },
+      {
+        "name": "character",
+        "character": "PV",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "-",
+            "count": 40
+          }
+        ]
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "La porte de la rétention",
+    "voname": "Tomon",
+    "limited": true,
+    "rank": 5,
+    "profil": "Techniques héréditaires",
+    "way": "Voie des huit portes célestes",
+    "jutsu": "Kinjutsu",
+    "element": "Inconnu",
+    "full-description": "Cette porte augmente l'énergie physique de l'utilisateur mais déchire ses muscles de façon importante. Pour le tour suivant, l'utilisateur de cette technique voit ses dégâts multipliés par 6, mais perd 50 points de vie.",
+    "short-description": "Cette porte augmente l'énergie physique de l'utilisateur mais déchire ses muscles de façon importante.",
+    "properties": [
+      {
+        "name": "property",
+        "property": "Effet",
+        "value": "Prochain tour"
+      },
+      {
+        "name": "damage",
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "quantity",
+                "adjustment": "x",
+                "count": 6
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": []
+            }
+          }
+        ]
+      },
+      {
+        "name": "character",
+        "character": "PV",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "-",
+            "count": 50
+          }
+        ]
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "way",
+    "name": "Voie du jinchûriki",
+    "profil": "Techniques héréditaires",
+    "full-description": "Les ninjas ayant scellé en eux des démons sont des réceptacles. Ils ne sont pas beaucoup aimés car ils font peur mais ont une réserve supplémentaire de chakra très importante.",
+    "icon": "images/ways/way-jinchuriki.png"
+  },
+  {
+    "otype": "capacity",
+    "name": "Mal aimé",
+    "voname": "Inconnu",
+    "limited": false,
+    "rank": 1,
+    "profil": "Techniques héréditaires",
+    "way": "Voie du jinchûriki",
+    "jutsu": "Inconnu",
+    "element": "Inconnu",
+    "full-description": "Le démon du jinchûriki ayant en général à un moment ou un autre dévasté le village du ninja dans lequel il a été scellé, les habitants en ont peur. Un tel ninja obtient un malus de -2 à tous ses tests en CHA mais ses points de chakra sont de [3 x niveau + Mod. jutsu].",
+    "short-description": "Le démon du jinchûriki ayant en général à un moment ou un autre dévasté le village du ninja dans lequel il a été scellé, les habitants en ont peur. Les points de chakra du jinchûriki sont de [3 x niveau + Mod. jutsu].",
+    "properties": [
+      {
+        "name": "test",
+        "test": "CHA",
+        "values": [
+          {
+            "name": "other",
+            "adjustment": "=",
+            "other": ":"
+          },
+          {
+            "name": "quantity",
+            "adjustment": "-",
+            "count": 2
+          }
+        ],
+        "detail": ""
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "Le sceau du démon",
+    "voname": "Inconnu",
+    "limited": true,
+    "rank": 2,
+    "profil": "Techniques héréditaires",
+    "way": "Voie du jinchûriki",
+    "jutsu": "Fûinjutsu",
+    "element": "Inconnu",
+    "full-description": "Lorsque le jinchûriki utilise le chakra de son démon, il peut devenir incontrôlable, s'il n'arrive pas à se maîtriser. Pour cela il existe une technique, le scellement du démon qui est donné à un de ses coéquipier pour que celui-ci puisse l'arrêter en cas de problème. Ce dernier doit être à moins de 3 mètres du démon pour pouvoir le sceller.  Lorsqu'un joueur atteint ce rang dans cette voie, il doit nommer un autre joueur à qui il confie la technique de sceau. Cette technique limitée a pour effet de maîtriser le démon, mais en contrepartie de mettre son réceptacle indisponible pour 1d6 tours. Lorsqu'il est incontrôlable, si le nombre de point de chakra du jinjûriki tombe à 0, le démon est maîtrisé automatiquement, mais l'hôte est inconscient pour la fin du combat.",
+    "short-description": "Cette technique permet de maîtriser le démon, mais en rend son réceptacle indisponible. Sinon, lorsque le démon est incontrôlable, si le nombre de point de chakra du jinjûriki tombe à 0, le démon est maîtrisé automatiquement, mais l'hôte est inconscient pour la fin du combat.",
+    "properties": [
+      {
+        "name": "action",
+        "action": "Indisponible",
+        "limited": false,
+        "detail": "(utilisation du sceau)",
+        "values": [
+          {
+            "name": "dice",
+            "adjustment": "=",
+            "count": 1,
+            "die": "6"
+          },
+          {
+            "name": "measure",
+            "adjustment": "=",
+            "measure": "tr"
+          }
+        ]
+      },
+      {
+        "name": "measure",
+        "measure": "range",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 3
+          }
+        ],
+        "unit": "m"
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "Le manteau du démon",
+    "voname": "Inconnu",
+    "limited": true,
+    "rank": 3,
+    "profil": "Techniques héréditaires",
+    "way": "Voie du jinchûriki",
+    "jutsu": "Inconnu",
+    "element": "Inconnu",
+    "full-description": "Lorsque le jinchûriki utilise cette technique, il gagne un bonus de 1 en déplacement, +3 en initiative et +4 en attaque. Par contre, à chaque tour, il lance un d12, et sur un résultat de 1, il devient incontrôlable et attaque la ou les personnes les plus proches de lui en utilisant son attaque la plus puissante en terme d'utilisation de chakra. Tant qu'il contrôle son démon, l'utilisateur peut mettre fin à tout moment à cette technique. Dans le cas contraire, seule la technique de scellement peut y mettre un terme.",
+    "short-description": "Si le jinchûriki utilise cette technique, chaque tour, il lance un d12, et sur un résultat de 1, il devient incontrôlable et attaque la personne la plus proche (il utilise son chakra au maximum). Tant qu'il contrôle son démon, l'utilisateur peut mettre fin à cette technique.",
+    "properties": [
+      {
+        "name": "action",
+        "action": "Déplacement",
+        "limited": false,
+        "detail": "",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "+",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "name": "character",
+        "character": "init",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "+",
+            "count": 3
+          }
+        ]
+      },
+      {
+        "name": "action",
+        "action": "Attaque",
+        "limited": false,
+        "detail": "",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "+",
+            "count": 4
+          }
+        ]
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "Le bras du démon",
+    "voname": "Inconnu",
+    "limited": true,
+    "rank": 4,
+    "profil": "Techniques héréditaires",
+    "way": "Voie du jinchûriki",
+    "jutsu": "Inconnu",
+    "element": "Inconnu",
+    "full-description": "Pour pouvoir utiliser cette technique, le jinchûriki doit au préalable s'habiller du manteau du démon. Il lui pousse alors un bras de chakra qui lui permet d'attaquer 2 fois par tour. Cette technique utilise beaucoup de chakra du démon qui rend sa maîtrise de plus en plus difficile. Maintenant, à chaque tour il lance un d12, et sur un résultat de 1 ou 2, il devient incontrôlable et attaque la ou les personnes les plus proches de lui en utilisant son attaque la plus puissante en terme d'utilisation de chakra. Tant qu'il contrôle son démon, l'utilisateur peut mettre fin à tout moment à cette technique. Dans le cas contraire, seule la technique de scellement peut y mettre un terme.",
+    "short-description": "Si le jinchûriki utilise cette technique, chaque tour, il lance un d12, et sur un résultat de 1 ou 2, il devient incontrôlable et attaque la personne la plus proche (il utilise son chakra au maximum). Tant qu'il contrôle son démon, l'utilisateur peut mettre fin à cette technique.",
+    "properties": [
+      {
+        "name": "property",
+        "property": "Nécessite",
+        "value": "Manteau du démon"
+      },
+      {
+        "name": "action",
+        "action": "Attaque",
+        "limited": false,
+        "detail": "",
+        "values": [
+          {
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 2
+          },
+          {
+            "name": "measure",
+            "adjustment": "/",
+            "measure": "tr"
+          }
+        ]
+      }
+    ],
+    "mudras": []
+  },
+  {
+    "otype": "capacity",
+    "name": "L'orbe du démon",
+    "voname": "Inconnu",
+    "limited": true,
+    "rank": 5,
+    "profil": "Techniques héréditaires",
+    "way": "Voie du jinchûriki",
+    "jutsu": "Inconnu",
+    "element": "Inconnu",
+    "full-description": "Pour pouvoir utiliser cette technique, le jinchûriki doit au préalable s'habiller du manteau du démon et posséder son bras. Il peut alors avec le bras, créer un orbe mélangeant le chakra rouge du démon avec le bleu de son hôte. Sur une attaque de jutsu réussie, l'orbe inflige 5d8 DM. Cette technique consomme énormément de chakra et rend la maîtrise du jinchûriki très compliquée. Maintenant, à chaque tour il lance un d12, et sur un résultat de 1 à 3, il devient incontrôlable et attaque la ou les personnes les plus proches de lui en utilisant son attaque la plus puissante en terme d'utilisation de chakra. Tant qu'il contrôle son démon, l'utilisateur peut mettre fin à tout moment à cette technique. Dans le cas contraire, seule la technique de scellement peut y mettre un terme.",
+    "short-description": "Si le jinchûriki utilise cette technique, chaque tour, il lance un d12. Il devient incontrôlable sur un résultat de 1 à 3 et attaque la personne la plus proche (il utilise son chakra au maximum). Tant qu'il contrôle son démon, l'utilisateur peut mettre fin à cette technique.",
+    "properties": [
+      {
+        "name": "property",
+        "property": "Nécessite",
+        "value": "Manteau et bras du démon"
+      },
+      {
+        "name": "fight",
+        "fight": "",
+        "attack": {
+          "name": "attack",
+          "attack": "Jutsu",
+          "values": []
+        },
+        "damage": [
+          {
+            "name": "damage",
+            "values": [
+              {
+                "name": "dice",
+                "adjustment": "=",
+                "count": 5,
+                "die": "8"
+              }
+            ],
+            "dm": {
+              "name": "dm",
+              "dm": [
+                "Tranchant",
+                "Contondant"
+              ]
+            }
+          }
+        ],
+        "detail": ""
+      }
+    ],
+    "mudras": []
+  }
+]

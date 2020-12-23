@@ -1,0 +1,339 @@
+[
+    {
+        "id": "kunai",
+        "name": "Kunaï",
+        "quantity": 1,
+        "hands": 1,
+        "cost": {"value": [{"count": 5}], "unit": "Ryo"},
+        "type": "Weapon",
+        "range": {"value": [{"count": 15}], "unit": "m"},
+        "attack": {
+            "atype": "contact",
+            "critical": "20",
+            "dm": [{"count": 1}, {"die": 6}]
+        },
+        "special-property": ["Équiper/Ranger: Gratuit", "Lancer: Att -1 / kunaï", "Esquive: Reculer de 10 m"],
+        "full-description": "Un kunaï est l'arme de base du ninja. Il s'agit d'une sorte de dague qui peut servir aussi bien au contact qu'à distance. S’équiper d’un kunaï ou le ranger dans son étui ou sa pochette est une action gratuite. Avec un malus de -1 par kunaï à son attaque à distance, un personnage peut aussi lancer un kunäi, et même plusieurs à la fois pour cibler plusieurs adversaires. Les kunaïs peuvent être lancés jusqu'à 20 mètres de distance et chacun des kunaïs sur une attaque au contact ou à distance réussie inflige 1d6 DM. Un kunaï peut être évité automatiquement si l'on recule immédiatement de 10 mètres. Cette action est une action gratuite qui s'effectue lorsqu'un personnage est la cible de kunaïs.",
+        "short-description": "Un kunaï est l'arme de base du ninja et s'utilise aussi bien au contact qu'à distance. Ils peuvent être lancés seuls, en nombre et esquivés si l'on recule.",
+        "weight": {"value": [{"count": 0.1}], "unit": "Kg"}
+    },
+    {
+        "id": "shurikens",
+        "name": "Shuriken",
+        "hands": 1,
+        "quantity": 1,
+        "cost": {"value": [{"count": 3}], "unit": "Ryô"},
+        "type": "Weapon",
+        "range": {"value": [{"count": 20}], "unit": "m"},
+        "attack": {
+            "atype": "ranged",
+            "critical": "20",
+            "dm": [{"count": 1}, {"die": 4}]
+        },
+        "special-property": ["Équiper/Ranger: Gratuit", "Multiple: Att -1/shuriken", "Précis (L): 1d4 + DEX", "Esquive: Reculer de 10 m"],
+        "full-description": "Un shuriken est une arme très couramment utilisée par les ninjas. Il s'agit d'étoiles de métal pointues destinées à être lancées. Bien que généralement petits, les shurikens peuvent servir à gêner la cible, voire à lui infliger de graves blessures si ils sont utilisés avec précision. S’équiper d’un shuriken ou le ranger dans son étui ou sa pochette est une action gratuite. Au prix d'une action limitée, un personnage peut en lancer un seul avec précision et ajouter son Mod. de DEX aux DM. Avec un malus de -1 par shuriken, un personnage peut également lancer plusieurs shurikens à la fois pour cibler plusieurs adversaires. Ces armes peuvent être lancées jusqu'à 15 mètres de distance et chaque shuriken s'il touche sa cible, inflige 1d4 DM. Un shuriken peut être évité automatiquement si l'on recule immédiatement de 10 mètres. Cette action est une action gratuite qui s'effectue lorsqu'un personnage est la cible de shurikens.",
+        "short-description": "Étoiles de métal pointues destinées à être lancées. Ils peuvent être lancés seuls, de façon précise ou en nombre. Il peuvent être esquivés si l'on recule.",
+        "weight": {"value": [{"count": 0.1}], "unit": "Kg"}
+    },
+    {
+        "id": "fuma-shurikens",
+        "hands": 1,
+        "name": "Fûma shuriken",
+        "quantity": 1,
+        "cost": {"value": [{"count": 100}], "unit": "Ryô"},
+        "type": "Weapon",
+        "range": {"value": [{"count": 10}], "unit": "m"},
+        "attack": {
+            "atype": "ranged",
+            "critical": "18-20",
+            "mod": [{"type": "-"}, {"count": 1}],
+            "dm": [{"count": 1}, {"die": 10}]
+        },        "special-property": [],
+        "full-description": "Un fûma shuriken est shuriken géant possédant 4 lames tranchantes attachées à un anneau central qui peuvent se replier sur une seule lame. Il est assez lourd et difficile à manipuler, impose un malus de -1 en attaque mais ses effets sont dévastateurs car sa zone de critique est étendue de 2 points ([18-20]).",
+        "short-description": "Un fûma shuriken est shuriken géant possédant 4 lames tranchantes attachées à un anneau central qui peuvent se replier sur une seule lame. Il impose un malus en attaque mais sa zone de critique est étendue.",
+        "weight": {"value": [{"count": 0.1}], "unit": "Kg"}
+    },
+    {
+        "id": "tanto",
+        "hands": 1,
+        "name": "Tantô",
+        "cost": {"value": [{"count": 12}], "unit": "Ryô"},
+        "type": "Weapon",
+        "attack": {
+            "atype": "melee",
+            "critical": "17-20",
+            "dm": [{"count": 1}, {"die": 6}]
+        },
+        "full-description": "Un Tantô est tout simplement un petit katana qui se porte sur son dos derrière l'épaule droite. Il s'utilise à 2 mains et inflige 1d6 dégâts. Son maniement facile le rend très dangeureux lorsqu'il atteind sa cible  (critiques sur 17-20).",
+        "short-description": "Un Tantô est tout simplement un petit katana qui se porte sur son dos derrière l'épaule droite.",
+        "weight": {"value": [{"count": 1.0}], "unit": "Kg"}
+    },
+    {
+        "id": "tonfas",
+        "hands": 1,
+        "name": "Tonfas",
+        "cost": {"value": [{"count": 20}], "unit": "Ryô"},
+        "type": "Weapon",
+        "attack": {
+            "atype": "melee",
+            "dm": [{"count": 2}, {"die": 4}]
+        },
+        "quantity": 2,
+        "defense": [{"type": "+"}, {"count": 1}],
+        "full-description": "Un tonfa est un bâton ayant une petite poignée perpendiculaire positionnée au tiers de la longueur du bâton. Ils s'utilisent par 2 pour attaquer, piquer, bloquer et matraquer l'adversaire. Sur une attaque au contact réussie ils infligent 2d4 DM. Cette arme procure également +1 en DEF.",
+        "short-description": "Un tonfa est un bâton ayant une petite poignée perpendiculaire positionnée au tiers de la longueur du bâton. Ils s'utilisent par 2 pour attaquer, piquer, bloquer et matraquer l'adversaire.",
+        "weight": {"value": [{"count": 0.5}], "unit": "Kg"}
+    },
+    {
+        "id": "katana",
+        "hands": 2,
+        "name": "Katana",
+        "cost": {"value": [{"count": 12}], "unit": "Ryô"},
+        "type": "Weapon",
+        "attack": {
+            "atype": "melee",
+            "critical": "19-20",
+            "dm": [{"count": 1}, {"die": 10}]
+        },
+        "special-property": [],
+        "full-description": "Le katana est une arme blanche courbe à un seul tranchant. Le katana est une arme de taille (dont on utilise le tranchant) et d'estoc (dont on utilise la pointe). Il s'utilise à 2 mains et inflige 1d10 dégâts (critiques sur 19-20).",
+        "short-description": "Le katana est une arme blanche courbe à un seul tranchant.",
+        "weight": {"value": [{"count": 1.5}], "unit": "Kg"}
+    },
+    {
+        "id": "senbon",
+        "name": "Senbon",
+        "hands": 1,
+        "quantity": 1,
+        "cost": {"value": [{"count": 10}], "unit": "Ryô"},
+        "type": "Weapon",
+        "range": {"value": [{"count": 15}], "unit": "m"},
+        "attack": {
+            "atype": "melee",
+            "critical": "20",
+            "dm": [{"count": 1}, {"die": 4}]
+        },
+        "special-property": ["Paralysé: Test CON < 10", "Lancer: 1d4", "Lancer (L): 1d4 + chakra"],
+        "full-description": "Les senbons sont de longues aiguilles en acier utilisées par les ninjas pour immobiliser, blesser ou tuer leur cible en visant leurs points vitaux. Sur une attaque au contact réussie, elles infligent 1d4 DM et peuvent paralyser un adversaire pour un tour si celui-ci rate un teste de CON difficulté 10. Les sembons peuvent être lancés jusqu'à une distance de 15 mètres. Sur une attaque à distance réussie, elles infligent 1d4 DM auxquels on peut ajouter des points de chakra si on utilise une action limitée.",
+        "short-description": "Les senbons sont de longues aiguilles en acier utilisées par les ninjas pour immobiliser, blesser ou tuer leur cible en visant leurs points vitaux.",
+        "weight": {"value": [{"count": 0}], "unit": "Kg"}
+    },
+    {
+        "id": "bombe-fumigene",
+        "name": "Bombe fumigène",
+        "quantity": 1,
+        "cost": {"value": [{"count": 200}], "unit": "Ryô"},
+        "type": "Material",
+        "range": {"value": [{"count": 10}], "unit": "m"},
+        "area": {"value": [{"count": 10}], "unit": "m"},
+        "duration": {"value": [{"count": 1}, {"die": 4}, {"type": "+"}, {"target": "DEX"} ], "unit": "tr"},
+        "special-property": ["Discretion: +5", "Attaque: -5"],
+        "full-description": "Les bombes fumigènes sont principalement utilisées pour cacher un ninja, distraire un ennemi, ou bien servir d'outil d'évasion. La bombe peut être projetée jusqu'à 15 mètres et provoque un nuage de fumée de 10 mètres de diamètre sur une hauteur de 3 mètres pour une durée de [1d4 + mod DEX] tours. Un personnage se trouvant dans un nuage de fumée bénéficie d'un bonus de +10 en discrétion. Attaquer depuis la zone ou attaquer un personnage se trouvant dans la zone impose un malus de -5.",
+        "short-description": "Les bombes fumigènes sont principalement utilisées pour cacher un ninja, distraire un ennemi, ou bien servir d'outil d'évasion. Attaquer depuis la zone ou attaquer un personnage se trouvant dans la zone impose un malus à l'attaque.",
+        "weight": {"value": [{"count": 0.1}], "unit": "Kg"}
+    },
+    {
+        "id": "bombe-lumineuse",
+        "name": "Bombe lumineuse",
+        "quantity": 1,
+        "cost": {"value": [{"count": 200}], "unit": "Ryô"},
+        "type": "Material",
+        "range": {"value": [{"count": 10}], "unit": "m"},
+        "area": {"value": [{"count": 10}], "unit": "m"},
+        "duration": {"value": [{"count": 1}, {"die": 4}], "unit": "tr"},
+        "special-property": ["Perception (vue): -5", "Attaque: -5"],
+        "full-description": "Les bombes lumineuses sont principalement utilisées pour aveugler un ennemi ou pour faire diversion. La bombe peut être lancée jusqu'à 10 mètres et explose en projetant une lumière aveuglante dans un rayon de 10 mètres. Un personnage se trouvant dans cette zone doit réussir un test de CON de [10 + Mod DEX] du lanceur sous peine d'être éblouie pour une durée de 1d4 tours et de se voir imposer un malus de -5 à tous ses tests d'attaque et perception visuelle.",
+        "short-description": "Les bombes lumineuses sont principalement utilisées pour aveugler un ennemi pour faire diversion. Ebloui, un personnage subit des malus de perception et d'attaque.",
+        "weight": {"value": [{"count": 0.1}], "unit": "Kg"}
+    },
+    {
+        "type": "Material",
+        "id": "briquet",
+        "name": "Briquet",
+        "duration": {"value": [{"count": 1}], "unit": "scénario"},
+        "cost": {"value": [{"count": 1}], "unit": "Ryô"},
+        "full-description": "Un briquet est un petit objet avec un petit réservoir de gaz qui s'enflamme lorsque l'on provoque une étincelle. La lumière du briquet n'est pas suffisante pour s'éclairer. On considère que la durée de vie d'un briquet est d'un scénario.",
+        "quantity": 1,
+        "short-description": "Un briquet est un petit objet avec un petit réservoir de gaz qui s'enflamme lorsque l'on provoque une étincelle.",
+        "weight": {"value": [{"count": 0}], "unit": "Kg"}
+    },
+    {
+        "type": "Material",
+        "name": "Lampe torche",
+        "id": "lampe-torche",
+        "range": {"value": [{"count": 4}], "unit": "m"},
+        "area": {"value": [{"count": 3}], "unit": "m"},
+        "duration": {"value": [{"count": 1}], "unit": "scénario"},
+        "cost": {"value": [{"count": 5}], "unit": "Ryô"},
+        "full-description": "Une lampe torche est un appareil électrique portable produisant de la lumière. Elle permet d'éclairer un faisceau de 3 mètres de large jusqu'à une distance de 4 mètres. On considère que la durée de vie d'une lampe torche est d'un scénario.",
+        "quantity": 1,
+        "short-description": "Une lampe torche est un appareil électrique portable produisant de la lumière.",
+        "weight": {"value": [{"count": 0.1}], "unit": "Kg"}
+    },
+    {
+        "type": "Material",
+        "name": "Couverture",
+        "id": "couverture",
+        "cost": {"value": [{"count": 1}], "unit": "Ryô"},
+        "full-description": "Une couverture bien épaisse qui tient chaud lorsque l'on dort à la belle étoile.",
+        "quantity": 1,
+        "short-description": "Une couverture bien épaisse qui tient chaud lorsque l'on dort à la belle étoile.",
+        "weight": {"value": [{"count": 0.3}], "unit": "Kg"}
+    },
+    {
+        "type": "Material",
+        "name": "Grappin",
+        "id": "grappin",
+        "range": {"value": [{"count": 15}], "unit": "m"},
+        "cost": {"value": [{"count": 3}], "unit": "Ryô"},
+        "full-description": "Un grappin est un outil composé de plusieurs crochets, généralement attaché à une corde ou autre filin. Il permettra de venir à bout de n'importe quelle falaise du moment que l'on ai pas le vertige. Ce grappin fait 15 mètres de long.",
+        "quantity": 1,
+        "short-description": "Un grappin composé de plusieurs crochets qui permettra de venir à bout de n'importe quelle falaise du moment que l'on ai pas le vertige.",
+        "weight": {"value": [{"count": 0.5}], "unit": "Kg"}
+    },
+    {
+        "type": "Material",
+        "name": "Corde",
+        "id": "corde",
+        "range": {"value": [{"count": 15}], "unit": "m"},
+        "cost": {"value": [{"count": 2}], "unit": "Ryô"},
+        "full-description": "Une solide corde de 15 mètres qui permettra de ficeler même le plus costaud des méchants.",
+        "quantity": 1,
+        "short-description": "Une solide corde qui permettra de ficeler même le plus costaud des méchants.",
+        "weight": {"value": [{"count": 0.3}], "unit": "Kg"}
+    },
+    {
+        "type": "Material",
+        "name": "Fil métallique",
+        "id": "fil-metallique",
+        "range": {"value": [{"count": 50}], "unit": "m"},
+        "cost": {"value": [{"count": 5}], "unit": "Ryô"},
+        "full-description": "Un fil métallique est un mince morceau de fil très dur, qui peut être utilisé dans une variété de situations comme la décente en rappel, la manipulation d'armes et pour imiter les mouvements de l'adversaire ou poser des pièges. Il est vendu en petit rouleau de 30 mètres.",
+        "quantity": 1,
+        "short-description": "Un fil métallique est un mince morceau de fil très dur, qui peut être utilisé dans une variété de situations.",
+        "weight": {"value": [{"count": 0.2}], "unit": "Kg"}
+    },
+    {
+        "type": "Material",
+        "name": "Outils de crochetage",
+        "id": "outils-de-crochetage",
+        "cost": {"value": [{"count": 10}], "unit": "Ryô"},
+        "full-description": "Cet étui comprend l'ensemble des outils nécessaires pour crocher n'importe quelle serrure. Elle contient un passe partout, des crochets, des tendeurs, des racleurs et des demi-diamants de plusieurs tailles.",
+        "quantity": 1,
+        "special-property": "Crocheter une serrure",
+        "short-description": "Outils nécessaires pour crocher n'importe quelle serrure.",
+        "weight": {"value": [{"count": 0.2}], "unit": "Kg"}
+    },
+    {
+        "type": "Material",
+        "name": "Petit rouleau de parchemin",
+        "id": "petit-rouleau-de- parchemin",
+        "cost": {"value": [{"count": 50}], "unit": "Ryô"},
+        "full-description": "Les petits rouleaux de parchemin sont utilisés pour sceller un pacte avec des créatures, ou sceller des objets tout en facilitant leur transport. Ce petit parchemin permet d'écrire jusqu'à 5 invocations d'objets de petites tailles ne dépassant pas 50 cm de diamètres ou des contrats d'invocation de créatures.",
+        "quantity": 1,
+        "use": 5,
+        "short-description": "Les petits rouleaux de parchemin sont utilisés pour invoquer des créatures, ou des objets tout en facilitant leur transport.",
+        "weight": {"value": [{"count": 0.3}], "unit": "Kg"}
+    },
+    {
+        "type": "Material",
+        "name": "Grand rouleau de parchemin",
+        "id": "grand-rouleau-de-parchemin",
+        
+        "cost": {"value": [{"count": 500}], "unit": "Ryô"},
+        "full-description": "Les grands rouleaux de parchemin sont utilisés pour sceller des objets volumineux tout en facilitant leur transport. Ce grand parchemin permet d'écrire une invocation  d'objets de grande taille (supérieur à 50 cm).",
+        "quantity": 1,
+        "use": 1,
+        "short-description": "Les grands rouleaux de parchemin sont utilisés pour sceller des objets volumineux tout en facilitant leur transport.",
+        "weight": {"value": [{"count": 1}], "unit": "Kg"}
+    },
+    {
+        "type": "Material",
+        "name": "Parchemin explosif",
+        "id": "parchemin-explosif",
+        "cost": {"value": [{"count": 200}], "unit": "Ryô"},
+        "full-description": "Un parchemin explosif est un morceau de papier sur lequel est apposé le sceau « Explosion ». Infusé avec du chakra, il s'enflamme et explose lorsqu'il est activé directement après l'embrasement. Pour qu'un parchemin explosif soit déclenché, l'utilisateur doit réaliser le mudrâ du Serpent et faire un test de JUTSU de difficulté 12. En cas d'échec, le parchemin est inutilisable. En explosant, le parchemin inflige 3d6 à tout personnage se trouvant dans une zone de 3 mètres de diamètre autour du parchemin.",
+        "area": {"value": [{"count": 3}], "unit": "m"},
+        "attack": {
+            "atype": "auto",
+            "critical": "20",
+            "dm": [{"count": 3}, {"die": 6}]
+        },
+        "quantity": 1,
+        "special-property": "Déclencher: Test JUTSU > 12",
+        "short-description": "Un parchemin explosif est un morceau de papier sur lequel est apposé le sceau « Explosion ». Infusé avec du chakra, il s'enflamme et explose lorsqu'il est déclenché.",
+        "weight": {"value": [{"count": 0}], "unit": "Kg"}
+    },
+    {
+        "type": "Material",
+        "name": "Rations",
+        "id": "rations",
+        "cost": {"value": [{"count": 5}], "unit": "Ryô"},
+        "full-description": "Tous les aliments nécessaires pour subvenir aux besoins de son corps pendant une journée. Avec quelques unes de ces rations en poche, vous êtes sûr de ne jamais avoir faim lorsque vous partez à l'aventure. Ce paquetage permet à un ninja de manger 3 fois par jour pendant 7 jours.",
+        "quantity": 7,
+        "use": 3,
+        "short-description": "Tous les aliments nécessaires pour subvenir aux besoins de son corps pendant une journée. Avec quelques unes de ces rations en poche, vous êtes sûr de ne jamais avoir faim lorsque vous partez à l'aventure.",
+        "weight": {"value": [{"count": 3}], "unit": "Kg"}
+    },
+    {
+        "type": "Material",
+        "name": "Gourde",
+        "id": "gourde",
+        "cost": {"value": [{"count": 2}], "unit": "Ryô"},
+        "full-description": "Une gourde est un petit récipient portatif destiné à transporter de l'eau ou tout autre boisson. Elle est plus coûteuse qu'une simple bouteille, mais plus solide et réutilisable. Cette gourde permet de transporter 1 litre.",
+        "quantity": 1,
+        "short-description": "Une gourde est un petit récipient portatif destiné à transporter de l'eau ou tout autre boisson. Elle est plus coûteuse qu'une simple bouteille, mais plus solide et réutilisable. Cette gourde permet de transporter 1 litre.",
+        "weight": {"value": [{"count": 1}], "unit": "Kg"}
+    },
+    {
+        "type": "Material",
+        "name": "Matériel d'écriture",
+        "id": "materiel-d-ecriture",
+        "cost": {"value": [{"count": 5}], "unit": "Ryô"},
+        "full-description": "Une plume, une fiole d'encre et un rouleau de papier. Vous êtes paré pour écrire votre premier roman.",
+        "quantity": 1,
+        "short-description": "Une plume, une fiole d'encre et un rouleau de papier. Vous êtes paré pour écrire votre premier roman.",
+        "weight": {"value": [{"count": 0.1}], "unit": "Kg"}
+    },
+    {
+        "type": "Armor",
+        "name": "Bandeau frontal",
+        "id": "bandeau-frontal",
+        "cost": {"value": [{"count": 1}], "unit": "Ryô"},
+        "full-description": "Un bandeau frontal est un accessoire en tissu sur lequel est fixé une plaque de métal où est gravé le symbole d'un des villages ninjas. Ils servent à indiquer l'appartenance militaire de leurs porteurs.",
+        "short-description": "Un bandeau frontal est un accessoire en tissu sur lequel est fixée une plaque de métal où est gravé le symbole d'un des villages ninjas. Ils servent à indiquer l'appartenance militaire de leurs porteurs.",
+        "weight": {"value": [{"count": 0.1}], "unit": "Kg"} 
+    },
+    {
+        "type": "Armor",
+        "name": "Gilet de protection",
+        "id": "gilet-de-protection",
+        "cost": {"value": [{"count": 50}], "unit": "Ryô"},
+        "full-description": "Les gilets de protection ressemblent à des gilets pare-balles et sont équipés avec trois sachets de défilement de chaque côté de la poitrine pour y défiler de la médecine ou des outils ninjas comme les kunäis ou les rouleaux de parchemin. Pour la protection, ils ont un protège-cou et un rembourrage supplémentaire sur les épaules. Ils procurent une DEF de +2 mais impose une pénalité de -1 à tous les tests de DEX.",
+        "short-description": "Les gilets de protection ressemblent à des gilets pare-balles et sont équipés avec trois sachets de chaque côté de la poitrine.",
+        "special-property": ["Test DEX: -1"],
+        "weight": {"value": [{"count": 2}], "unit": "Kg"},
+        "defense": [{"type": "+"}, {"count": 2}]
+    },
+    {
+        "type": "Armor",
+        "name": "Armure de combat",
+        "id": "gilet-de-protection",
+        "cost": {"value": [{"count": 200}], "unit": "Ryô"},
+        "full-description": "L'armure de combat est un équipement protecteur qui couvre le samouraï de la tête au pied. L'armure est constituée de plusieurs parties et est conçue de manière à favoriser le plus possible la mobilité du combattant. Ils procurent une DEF de +4 mais impose une pénalité de -2 à tous les tests de DEX.",
+        "short-description": "Les gilets de protection ressemblent à des gilets pare-balles et sont équipés avec trois sachets de chaque côté de la poitrine.",
+        "special-property": ["Test DEX: -2"],
+        "weight": {"value": [{"count": 5}], "unit": "Kg"},
+        "defense": [{"type": "+"}, {"count": 4}]
+    },
+    {
+        "type": "Armor",
+        "name": "Kabuto",
+        "id": "kabuto",
+        "cost": {"value": [{"count": 8}], "unit": "Ryô"},
+        "full-description": "Le kabuto est le casque traditionnel de l'armure japonaise, employé par les samouraïs. Il est constitué en forme d'une bombe, composée de diverses plaques en métal forgé et rivetées entre elles, protégeant le sommet du crâne ainsi qu'une série de lamelles souples protégeant le cou. Ce casque permet d'éviter les coups critiques mais impose un malus de perception de -2.",
+        "short-description": "Le kabuto est le casque traditionnel de l'armure japonaise, employé par les samouraïs.",
+        "special-property": ["Perception: -2", "Immunité aux critiques"],
+        "weight": {"value": [{"count": 1}], "unit": "Kg"}
+    }
+]
