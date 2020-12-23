@@ -184,7 +184,7 @@ with open("src/naruto-ways.json") as nw:
                 otable.removeChild(otable_row)
 
     gen_path = Path("generated")
-    if not gen_path.exists :
-            gen_path.mkdir()
+    if not gen_path.exists() :
+        gen_path.mkdir()
             
     doc.save("generated/naruto-rules-generated.odt")
