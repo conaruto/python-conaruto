@@ -1,6 +1,7 @@
 from odf import text, draw, teletype, table
 from odf.opendocument import load
 from unicodedata import normalize
+from pathlib import Path
 import json
 doc = load("src/naruto-rules-template.odt")
 
@@ -182,4 +183,8 @@ with open("src/naruto-ways.json") as nw:
                 
                 otable.removeChild(otable_row)
 
+    gen_path = Path("generated")
+    if not gen_path.exists :
+            gen_path.mkdir()
+            
     doc.save("generated/naruto-rules-generated.odt")
