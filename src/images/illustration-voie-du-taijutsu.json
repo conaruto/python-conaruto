@@ -1,0 +1,22 @@
+{
+	"characterId": "boy",
+	"attributes": [
+		{"categoryId":"body","itemId":"1"},
+		{"categoryId":"eyes","itemId":"12"},
+		{"categoryId":"nose","itemId":"7"},
+		{"categoryId":"mouth","itemId":"1"},
+		{"categoryId":"Fsymbol","itemId":"14"},
+		{"categoryId":"forearms","itemId":"2"},
+		{"categoryId":"under","itemId":"5"},
+		{"categoryId":"face","itemId":"4"},
+		{"categoryId":"headband","itemId":"23"},
+		{"categoryId":"legs","itemId":"4"},
+		{"categoryId":"bottom","itemId":"18"},
+		{"categoryId":"feet","itemId":"2"},
+		{"categoryId":"top","itemId":"36"},
+		{"categoryId":"hair","itemId":"30"},
+		{"categoryId":"animal","itemId":"1"},
+		{"categoryId":"weapon","itemId":"2"},
+		{"categoryId":"extra","itemId":"7"}
+	]
+}
