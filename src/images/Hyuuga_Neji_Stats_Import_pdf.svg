@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   width="540"
+   height="500"
+   id="svg2">
+  <path
+     d="M 264.98016,412.02409 383.27351,363.29732 432.27217,245.66038 383.27351,128.02346 264.98016,79.296638 146.68683,128.02346 97.688097,245.66038 146.68683,363.29732 264.98016,412.02409 z"
+     id="path2869"
+     style="fill:#feecc6;fill-opacity:1;fill-rule:nonzero;stroke:none;filter:url(#filter3185-1)" />
+  <defs
+     id="defs4">
+    <filter
+       filterUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       color-interpolation-filters="sRGB"
+       id="filter3185">
+      <desc
+         id="desc2827">Produces a 3D lighting effect.</desc>
+      <feGaussianBlur
+         in="SourceAlpha"
+         stdDeviation="1.5"
+         result="blur"
+         id="feGaussianBlur2829" />
+      <feOffset
+         in="blur"
+         dx="0"
+         dy="3"
+         result="offsetBlur"
+         id="feOffset2831" />
+      <feComposite
+         in2="SourceAlpha"
+         operator="in"
+         in="blur"
+         result="blur"
+         id="feComposite2833" />
+      <feComposite
+         in2="blur"
+         operator="arithmetic"
+         k1="0"
+         k2="1"
+         k3="1"
+         k4="0"
+         in="SourceGraphic"
+         result="litPaint"
+         id="feComposite2835" />
+      <feMerge
+         id="feMerge2837">
+        <feMergeNode
+           in="offsetBlur"
+           id="feMergeNode2839" />
+        <feMergeNode
+           in="litPaint"
+           id="feMergeNode2841" />
+      </feMerge>
+    </filter>
+    <filter
+       filterUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       color-interpolation-filters="sRGB"
+       id="filter3185-1">
+      <desc
+         id="desc2827">Produces a 3D lighting effect.</desc>
+      <feGaussianBlur
+         in="SourceAlpha"
+         stdDeviation="2"
+         result="blur"
+         id="feGaussianBlur2829-1" />
+      <feOffset
+         in="blur"
+         dx="4"
+         dy="4"
+         result="offsetBlur"
+         id="feOffset2831-1" />
+      <feComposite
+         in2="SourceAlpha"
+         operator="in"
+         in="blur"
+         result="blur"
+         id="feComposite2833-1" />
+      <feComposite
+         in2="blur"
+         operator="arithmetic"
+         k1="0"
+         k2="1"
+         k3="1"
+         k4="0"
+         in="SourceGraphic"
+         result="litPaint"
+         id="feComposite2835-1" />
+      <feMerge
+         id="feMerge2837">
+        <feMergeNode
+           in="offsetBlur"
+           id="feMergeNode2839-1" />
+        <feMergeNode
+           in="litPaint"
+           id="feMergeNode2841-1" />
+      </feMerge>
+    </filter>
+
+  </defs>
+  <g
+     transform="translate(-119.2218,-280.71314)"
+     id="layer1">
+    <text
+       x="357.38449"
+       y="347.37039"
+       id="text2925"
+       style="font-size:18px;font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Effloresce">
+      <tspan
+         x="357.38449"
+         y="347.37039"
+         id="tspan2927">ninjutsu</tspan>
+    </text>
+    <g
+       transform="matrix(1.25,0,0,-1.25,134.185,777.078)"
+       id="g2847">
+      <g
+         id="g2873">
+        <g
+           transform="matrix(0.0133333,0,0,0.0133333,200,200)"
+           id="g2875">
+          <path
+             d="M 0,8181.818 5785.419,5785.419 8181.818,0 5785.419,-5785.419 0,-8181.818 -5785.419,-5785.419 -8181.818,0.00114441 -5785.42,5785.419 0,8181.818 z"
+             id="path2877"
+             style="fill:none;stroke:#0a31ff;stroke-width:100;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:0.5;stroke-dasharray:521.841;stroke-dashoffset:-260.921" />
+        </g>
+        <g
+           transform="matrix(0.0133333,0,0,0.0133333,200,200)"
+           id="g2879">
+          <path
+             d="M 0,6363.636 4499.771,4499.771 6363.636,0 4499.771,-4499.771 0,-6363.637 -4499.771,-4499.771 -6363.637,0 -4499.771,4499.771 0,6363.636 z"
+             id="path2881"
+             style="fill:none;stroke:#0a31ff;stroke-width:100;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:0.5;stroke-dasharray:487.052;stroke-dashoffset:-243.526" />
+        </g>
+        <g
+           transform="matrix(0.0133333,0,0,0.0133333,200,200)"
+           id="g2883">
+          <path
+             d="M 0,4545.454 3214.121,3214.121 4545.454,0 3214.121,-3214.121 0,-4545.455 -3214.121,-3214.121 -4545.455,0 -3214.122,3214.121 0,4545.454 z"
+             id="path2885"
+             style="fill:none;stroke:#0a31ff;stroke-width:100;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:0.5;stroke-dasharray:434.867;stroke-dashoffset:-217.434" />
+        </g>
+        <g
+           transform="matrix(0.0133333,0,0,0.0133333,200,200)"
+           id="g2887">
+          <path
+             d="M 0,2727.272 1928.473,1928.473 2727.272,0 1928.473,-1928.473 0,-2727.272 -1928.473,-1928.473 -2727.272,0 -1928.474,1928.473 0,2727.272 z"
+             id="path2889"
+             style="fill:none;stroke:#0a31ff;stroke-width:100;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:0.5;stroke-dasharray:347.894;stroke-dashoffset:-173.947" />
+        </g>
+        <g
+           transform="matrix(0.0133333,0,0,0.0133333,200,200)"
+           id="g2891">
+          <path
+             d="M 0,909.0912 642.8238,642.8238 909.0912,0 642.8238,-642.8238 0,-909.0912 -642.8238,-642.8238 -909.0912,0 -642.825,642.8238 0,909.0912 z"
+             id="path2893"
+             style="fill:none;stroke:#0a31ff;stroke-width:100;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:0.5;stroke-dasharray:none" />
+        </g>
+        <g
+           transform="matrix(0.0133333,0,0,0.0133333,200,200)"
+           id="g2895">
+          <path
+             d="M 0,909.0912 0,10000 M 642.8238,642.8238 7071.068,7071.068 M 909.0912,0 10000,0 M 642.8238,-642.8238 7071.068,-7071.068 M 0,-909.0912 0,-10000 M -642.8238,-642.8238 -7071.068,-7071.068 M -909.0912,0 -10000,0.00114441 M -642.825,642.8238 -7071.068,7071.066 -642.825,642.8238 z"
+             id="path2897"
+             style="fill:none;stroke:#0a31ff;stroke-width:100;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:0.5;stroke-dasharray:none" />
+        </g>
+      </g>
+      <g
+         id="g3131">
+        <g
+           transform="matrix(0.0133333,0,0,0.0133333,200,200)"
+           id="g3133" />
+        <path
+           d="M 200,309.0909 285.7099,285.7099 260.606,200 259.9969,140.0031 200,127.2727 114.2901,114.2901 103.0303,200 l 36.9728,59.9969 m 0,0 L 127.2727,200 122.8611,122.8611 200,127.2727 259.9969,140.0031 260.606,200 285.7099,285.7099 200,296.9697 140.0031,259.9969 z"
+           id="path3139"
+           style="fill:#0a31ff;fill-opacity:0.85;fill-rule:nonzero;stroke:none" />
+        <path
+           d="M 200,296.9697 285.7099,285.7099 260.606,200 259.9969,140.0031 200,127.2727 122.8611,122.8611 127.2727,200 l 12.7304,59.9969 m 0,0 L 139.3939,200 140.0031,140.0031 200,127.2727 251.4259,148.5741 260.606,200 268.5679,268.5679 200,272.7273 140.0031,259.9969 z"
+           id="path3141"
+           style="fill:#007fff;fill-opacity:0.85;fill-rule:nonzero;stroke:none" />
+        <path
+           d="M 200,272.7273 268.5679,268.5679 260.606,200 251.4259,148.5741 200,127.2727 140.0031,140.0031 139.3939,200 140.0031,259.9969 200,272.7273 z"
+           id="path3143"
+           style="fill:#00d5ff;fill-opacity:0.85;fill-rule:nonzero;stroke:none" />
+      </g>
+    </g>
+    <text
+       x="159.16156"
+       y="540.34943"
+       id="text3821"
+       xml:space="preserve"
+       style="font-size:40px;font-variant:normal;font-stretch:normal;fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:#ff0000;stroke-opacity:1;filter:url(#filter3185);font-family:Effloresce"><tspan
+         x="159.16156"
+         y="540.34943"
+         id="tspan3825">精</tspan></text>
+    <text
+       x="202.9532"
+       y="400.33807"
+       id="text3827"
+       xml:space="preserve"
+       style="font-size:40px;font-variant:normal;font-stretch:normal;fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:#ff0000;stroke-opacity:1;filter:url(#filter3185);font-family:Effloresce"><tspan
+         x="202.9532"
+         y="400.33807"
+         id="tspan3831">印</tspan></text>
+    <text
+       x="360.4426"
+       y="323.36838"
+       id="text3833"
+       xml:space="preserve"
+       style="font-size:40px;font-variant:normal;font-stretch:normal;fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:#ff0000;stroke-opacity:1;filter:url(#filter3185);font-family:Effloresce"><tspan
+         x="360.4426"
+         y="323.36838"
+         id="tspan3837">忍</tspan></text>
+    <text
+       x="519.54871"
+       y="396.00473"
+       id="text3801"
+       xml:space="preserve"
+       style="font-size:40px;font-variant:normal;font-stretch:normal;fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:#ff0000;stroke-opacity:1;filter:url(#filter3185);font-family:Effloresce"><tspan
+         x="519.54871"
+         y="396.00473"
+         id="tspan3803">体</tspan></text>
+    <text
+       x="566.85919"
+       y="540.21045"
+       id="text3839"
+       xml:space="preserve"
+       style="font-size:40px;font-variant:normal;font-stretch:normal;fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:#ff0000;stroke-opacity:1;filter:url(#filter3185);font-family:Effloresce"><tspan
+         x="566.85919"
+         y="540.21045"
+         id="tspan3843">幻</tspan></text>
+    <text
+       x="517.40503"
+       y="421.55743"
+       id="text2925-2"
+       style="font-size:18px;font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Effloresce">
+      <tspan
+         x="517.40503"
+         y="421.55743"
+         id="tspan2927-6">taijutsu</tspan>
+    </text>
+    <text
+       x="558.31476"
+       y="567.79785"
+       id="text2925-2-0"
+       style="font-size:18px;font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Effloresce">
+      <tspan
+         x="558.31476"
+         y="567.79785"
+         id="tspan2927-6-2">genjutsu</tspan>
+    </text>
+    <text
+       x="489.63852"
+       y="719.20923"
+       id="text2925-2-0-9"
+       style="font-size:18px;font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Effloresce">
+      <tspan
+         x="489.63852"
+         y="719.20923"
+         id="tspan2927-6-2-0">intelligence</tspan>
+    </text>
+    <text
+       x="365.74261"
+       y="761.70013"
+       id="text2925-2-0-9-9"
+       style="font-size:18px;font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Effloresce">
+      <tspan
+         x="365.74261"
+         y="761.70013"
+         id="tspan2927-6-2-0-9">force</tspan>
+    </text>
+    <text
+       x="209.08643"
+       y="711.36096"
+       id="text2925-2-0-9-9-4"
+       style="font-size:18px;font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Effloresce">
+      <tspan
+         x="209.08643"
+         y="711.36096"
+         id="tspan2927-6-2-0-9-5">vitesse</tspan>
+    </text>
+    <text
+       x="146.03546"
+       y="570.21979"
+       id="text2925-2-0-9-9-4-1"
+       style="font-size:18px;font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Effloresce">
+      <tspan
+         x="146.03546"
+         y="570.21979"
+         id="tspan2927-6-2-0-9-5-0">endurance</tspan>
+    </text>
+    <text
+       x="201.22673"
+       y="425.13712"
+       id="text2925-2-0-9-9-4-1-3"
+       style="font-size:18px;font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Effloresce">
+      <tspan
+         x="201.22673"
+         y="425.13712"
+         id="tspan2927-6-2-0-9-5-0-7">sceaux</tspan>
+    </text>
+  </g>
+  <text
+     x="91.598503"
+     y="404.18234"
+     id="text2925-2-4-7"
+     style="font-size:40px;font-variant:normal;font-stretch:normal;fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:#ff0000;stroke-opacity:1;filter:url(#filter3185);font-family:Effloresce">
+    <tspan
+       x="91.598503"
+       y="404.18234"
+       id="tspan2927-6-4-5">速</tspan>
+  </text>
+  <text
+     x="244.23871"
+     y="456.39572"
+     id="text2965-9"
+     xml:space="preserve"
+     style="font-size:40px;font-variant:normal;font-stretch:normal;fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:#ff0000;stroke-opacity:1;filter:url(#filter3185);font-family:Effloresce"><tspan
+       x="244.23871"
+       y="456.39572"
+       id="tspan2969-3">力</tspan></text>
+  <text
+     x="385.20795"
+     y="409.29797"
+     id="text3845-5"
+     xml:space="preserve"
+     style="font-size:40px;font-variant:normal;font-stretch:normal;fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:#ff0000;stroke-opacity:1;filter:url(#filter3185);font-family:Effloresce"><tspan
+       x="385.20795"
+       y="409.29797"
+       id="tspan3849-8">賢</tspan></text>
+</svg>

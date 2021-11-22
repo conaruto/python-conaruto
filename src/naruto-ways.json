@@ -2834,59 +2834,54 @@
     "name": "Déplacement souterrain",
     "voname": "Dochū eigyo no jutsu",
     "limited": true,
-    "mudras": [],
-    "profil": "Techniques des 5 éléments",
-    "element": "Doton",
-    "way": "Voie de la terre",
     "rank": 5,
+    "profil": "Techniques des 5 éléments",
+    "way": "Voie de la terre",
     "jutsu": "Ninjutsu",
+    "element": "Doton",
     "full-description": "Technique de déplacement permettant de se déplacer sous le sol pendant 15 mètres. Au tour suivant, si l'utilisateur de cette technique ressort dans le dos de son adversaire, il peut porter une attaque sournoise qui inflige, si l'attaque au contact est réussie, +5d6 DM.",
     "short-description": "Technique de déplacement permettant de se déplacer sous le sol. Au tour suivant, si l'utilisateur de cette technique ressort dans le dos de son adversaire, il peut porter une attaque sournoise.",
     "properties": [
       {
-        "name": "range",
-        "value": [
+        "name": "measure",
+        "measure": "range",
+        "values": [
           {
-            "name": "count",
-            "value": 15
-          },
-          {
-            "name": "unit",
-            "value": "m"
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 15
           }
-        ]
+        ],
+        "unit": "m"
       },
       {
-        "name": "duration",
-        "value": [
+        "name": "measure",
+        "measure": "duration",
+        "values": [
           {
-            "name": "count",
-            "value": 1
-          },
-          {
-            "name": "unit",
-            "value": "tr"
+            "name": "quantity",
+            "adjustment": "=",
+            "count": 1
           }
-        ]
+        ],
+        "unit": "tr"
       },
       {
-        "name": "Attaque sournoise",
-        "value": [
+        "name": "action",
+        "action": "Attaque sournoise",
+        "limited": false,
+        "detail": "",
+        "values": [
           {
-            "name": "mod",
-            "value": "+"
-          },
-          {
-            "name": "count",
-            "value": "5"
-          },
-          {
-            "name": "die",
-            "value": 6
+            "name": "dice",
+            "adjustment": "+",
+            "count": 5,
+            "die": "6"
           }
         ]
       }
-    ]
+    ],
+    "mudras": []
   },
   {
     "otype": "way",
@@ -4955,17 +4950,32 @@
       {
         "name": "property",
         "property": "Verte",
-        "value": "+2 FOR, Att. et DEF (combat) et 3 points de chakra supplémentaire (tour)"
+        "value": "+2 FOR, Att. et DEF (combat)"
+      },
+      {
+        "name": "property",
+        "property": "",
+        "value": "+3 points de chakra pour le prochain tour"
       },
       {
         "name": "property",
         "property": "Jaune",
-        "value": "+4 FOR, Att. et DEF (combat) et 6 points de chakra supplémentaire (tour)"
+        "value": "+4 FOR, Att. et DEF (combat)"
+      },
+      {
+        "name": "property",
+        "property": "",
+        "value": "+6 points de chakra pour le prochain tour"
       },
       {
         "name": "property",
         "property": "Rouge",
-        "value": "+6 FOR, Att. et DEF (combat) et 9 points de chakra supplémentaire (tour)"
+        "value": "+6 FOR, Att. et DEF (combat)"
+      },
+      {
+        "name": "property",
+        "property": "",
+        "value": "+9 points de chakra pour le prochain tour"
       }
     ],
     "mudras": []
@@ -6022,9 +6032,9 @@
         "test": "CHA",
         "values": [
           {
-            "name": "other",
+            "name": "free",
             "adjustment": "=",
-            "other": ":"
+            "value": ":"
           },
           {
             "name": "quantity",

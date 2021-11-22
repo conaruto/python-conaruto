@@ -14,33 +14,61 @@ def ssafe(s: any) -> str:
     """
     return normalize('NFD', str(s)).encode('ascii', 'ignore').decode("utf-8")
 
-def mod2s(dms):
-    sdm = ''
-    if dms is not None:
-        for dm in dms:
-            (a, v) = next(iter(dm.items()))
-            if a == 'die':
-                sdm = f"{sdm}d{v}"
-            elif a == 'type':
-                sdm = f"{sdm} {v}"
-            elif a == 'target':
-                if v in ['FOR', 'DEX', 'CON', 'INT', 'SAG', 'CHA']:
-                    sdm = f"{sdm} {v}"
-                else:
-                    sdm = f"{sdm}{v}" 
+def values2str(values):
+    v2s=[]
+    for value in values:
+        if value['name'] == "quantity":
+            if'adjustement' in value and not value['adjustement'] == '=':
+                v2s.append(f"{value['adjustement']}{value['count']}") 
             else:
-                sdm = f"{sdm}{v}"
+                v2s.append(f"{value['count']}")
+        elif value["name"] == "dice":
+            if'adjustement' in value and not value['adjustement'] == '=':
+                v2s.append(f"{value['count']}d{value['die']}")
+            else:
+                v2s.append(f"{value['count']}d{value['die']}")
 
-    if sdm == '':
+    return ' '.join(v2s)
+        
+
+def property2str(obj, pname, ptype):
+    if 'properties' in obj:
+        oproperty = next(iter([p for p in obj['properties'] if p['name'] == pname and pname in p and p[pname] == ptype]), None)
+        if oproperty is None:
+            print(f"Object {obj['name']} has no property '{pname}'")
+            return "-"
+        else:
+            if pname == "defense" and ptype == 'DEF':
+                if 'values' in oproperty:
+                    return ' '.join(values2str(oproperty['values'])) 
+                else:
+                    print(f"Object {obj['name']} has property '{pname}' with type '{ptype}' but no values")
+                    return("-")
+            elif pname == "fight" and ptype == "":
+                if "damage" in oproperty and "values" in oproperty['damage']:
+                    return ' '.join(values2str(oproperty['damage']['values'])) 
+                else:
+                    print(f"Object {obj['name']} has property '{pname}' with type '{ptype}' but no values")
+                    return "-"
+            elif pname == "measure" and ptype == "range":
+                if "values" in oproperty:
+                    return f"{' '.join(values2str(oproperty['values']))}{oproperty['unit']}"
+                else:
+                    print(f"Object {obj['name']} has property '{pname}' with type '{ptype}' but no values")
+                    return "-"
+            else:
+                print(f"Object {obj['name']} has no property '{pname}' with type '{ptype}'")
+                return "-"
+
+    else:
+        print(f"Object {obj['name']} has no properties")
+        return "-"
+
+def cost2str(cost):
+    if cost is None:
         return "-"
     else:
-        return f"{sdm}"
-
-def vu2s(vu):
-    if vu is None:
-        return "-"
-    else:
-        return f"{mod2s(vu['value'])} {vu['unit']}"
+        return f"{cost['value']} {cost['unit']}"
         
 # for paragraph in doc.getElementsByType(text.P):
 #     print(f" '{teletype.extractText(paragraph)}' : [{paragraph.getAttribute('stylename')}]")
@@ -78,6 +106,7 @@ with open("src/naruto-ways.json") as nw:
                 print(f"Add way '{item['name']}'...")
                 way_rank = 0
                 wn = text.H(stylename="WayName", outlinelevel=3, text=f"{ssafe(item['name'])}")
+                # wn = text.H(stylename="WayName", outlinelevel=3, text=f"{item['name']}")
                 wd = text.P(stylename="WayDescription", text=f"{item['full-description']}")
                 pn.insertBefore(wn,end_tag)
                 pn.insertBefore(wd,end_tag)
@@ -106,30 +135,35 @@ with open("src/naruto-ways.json") as nw:
             print("We found end tag !")   
             pn.removeChild(end_tag)
 
-    with open("src/naruto-objects.json") as no:
+    with open("src/naruto-things.json") as no:
         nos = json.load(no)
 
-        for otype in ['Material', 'Armor', 'Weapon']:
+        for ttype in ['Material', 'Armor', 'Weapon']:
+            print(f"Object with no ttype {[o for o in nos if 'ttype' not in o]}")
+            rtype = [ttype]
+            if ttype == "Armor":
+                rtype.append('Hat')
+                
             # Find start and end tags
             otag_start = next(
                 iter(
                     p for p in doc.getElementsByType(text.P) 
-                    if teletype.extractText(p).startswith(f"#{otype.lower()}-tag-start#")
+                    if teletype.extractText(p).startswith(f"#{ttype.lower()}-tag-start#")
                 ), None
             )
             otag_end = next(
                 iter(
                     p for p in doc.getElementsByType(text.P) 
-                    if teletype.extractText(p).startswith(f"#{otype.lower()}-tag-end#")
+                    if teletype.extractText(p).startswith(f"#{ttype.lower()}-tag-end#")
                 ), None
             )
 
             if otag_start is None or otag_end is None:
-                print(f"{otype} tags not found !")
+                print(f"{ttype} tags not found !")
             else:
-                print(f"{otype} tags found ! ({otag_start} {otag_end})")
+                print(f"{ttype} tags found ! ({otag_start} {otag_end})")
                 opt = otag_start.parentNode
-                for o in sorted([wo for wo in nos if wo['type'] == otype], key = lambda i: i['name']):
+                for o in sorted([wo for wo in nos if wo['ttype'] in rtype], key = lambda i: i['name']):
                     on = text.P(stylename="WayRank")
                     on.addElement(text.Span(stylename="WayRankName", text=f"{o['name']}\xa0:"))
                     on.addElement(text.Span(stylename="WayRankDescription", text=f" {o['full-description']}"))
@@ -141,7 +175,7 @@ with open("src/naruto-ways.json") as nw:
             otable_tag = next(
                 iter(
                     p for p in doc.getElementsByType(text.P) 
-                    if teletype.extractText(p).startswith(f"#{otype.lower()}-name#")
+                    if teletype.extractText(p).startswith(f"#{ttype.lower()}-name#")
                 ), None
             )
             if otable_tag is None :
@@ -153,33 +187,30 @@ with open("src/naruto-ways.json") as nw:
                 otable = otable_row.parentNode
                 cell_style = otable_cell.getAttribute('stylename')
                 row_style = otable_row.getAttribute('stylename')
-                for o in sorted([wo for wo in nos if wo['type'] == otype], key = lambda i: i['name']):
-                    print(f"Add row : {o['name']}, {vu2s(o['cost'])}")
+                for o in sorted([wo for wo in nos if wo['ttype'] == ttype], key = lambda i: i['name']):
+                    print(f"Add row : {o['name']}, {cost2str(o['cost'])}")
                     tr = table.TableRow(stylename=row_style)
                     otable.addElement(tr)
                     fc = table.TableCell(stylename=cell_style)
                     tr.addElement(fc)
                     fc.addElement(text.P(text=f"{o['name']}", stylename="RowCellFirst"))
-                    if otype == 'Weapon':
+                    if ttype == 'Weapon':
                         if 'range' not in o:
                             o.update({'range': None})
-                        print(f"Add weapon cols : {mod2s(o['attack']['dm'])}, {vu2s(o['range'])}")
+                        print(f"Add weapon cols : {property2str(o, 'fight', '')}, {property2str(o, 'measure', 'range')}")
                         c1 = table.TableCell(stylename=cell_style)
                         tr.addElement(c1)
-                        c1.addElement(text.P(text=f"{mod2s(o['attack']['dm'])}", stylename="RowCell"))
+                        c1.addElement(text.P(text=f"{property2str(o, 'fight', '')}", stylename="RowCell"))
                         c2 = table.TableCell(stylename=cell_style)
                         tr.addElement(c2)
-                        c2.addElement(text.P(text=f"{vu2s(o['range'])}", stylename="RowCell"))
-                    if otype == 'Armor':
-                        if 'defense' not in o:
-                            o.update({'defense': None})
-                        print(f"Add armor col : {mod2s(o['defense'])}")
+                        c2.addElement(text.P(text=f"{property2str(o, 'measure', 'range')}", stylename="RowCell"))
+                    if ttype == 'Armor' or ttype == 'Hat':
                         c1 = table.TableCell(stylename=cell_style)
                         tr.addElement(c1)
-                        c1.addElement(text.P(text=f"{mod2s(o['defense'])}", stylename="RowCell"))
+                        c1.addElement(text.P(text=f"{property2str(o,'defense','DEF')}", stylename="RowCell"))
                     c3 = table.TableCell(stylename=cell_style)
                     tr.addElement(c3)
-                    c3.addElement(text.P(text=f"{vu2s(o['cost'])}", stylename="RowCell"))
+                    c3.addElement(text.P(text=f"{cost2str(o['cost'])}", stylename="RowCell"))
                 
                 otable.removeChild(otable_row)
 
